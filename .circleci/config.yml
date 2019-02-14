@@ -17,6 +17,9 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
+      - add_ssh_keys:
+          fingerprints:
+            - "a5:5b:6d:4e:62:d5:f4:5a:de:5f:d2:6c:db:cd:ba:bf"
       - run: git config --global user.email "$GIT_AUTHOR_EMAIL"
       - run: git config --global user.name "$GIT_AUTHOR_NAME"
       - run: yarn install
