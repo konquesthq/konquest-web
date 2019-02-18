@@ -19,6 +19,7 @@ class IndexPage extends React.Component {
           <Image/>
         </div>
         <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/resources/">Resources</Link>
       </Layout>
     )
   }
