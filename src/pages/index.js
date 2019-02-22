@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 class IndexPage extends React.Component {
   render() {
     const resourceItem = this.props.data.contentfulResourceItem;
-    console.log(resourceItem);
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
