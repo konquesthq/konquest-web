@@ -9,7 +9,7 @@ const NavLink = ({path, children}) => {
     <Location>
       {
         ({location}) => {
-          const currentPath = location.pathname;
+          const currentPath = location.pathname.replace('/konquest-web', ''); // hack for hosting on gh-pages
           const isSelected = currentPath === path;
           const selectedClass = isSelected ? "selected" : null;
           return <Link to={path} className={selectedClass}>{children}</Link>
