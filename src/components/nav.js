@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './nav.scss';
 
 const NavLink = ({path, children}) => {
-  const currentPath =  window ? window.location.pathname : '';
+  const currentPath =  typeof window ? window.location.pathname : '';
   const isSelected = currentPath === path;
   const selectedClass = isSelected ? "selected" : null;
   return (
