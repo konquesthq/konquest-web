@@ -7,7 +7,12 @@ nav {
     margin-left: 30px;
     display: inline-block;
     line-height: 1.5;
-    padding: 28px 0;
+    padding: 28px 2px;
+    height: 80px;
+
+    &:not(.sign-in):hover, &.selected:not(.sign-in) {
+      border-bottom: 5px solid $wireframe-link;
+    }
 
     &.sign-in {
       padding: 27px 76px;
