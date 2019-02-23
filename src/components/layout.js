@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.scss"
 
-const Layout = ({ children }) => (
+const Layout = ({children}) => (
   <div>
     <Header />
     <div
@@ -25,7 +25,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;
