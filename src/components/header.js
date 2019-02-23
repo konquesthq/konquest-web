@@ -1,15 +1,17 @@
 import {Link} from "gatsby"
 import React from "react"
+import Nav from "./nav";
 
 import './header.scss';
 
 const Header = () => (
-  <header>
-    <h1>
+  <header className="site-header">
+    <div className="logo">
       <Link to='/'>
         Konquest
       </Link>
-    </h1>
+    </div>
+    <Nav />
   </header>
 );
 

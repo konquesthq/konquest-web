@@ -1,14 +1,19 @@
 @import '../styles/palette';
 
-header {
-  h1 {
+header.site-header {
+  display: grid;
+  grid-template-columns: 300px auto;
+  height: 80px;
+
+  .logo {
     font-family: 'Bebas', sans-serif;
     text-transform: uppercase;
     font-size: 28px;
+    margin: 26px 0 0 80px;
 
     a {
       text-decoration: none;
-      color: $wireframe-text;
+      color: $wireframe-link;
     }
   }
 }

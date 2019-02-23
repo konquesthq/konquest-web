@@ -1,0 +1,29 @@
+@import '../styles/palette';
+
+nav {
+  justify-self: end;
+  a {
+    font-weight: bold;
+    margin-left: 30px;
+    display: inline-block;
+    line-height: 1.5;
+    padding: 28px 0;
+
+    &.sign-in {
+      padding: 27px 76px;
+      background-color: $wireframe-link;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+
+      &::after {
+        font-family: 'Material Icons', sans-serif;
+        content: 'arrow_forward';
+        margin-left: 12px;
+        font-size: 18px;
+        display: inline-block;
+        vertical-align: sub;
+      }
+    }
+  }
+}
