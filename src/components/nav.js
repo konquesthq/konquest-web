@@ -27,7 +27,6 @@ const Nav = () => {
       <NavLink path="/pricing/">Pricing</NavLink>
       <NavLink path="/resources/">Resources</NavLink>
       <NavLink path="/contact/">Contact</NavLink>
-      <a href="https://app.konquest.io" className="sign-in">Sign In</a>
     </nav>
   )
 };

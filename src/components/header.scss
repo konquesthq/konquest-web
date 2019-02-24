@@ -1,19 +1,46 @@
 @import '../styles/palette';
+@import '../styles/grid';
 
 header.site-header {
-  display: grid;
-  grid-template-columns: 300px auto;
-  height: 80px;
+  @extend %grid;
 
   .logo {
     font-family: 'Bebas', sans-serif;
     text-transform: uppercase;
-    font-size: 28px;
-    margin: 26px 0 0 80px;
+    grid-column: 1 / span 2;
+    background: $wireframe-link url("../images/logo-lines.svg") no-repeat center 70px;
+    background-size: 95px 98px;
+    height: 245px;
 
     a {
+      font-size: 20px;
       text-decoration: none;
-      color: $wireframe-link;
+      color: white;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: 187px;
+    }
+  }
+
+  .sign-in {
+    padding: 27px 0;
+    height: 82px;
+    grid-column: 15 / span 2;
+    width: 100%;
+    text-align: center;
+    background-color: $wireframe-link;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+
+    &::after {
+      font-family: 'Material Icons', sans-serif;
+      content: 'arrow_forward';
+      margin-left: 12px;
+      font-size: 18px;
+      display: inline-block;
+      vertical-align: sub;
     }
   }
 }

@@ -1,0 +1,18 @@
+footer {
+  & > section {
+    display: inline-block;
+  }
+
+  .social {
+    margin-right: 18px;
+    a {
+      display: inline-block;
+      font-size: 0;
+      margin-right: 8px;
+
+      &:first-letter {
+        font-size: 16px;
+      }
+    }
+  }
+}

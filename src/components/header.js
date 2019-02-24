@@ -12,6 +12,7 @@ const Header = () => (
       </Link>
     </div>
     <Nav />
+    <a href="https://app.konquest.io" className="sign-in">Sign In</a>
   </header>
 );
 

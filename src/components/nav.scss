@@ -1,34 +1,20 @@
 @import '../styles/palette';
 
 nav {
+  grid-column-start: 3;
+  grid-column-end: 15;
   justify-self: end;
   a {
-    font-weight: bold;
+    font-weight: 800;
     margin-left: 30px;
     display: inline-block;
     line-height: 1.5;
     padding: 28px 2px;
     height: 80px;
+    color: $wireframe-nav;
 
-    &:not(.sign-in):hover, &.selected:not(.sign-in) {
-      border-bottom: 5px solid $wireframe-link;
-    }
-
-    &.sign-in {
-      padding: 27px 76px;
-      background-color: $wireframe-link;
-      color: white;
-      font-size: 15px;
-      font-weight: 600;
-
-      &::after {
-        font-family: 'Material Icons', sans-serif;
-        content: 'arrow_forward';
-        margin-left: 12px;
-        font-size: 18px;
-        display: inline-block;
-        vertical-align: sub;
-      }
+    &:hover, &.selected {
+      color: $wireframe-nav-selected;
     }
   }
 }
