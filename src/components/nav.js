@@ -23,7 +23,6 @@ const Nav = () => {
   return (
     <nav>
       <NavLink path="/">Home</NavLink>
-      <NavLink path="/benefits/">Benefits</NavLink>
       <NavLink path="/pricing/">Pricing</NavLink>
       <NavLink path="/resources/">Resources</NavLink>
       <NavLink path="/contact/">Contact</NavLink>
