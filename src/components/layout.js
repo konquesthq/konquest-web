@@ -5,7 +5,7 @@ import Footer from "./footer"
 import "./layout.scss"
 
 const Layout = ({children}) => (
-  <div>
+  <div className="site-container">
     <Header/>
     <div
       style={{
