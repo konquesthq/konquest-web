@@ -22,7 +22,14 @@ class Footer extends React.Component {
             </div>
           </div>
           <div className="subscribe">
-            
+            <form>
+              <label htmlFor="mail-subscription">
+                <span>Join the <b>Commission Mission</b> Newsletter</span>
+                <span>The inside track on incentive strategy</span>
+              </label>
+              <input type="text" id="mail-subscription" placeholder="you@domain.com" />
+              <button type="button">Subscribe</button>
+            </form>
           </div>
         </div>
         <div className="copyright">

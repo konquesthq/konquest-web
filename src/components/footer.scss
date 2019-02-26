@@ -3,18 +3,20 @@
 
 footer.site-footer {
   border-top: 2px solid $wireframe-footer-border;
+  color: $wireframe-footer-text;
 
   & > .contact {
     @extend %grid;
     width: 100%;
     background-color: white;
-    padding: 34px 0;
+    height: 88px;
+    padding: 20px 0 28px;
 
     & > .links {
       grid-column: 2 / span 8;
-      color: $wireframe-footer-text;
       font-size: 13px;
       line-height: 1.5;
+      padding: 12px 0 6px;
 
       & > div {
         display: inline-block;
@@ -35,7 +37,59 @@ footer.site-footer {
     }
 
     & > .subscribe {
-      grid-column: 9 / span 6;
+      grid-column: 10 / span 6;
+      font-size: 13px;
+      line-height: 1.5;
+
+      form {
+        & > * {
+          vertical-align: middle;
+        }
+
+        label {
+          display: inline-block;
+
+          span {
+            display: block;
+
+            &:first-child {
+              font-weight: 600;
+            }
+
+            &:last-child {
+              font-size: 12px;
+              font-weight: 300;
+            }
+
+            b {
+              font-weight: bold;
+              color: $wireframe-header;
+            }
+          }
+        }
+
+        input {
+          margin-left: 26px;
+          height: 38px;
+          width: 274px;
+          border: 1px solid $wireframe-input-border;
+          background-color: $wireframe-input-bground;
+          padding: 9px 16px;
+
+          &::placeholder {
+            color: $wireframe-input-placeholder;
+          }
+        }
+
+        button {
+          height: 38px;
+          width: 120px;
+          color: white;
+          background-color: $wireframe-input-btn;
+          text-align: center;
+          border: none;
+        }
+      }
     }
   }
 
