@@ -1,24 +1,66 @@
 @import "../styles/grid";
+@import "../styles/palette";
 
 footer.site-footer {
-  @extend %grid;
+  border-top: 2px solid $wireframe-footer-border;
 
-  & > .links {
-    grid-column: 2 / span 8;
+  & > .contact {
+    @extend %grid;
+    width: 100%;
+    background-color: white;
+    padding: 34px 0;
 
-    & > section {
-      display: inline-block;
+    & > .links {
+      grid-column: 2 / span 8;
+      color: $wireframe-footer-text;
+      font-size: 13px;
+      line-height: 1.5;
+
+      & > div {
+        display: inline-block;
+      }
+
+      .social {
+        margin-right: 18px;
+        a {
+          display: inline-block;
+          font-size: 0;
+          margin-right: 8px;
+
+          &:first-letter {
+            font-size: 13px;
+          }
+        }
+      }
     }
 
-    .social {
-      margin-right: 18px;
-      a {
-        display: inline-block;
-        font-size: 0;
-        margin-right: 8px;
+    & > .subscribe {
+      grid-column: 9 / span 6;
+    }
+  }
 
-        &:first-letter {
-          font-size: 16px;
+  & > .copyright {
+    background-color: $wireframe-copyright-bground;
+    padding: 20px 0 18px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 2;
+    color: $wireframe-copyright-text;
+
+    b {
+      font-weight: bold;
+    }
+
+    ul {
+      display: inline-block;
+
+      li {
+        display: inline-block;
+
+        &::before {
+          content: '|';
+          margin: 0 4px;
         }
       }
     }
