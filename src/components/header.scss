@@ -1,16 +1,18 @@
 @import '../styles/palette';
-@import '../styles/grid';
 
 header.site-header {
-  @extend %grid;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 32px;
+  width: 100%;
 
   .logo {
     font-family: 'Bebas', sans-serif;
     text-transform: uppercase;
-    grid-column: 1 / span 2;
     background: $wireframe-link url("../images/logo-lines.svg") no-repeat center 70px;
     background-size: 95px 98px;
     height: 245px;
+    width: 184px;
 
     a {
       font-size: 20px;
@@ -26,8 +28,7 @@ header.site-header {
   .sign-in {
     padding: 28px 0;
     height: 82px;
-    grid-column: 15 / span 2;
-    width: 100%;
+    width: 214px;
     text-align: center;
     background-color: $wireframe-link;
     color: white;

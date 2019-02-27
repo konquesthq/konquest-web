@@ -1,9 +1,8 @@
 @import '../styles/palette';
 
 nav {
-  grid-column-start: 3;
-  grid-column-end: 15;
   justify-self: end;
+  display: inline-block;
   a {
     font-weight: 800;
     margin-left: 30px;
