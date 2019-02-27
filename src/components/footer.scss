@@ -1,19 +1,20 @@
-@import "../styles/grid";
 @import "../styles/palette";
 
 footer.site-footer {
   border-top: 2px solid $wireframe-footer-border;
   color: $wireframe-footer-text;
+  display: block;
 
   & > .contact {
-    @extend %grid;
+    display: grid;
+    grid-template-columns: auto 1fr;
     width: 100%;
     background-color: white;
     height: 88px;
-    padding: 20px 0 28px;
+    padding: 20px 120px 28px;
 
     & > .links {
-      grid-column: 2 / span 8;
+      justify-self: left;
       font-size: 13px;
       line-height: 1.5;
       padding: 12px 0 6px;
@@ -37,7 +38,7 @@ footer.site-footer {
     }
 
     & > .subscribe {
-      grid-column: 10 / span 6;
+      justify-self: right;
       font-size: 13px;
       line-height: 1.5;
 

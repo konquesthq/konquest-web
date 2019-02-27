@@ -11,10 +11,10 @@ class Footer extends React.Component {
         <div className="contact">
           <div className="links">
             <div className="social">
-              <a href="https://www.linkedin.com/company/konquest/" target="_blank">LinkedIn</a>
-              <a href="https://www.facebook.com/Konquest-256106555318391/" target="_blank">Facebook</a>
+              <a href="https://www.linkedin.com/company/konquest/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.facebook.com/Konquest-256106555318391/" target="_blank" rel="noopener noreferrer">Facebook</a>
               {/*<a href="#">Instagram</a>*/}
-              <a href="https://twitter.com/KonquestHQ" target="_blank">Twitter</a>
+              <a href="https://twitter.com/KonquestHQ" target="_blank" rel="noopener noreferrer">Twitter</a>
             </div>
             <div className="contact" itemScope itemType="http://schema.org/Organization">
               <p>Call: <a href="tel:+441915111298" itemProp="telephone">0191 511 1298</a>&nbsp;|&nbsp;<a
