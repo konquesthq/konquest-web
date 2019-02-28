@@ -44,8 +44,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
+        google: {
+          families: ['Open Sans', 'Material Icons']
+        },
         custom: {
-          families: ['Bebas', 'Open Sans', 'Material Icons'],
+          families: ['Bebas'],
           urls: ['fonts.css']
         }
       }

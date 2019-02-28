@@ -34,7 +34,7 @@ class MailchimpSubscribe extends React.Component {
         <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
           <input type="text"
                  name="b_1b4fcadd18b78063061131d93_f3a7dd4abc"
-                 tabIndex="-1" value=""/>
+                 tabIndex="-1" value="" onChange={()=>{}}/>
         </div>
         <button type="submit">Subscribe</button>
       </form>
