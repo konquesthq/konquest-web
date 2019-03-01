@@ -1,6 +1,6 @@
 %grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   grid-template-rows: 100%;
-  grid-column-gap: 48px;
+  grid-column-gap: 32px;
 }

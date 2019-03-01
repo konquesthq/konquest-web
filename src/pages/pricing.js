@@ -29,25 +29,19 @@ const PricingPage = () => (
           <dl>
             <dt>Here is a question about pricing?</dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget. Duis sed urna vitae leo efficitur tempor. Duis tempor nisl ac pharetra dapibus. In hac
-              habitasse platea dictumst.
+              ipsum blandit eget.
             </dd>
             <dt>Here is a question about another concern on two lines?</dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget. Duis sed urna vitae leo efficitur tempor. Duis tempor nisl ac pharetra dapibus. In hac
-              habitasse platea dictumst.
+              ipsum blandit eget.
             </dd>
             <dt>And who on earth are you?</dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget. Duis sed urna vitae leo efficitur tempor. Duis tempor nisl ac pharetra dapibus. In hac
-              habitasse platea dictumst.
+              ipsum blandit eget.
             </dd>
-          </dl>
-          <dl>
             <dt>Why haven't you bought yet?</dt>
             <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget. Duis sed urna vitae leo efficitur tempor. Duis tempor nisl ac pharetra dapibus. In hac
-              habitasse platea dictumst.
+              ipsum blandit eget.
             </dd>
             <dt>Another question?</dt>
             <dd>No more.</dd>
