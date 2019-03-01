@@ -1,5 +1,6 @@
 @import '../styles/palette';
 @import '../styles/grid';
+@import '../styles/forms';
 
 .pricing-overview {
   width: 100%;
@@ -129,6 +130,31 @@
           font-weight: normal;
         }
       }
+    }
+  }
+}
+
+.request-demo {
+  @extend %grid;
+  padding: 80px 0 90px;
+
+  & > div {
+    grid-column: 5 / span 8;
+    background-color: $wireframe-demorequest-bground;
+    padding: 24px 32px 29px;
+    color: $wireframe-demorequest-text;
+    font-size: 15px;
+    line-height: 1.67;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 16px;
+
+    button {
+      @extend %btn;
+      font-size: 15px;
+      line-height: 1.53;
+      width: 160px;
+      padding: 12px 0;
     }
   }
 }

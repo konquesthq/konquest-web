@@ -1,0 +1,8 @@
+@import './palette';
+
+%btn {
+  color: white;
+  background-color: $wireframe-input-btn;
+  text-align: center;
+  border: none;
+}
