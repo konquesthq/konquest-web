@@ -103,4 +103,30 @@
       display: none;
     }
   }
+
+  .quote {
+    background-color: $wireframe-quote-bground;
+    color: white;
+    padding: 158px 0 145px;
+
+    blockquote {
+      max-width: 672px;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 2;
+      margin: 0 auto;
+
+      cite {
+        margin-top: 72px;
+        font-size: 13px;
+        line-height: 1.46;
+        font-weight: bold;
+        display: block;
+
+        .company {
+          font-weight: normal;
+        }
+      }
+    }
+  }
 }

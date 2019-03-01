@@ -58,9 +58,15 @@ const PricingPage = () => (
     <div className="testimonial">
       <section className="current-customers">
         <h2>Current Customers</h2>
-        <Logos />
+        <Logos/>
       </section>
       <section className="quote">
+        <blockquote>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
+          eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit. Donec
+          a purus id ex tincidunt pulvinar.
+          <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
+        </blockquote>
       </section>
     </div>
     <div className="request-demo">
