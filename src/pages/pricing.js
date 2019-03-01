@@ -1,6 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Logos from "../components/logos";
 
 import './pricing.scss';
 
@@ -57,8 +58,9 @@ const PricingPage = () => (
     <div className="testimonial">
       <section className="current-customers">
         <h2>Current Customers</h2>
+        <Logos />
       </section>
-      <section className="testimonial">
+      <section className="quote">
       </section>
     </div>
     <div className="request-demo">

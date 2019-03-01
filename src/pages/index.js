@@ -10,7 +10,7 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <h1>Commission. Sorted.</h1>
         <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}>
-          <Image/>
+          <Image />
         </div>
       </Layout>
     )
