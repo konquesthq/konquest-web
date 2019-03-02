@@ -4,8 +4,8 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.scss"
 
-const Layout = ({children}) => (
-  <div className="site-container">
+const Layout = ({children, className}) => (
+  <div className={`site-container ${className ? className : ''}`}>
     <Header/>
     <main>{children}</main>
     <Footer/>
@@ -13,7 +13,8 @@ const Layout = ({children}) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  pageClassName: PropTypes.string
 };
 
 export default Layout;
