@@ -1,0 +1,18 @@
+.not-found {
+  position: relative;
+  overflow: hidden;
+
+  .contents {
+    &::after {
+      content: '404';
+      position: absolute;
+      right: -32%;
+      bottom: -22%;
+      font-size: 900px;
+      line-height: 1;
+      opacity: 0.02;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

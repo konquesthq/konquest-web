@@ -1,13 +1,15 @@
 import React from "react"
-import Layout from "../components/layout"
+import Info from "../components/info"
 import SEO from "../components/seo"
 
+import './404.scss';
+
 const NotFoundPage = () => (
-  <Layout>
+  <Info className="not-found">
     <SEO title="404: Not found" />
-    <h1>404</h1>
-    <p>This is not the primate you're looking for</p>
-  </Layout>
+    <h1>This isn't the primate you're looking for</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat eget. </p>
+  </Info>
 );
 
 export default NotFoundPage;
