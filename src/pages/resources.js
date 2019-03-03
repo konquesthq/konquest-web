@@ -3,11 +3,23 @@ import {Link, graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import RequestDemo from "../components/requestDemo";
+import Img from 'gatsby-image';
 import './resources.scss';
 
 const ResourceItem = ({resourceItem}) => (
   <div className="resource-item">
-    <div className="image">&nbsp;</div>
+    <Img fluid={resourceItem.headerImage.fluid} />
+    <div className="details">
+      <h2>{resourceItem.title}</h2>
+      <p>Etiam in faucibus lectus, ut lobortis ex. Pellentese habitant morbi tristique senectus et netus. Prae interdum
+        sed sapien consequat tincidunt. </p>
+      <Link to={`/resources/${resourceItem.id}`}>Read More</Link>
+    </div>
+  </div>
+);
+
+const ShortResourceItem = ({resourceItem}) => (
+  <div className="resource-item short">
     <div className="details">
       <h2>{resourceItem.title}</h2>
       <p>Etiam in faucibus lectus, ut lobortis ex. Pellentese habitant morbi tristique senectus et netus. Prae interdum
@@ -28,7 +40,7 @@ class ResourceListPage extends React.Component {
             .slice(3)
             .map(({node}) => (
               <li key={node.id}>
-                <ResourceItem resourceItem={node}/>
+                <ShortResourceItem resourceItem={node}/>
               </li>
             ))}
         </ul>
@@ -69,6 +81,11 @@ export const resourceQuery = graphql`
           title,
           description {
             description
+          },
+          headerImage {
+            fluid(maxWidth: 440, maxHeight: 241) {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }

@@ -14,28 +14,14 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 32px;
 
-        &.recent-resources {
-          li .resource-item {
-            margin-bottom: 88px;
-            .image {
-              display: block;
-            }
-          }
-        }
-
         li {
-          margin-bottom: 32px;
-
           .resource-item {
+            margin-bottom: 88px;
             background-color: white;
             box-shadow: 0 8px 14px 0 $wireframe-resources-boxshadow;
 
-            // temp
-            .image {
-              height: 241px;
-              width: 100%;
-              background-color: #cecece;
-              display: none;
+            &.short {
+              margin-bottom: 32px;
             }
 
             .details {
