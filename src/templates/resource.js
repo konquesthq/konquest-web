@@ -2,6 +2,7 @@ import React from "react";
 import {graphql} from "gatsby";
 import * as PropTypes from "prop-types";
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 import ShortResourceItem from "../components/resourceItem";
 import RequestDemo from "../components/requestDemo";
 
@@ -17,6 +18,7 @@ class ResourceItemTemplate extends React.Component {
     const recent = this.props.data.recent.edges;
     return (
       <Layout className="resource-page">
+        <SEO title={resourceItem.title} />
         <h1>{resourceItem.title}</h1>
         <div
           dangerouslySetInnerHTML={{
