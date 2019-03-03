@@ -4,6 +4,82 @@
 .site-container.resource-page {
   background-color: #f7f7f7;
 
+  article {
+    @extend %grid;
+    grid-template-rows: 1fr;
+
+    & > header {
+      grid-column: 5 / span 8;
+      grid-row: auto;
+    }
+
+    & > .contents {
+      grid-column: 3 / span 12;
+      grid-row: auto;
+      background-color: white;
+      box-shadow: 0 2px 66px 0 $wireframe-resourcepage-boxshadow;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 32px;
+      padding-bottom: 76px;
+      margin-bottom: 80px;
+
+      & > div {
+        grid-column: 3 / span 8;
+        font-size: 16px;
+        line-height: 1.75;
+        color: $wireframe-resourcepage-text;
+
+        h2, h3 {
+          margin-bottom: 26px;
+          font-size: 28px;
+          font-weight: 800;
+          line-height: 1.4;
+          color: $wireframe-resourcepage-header;
+        }
+
+        h3 {
+          margin-bottom: 24px;
+          font-size: 18px;
+          line-height: 1.56;
+        }
+
+        p {
+          margin-bottom: 32px;
+        }
+
+        ol, ul {
+          list-style-position: outside;
+          font-size: 15px;
+          line-height: 1.53;
+          color: $wireframe-resourcepage-list;
+          margin-bottom: 32px;
+        }
+
+        ol {
+          list-style-type: decimal;
+        }
+
+        ul {
+          list-style-type: disc;
+        }
+
+        blockquote {
+          grid-column: 1 / span 5;
+          background-color: white;
+          box-shadow: 0 13px 44px 0 $wireframe-resourcepage-blockquote-boxshadow;
+          padding: 97px 68px;
+          font-family: Georgia, serif;
+          font-size: 25px;
+          line-height: 1.92;
+          color: $wireframe-resourcepage-blockquote-text;
+          margin-bottom: 40px;
+          width: 62.5%;
+        }
+      }
+    }
+  }
+
   .recent-articles {
     @extend %grid;
     grid-template-rows: auto 1fr;

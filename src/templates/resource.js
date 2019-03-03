@@ -18,13 +18,19 @@ class ResourceItemTemplate extends React.Component {
     const recent = this.props.data.recent.edges;
     return (
       <Layout className="resource-page">
-        <SEO title={resourceItem.title} />
-        <h1>{resourceItem.title}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: resourceItem.content.childContentfulRichText.html,
-          }}
-        />
+        <SEO title={resourceItem.title}/>
+        <article>
+          <header>
+            <h1>{resourceItem.title}</h1>
+          </header>
+          <div className="contents">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: resourceItem.content.childContentfulRichText.html,
+              }}
+            />
+          </div>
+        </article>
         <div className="recent-articles">
           <h2>Recent Articles</h2>
           <ul className="resource-items">
