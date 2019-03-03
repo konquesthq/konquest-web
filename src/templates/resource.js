@@ -7,15 +7,6 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-const DownloadLink = ({download}) => {
-  if(download)
-    return (
-      <div>
-        <a href={`${download.file.url}`}>{download.file.fileName}</a>
-      </div>
-    );
-};
-
 class ResourceItemTemplate extends React.Component {
   render() {
     const resourceItem = this.props.data.contentfulResourceItem;
@@ -27,7 +18,6 @@ class ResourceItemTemplate extends React.Component {
             __html: resourceItem.content.childContentfulRichText.html,
           }}
         />
-        <DownloadLink download={resourceItem.download}/>
       </Layout>
     )
   }
@@ -44,12 +34,6 @@ export const resourceItemQuery = graphql`
       content {
         childContentfulRichText {
           html
-        }
-      },
-      download {
-        file {
-          url,
-          fileName
         }
       }
     }

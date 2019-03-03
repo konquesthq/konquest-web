@@ -2,7 +2,7 @@ import React from "react";
 import {Link, graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
+import RequestDemo from "../components/requestDemo";
 import './resources.scss';
 
 const ResourceItem = ({resourceItem}) => (
@@ -25,7 +25,7 @@ class ResourceListPage extends React.Component {
       extraResourceItems = (
         <ul>
           {resourceItems
-            .slice(4)
+            .slice(3)
             .map(({node}) => (
               <li key={node.id}>
                 <ResourceItem resourceItem={node}/>
@@ -40,7 +40,7 @@ class ResourceListPage extends React.Component {
         <h1>Resources</h1>
         <div className="contents">
           <div>
-            <ul>
+            <ul className="recent-resources">
               {resourceItems
                 .slice(0, 3)
                 .map(({node}) => (
@@ -52,6 +52,7 @@ class ResourceListPage extends React.Component {
             {extraResourceItems}
           </div>
         </div>
+        <RequestDemo/>
       </Layout>
     )
   }
@@ -65,7 +66,10 @@ export const resourceQuery = graphql`
       edges {
         node {
           id,
-          title
+          title,
+          description {
+            description
+          }
         }
       }
     }
