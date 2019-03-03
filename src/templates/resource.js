@@ -1,6 +1,7 @@
 import React from "react";
 import {graphql} from "gatsby";
 import * as PropTypes from "prop-types";
+import Img from 'gatsby-image';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ShortResourceItem from "../components/resourceItem";
@@ -22,6 +23,7 @@ class ResourceItemTemplate extends React.Component {
         <article>
           <header>
             <h1>{resourceItem.title}</h1>
+            <Img fluid={resourceItem.headerImage.fluid}/>
           </header>
           <div className="contents">
             <div
@@ -61,6 +63,11 @@ export const resourceItemQuery = graphql`
       content {
         childContentfulRichText {
           html
+        }
+      },
+      headerImage {
+        fluid(maxWidth: 978) {
+          ...GatsbyContentfulFluid
         }
       }
     }
