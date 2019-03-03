@@ -1,0 +1,58 @@
+@import '../styles/palette';
+@import '../styles/grid';
+
+ul.resource-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 32px;
+}
+
+.resource-item {
+  margin-bottom: 88px;
+  background-color: white;
+  box-shadow: 0 8px 14px 0 $wireframe-resources-boxshadow;
+
+  &.short {
+    margin-bottom: 32px;
+  }
+
+  .details {
+    width: 100%;
+    height: 243px;
+    padding: 40px 32px 24px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.5;
+      color: $wireframe-header;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.53;
+      color: $wireframe-text;
+    }
+
+    a {
+      justify-self: end;
+      text-align: right;
+      color: $wireframe-resources-link;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.75;
+
+      &::after {
+        font-family: 'Material Icons', sans-serif;
+        content: 'arrow_forward';
+        margin-left: 12px;
+        font-size: 18px;
+        display: inline-block;
+        vertical-align: sub;
+      }
+    }
+  }
+}

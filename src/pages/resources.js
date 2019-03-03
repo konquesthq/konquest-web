@@ -1,33 +1,10 @@
 import React from "react";
-import {Link, graphql} from "gatsby";
+import {graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import RequestDemo from "../components/requestDemo";
-import Img from 'gatsby-image';
+import ShortResourceItem, {ResourceItem} from "../components/resourceItem";
 import './resources.scss';
-
-const ResourceItem = ({resourceItem}) => (
-  <div className="resource-item">
-    <Img fluid={resourceItem.headerImage.fluid} />
-    <div className="details">
-      <h2>{resourceItem.title}</h2>
-      <p>Etiam in faucibus lectus, ut lobortis ex. Pellentese habitant morbi tristique senectus et netus. Prae interdum
-        sed sapien consequat tincidunt. </p>
-      <Link to={`/resources/${resourceItem.id}`}>Read More</Link>
-    </div>
-  </div>
-);
-
-const ShortResourceItem = ({resourceItem}) => (
-  <div className="resource-item short">
-    <div className="details">
-      <h2>{resourceItem.title}</h2>
-      <p>Etiam in faucibus lectus, ut lobortis ex. Pellentese habitant morbi tristique senectus et netus. Prae interdum
-        sed sapien consequat tincidunt. </p>
-      <Link to={`/resources/${resourceItem.id}`}>Read More</Link>
-    </div>
-  </div>
-);
 
 class ResourceListPage extends React.Component {
   render() {
@@ -35,7 +12,7 @@ class ResourceListPage extends React.Component {
     let extraResourceItems = null;
     if (resourceItems.length > 3) {
       extraResourceItems = (
-        <ul>
+        <ul className="resource-items">
           {resourceItems
             .slice(3)
             .map(({node}) => (
@@ -52,7 +29,7 @@ class ResourceListPage extends React.Component {
         <h1>Resources</h1>
         <div className="contents">
           <div>
-            <ul className="recent-resources">
+            <ul className="resource-items">
               {resourceItems
                 .slice(0, 3)
                 .map(({node}) => (
