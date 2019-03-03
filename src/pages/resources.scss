@@ -10,10 +10,6 @@
       grid-column: 3 / span 12;
 
       & > ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 32px;
-
         li {
           .resource-item {
             margin-bottom: 88px;
