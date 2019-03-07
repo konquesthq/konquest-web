@@ -71,16 +71,9 @@ footer.site-footer {
         }
 
         input {
+          @extend %input;
           margin-left: 26px;
-          height: 38px;
           width: 274px;
-          border: 1px solid $wireframe-input-border;
-          background-color: $wireframe-input-bground;
-          padding: 9px 16px;
-
-          &::placeholder {
-            color: $wireframe-input-placeholder;
-          }
         }
 
         button {

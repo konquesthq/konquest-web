@@ -57,10 +57,10 @@ class Footer extends React.Component {
               {/*<a href="#">Instagram</a>*/}
               <a href="https://twitter.com/KonquestHQ" target="_blank" rel="noopener noreferrer">Twitter</a>
             </div>
-            <div className="contact" itemScope itemType="http://schema.org/Organization">
-              <p>Call: <a href="tel:+441915111298" itemProp="telephone">0191 511 1298</a>&nbsp;|&nbsp;<a
-                href="mailto:hello@konquest.io" itemProp="email">hello@konquest.io</a></p>
-            </div>
+            <address className="contact vcard" itemScope itemType="http://schema.org/Organization">
+              <p>Call: <a href="tel:+441915111298" className="tel" itemProp="telephone">0191 511 1298</a>&nbsp;|&nbsp;<a
+                href="mailto:hello@konquest.io" className="email" itemProp="email">hello@konquest.io</a></p>
+            </address>
           </div>
           <div className="subscribe">
             <MailchimpSubscribe/>

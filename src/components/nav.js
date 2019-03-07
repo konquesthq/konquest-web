@@ -19,20 +19,24 @@ const NavLink = ({path, children}) => {
   );
 };
 
-const Nav = () => {
+const Nav = ({onOpenContact}) => {
   return (
     <nav>
       <NavLink path="/">Home</NavLink>
       <NavLink path="/pricing/">Pricing</NavLink>
       <NavLink path="/resources/">Resources</NavLink>
-      <NavLink path="/contact/">Contact</NavLink>
+      <button type="button" onClick={onOpenContact}>Contact</button>
     </nav>
   )
 };
 
 NavLink.propTypes = {
   path: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+};
+
+Nav.propTypes = {
+  onOpenContact: PropTypes.func.isRequired
 };
 
 export default Nav;

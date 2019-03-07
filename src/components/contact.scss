@@ -1,0 +1,119 @@
+@import '../styles/palette';
+@import '../styles/forms';
+
+.site-container {
+  &.contact-open {
+    .contact-form {
+      opacity: 1;
+      width: 25%;
+      transition: width 0.2s linear;
+
+      & > div {
+        opacity: 1;
+        transition: opacity 0.3s linear 0.2s;
+      }
+    }
+  }
+
+  .contact-form {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    transition: width 0.2s linear;
+
+    &::before {
+      content: '';
+      width: 30%;
+      height: 100%;
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+      display: block;
+      background-color: transparent;
+      opacity: 0.15;
+      margin-left: -30%;
+      float: left;
+    }
+
+    & > div {
+      padding: 104px 32px 32px;
+      opacity: 0;
+
+      .close-button {
+        position: absolute;
+        top: 22px;
+        right: 36px;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.39;
+        color: $wireframe-link;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $wireframe-contact-text;
+        margin-bottom: 24px;
+      }
+
+      form {
+        label {
+          display: block;
+          margin-bottom: 16px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.71;
+          color: $wireframe-contact-label;
+
+          input, textarea {
+            display: block;
+            width: 75%;
+            @extend %input;
+            margin-top: 4px;
+          }
+
+          textarea {
+            height: 126px;
+            font-family: "Open Sans", sans-serif;
+          }
+        }
+
+        button {
+          @extend %btn;
+          font-size: 15px;
+          line-height: 1.53;
+          color: white;
+          width: 160px;
+          margin: 32px 0;
+          padding: 12px 8px;
+        }
+      }
+
+      address {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $wireframe-contact-text;
+
+        .org {
+          font-weight: bold;
+        }
+
+        .adr {
+          margin-bottom: 12px;
+
+          span {
+            display: block;
+          }
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

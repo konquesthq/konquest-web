@@ -3,13 +3,19 @@
 nav {
   justify-self: end;
   display: inline-block;
-  a {
+  a, button {
     font-weight: 800;
     margin-left: 30px;
     display: inline-block;
     line-height: 1.5;
     padding: 28px 0;
     color: $wireframe-nav;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
 
     &:hover, &.selected {
       color: $wireframe-nav-selected;
