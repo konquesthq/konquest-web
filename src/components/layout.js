@@ -4,6 +4,7 @@ import Header from "./header"
 import Footer from "./footer"
 import Contact from './contact';
 import "./layout.scss"
+import "./infoLayout.scss"
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -43,5 +44,5 @@ export default class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };

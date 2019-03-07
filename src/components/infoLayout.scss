@@ -20,10 +20,14 @@
     }
 
     nav {
-      a:hover {
+      a:hover, button:hover {
         color: white;
       }
     }
+  }
+
+  footer {
+    display: none;
   }
 
   & > main {
