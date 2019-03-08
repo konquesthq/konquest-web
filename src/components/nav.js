@@ -19,20 +19,25 @@ const NavLink = ({path, children}) => {
   );
 };
 
-const Nav = () => {
-  return (
-    <nav>
-      <NavLink path="/">Home</NavLink>
-      <NavLink path="/pricing/">Pricing</NavLink>
-      <NavLink path="/resources/">Resources</NavLink>
-      <button type="button" onClick={() => {navigate('#contact-form')}}>Contact</button>
-    </nav>
-  )
+export default class Nav extends React.Component {
+  static handleContactOpen() {
+    navigate('#contact-form');
+  }
+
+  render() {
+    return (
+      <nav>
+        <NavLink path="/">Home</NavLink>
+        <NavLink path="/pricing/">Pricing</NavLink>
+        <NavLink path="/resources/">Resources</NavLink>
+        <button type="button" onClick={Nav.handleContactOpen}>Contact
+        </button>
+      </nav>
+    );
+  }
 };
 
 NavLink.propTypes = {
   path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
-
-export default Nav;
