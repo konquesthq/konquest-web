@@ -2,7 +2,7 @@ import {Link} from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './nav.scss';
-import {Location} from '@reach/router';
+import {Location, navigate} from '@reach/router';
 
 const NavLink = ({path, children}) => {
   return (
@@ -19,13 +19,13 @@ const NavLink = ({path, children}) => {
   );
 };
 
-const Nav = ({onOpenContact}) => {
+const Nav = () => {
   return (
     <nav>
       <NavLink path="/">Home</NavLink>
       <NavLink path="/pricing/">Pricing</NavLink>
       <NavLink path="/resources/">Resources</NavLink>
-      <button type="button" onClick={onOpenContact}>Contact</button>
+      <button type="button" onClick={() => {navigate('#contact-form')}}>Contact</button>
     </nav>
   )
 };
@@ -33,10 +33,6 @@ const Nav = ({onOpenContact}) => {
 NavLink.propTypes = {
   path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-};
-
-Nav.propTypes = {
-  onOpenContact: PropTypes.func.isRequired
 };
 
 export default Nav;

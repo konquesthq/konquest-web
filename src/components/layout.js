@@ -5,38 +5,30 @@ import Footer from "./footer"
 import Contact from './contact';
 import "./layout.scss"
 import "./infoLayout.scss"
+import {Location, navigate} from '@reach/router';
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.children = props.children;
     this.className = props.className;
-    this.state = {
-      isContactOpen: false
-    };
-    this.handleOpenContact = this.handleOpenContact.bind(this);
-    this.handleCloseContact = this.handleCloseContact.bind(this);
+    Layout.handleCloseContact = Layout.handleCloseContact.bind(this);
   }
 
-  handleOpenContact() {
-    this.setState({
-      isContactOpen: true
-    });
-  }
-
-  handleCloseContact() {
-    this.setState({
-      isContactOpen: false
-    });
+  static handleCloseContact() {
+    navigate('#');
   }
 
   render() {
+    const {location} = this.props;
+    const isContactOpen = location.hash === '#contact-form';
     return (
-      <div className={`site-container ${this.className ? this.className : ''} ${this.state.isContactOpen ? 'contact-open' : ''}`}>
-        <Header onOpenContact={this.handleOpenContact} />
+      <div
+        className={`site-container ${this.className ? this.className : ''} ${isContactOpen ? 'contact-open' : ''}`}>
+        <Header/>
         <main>{this.children}</main>
         <Footer/>
-        <Contact onClose={this.handleCloseContact}/>
+        <Contact onClose={Layout.handleCloseContact}/>
       </div>
     );
   }
@@ -46,3 +38,9 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
+
+export default props => (
+  <Location>
+    {locationProps => <Layout {...locationProps} {...props} />}
+  </Location>
+);
