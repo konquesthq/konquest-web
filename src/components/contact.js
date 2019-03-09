@@ -1,18 +1,43 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { closeContact } from "../redux/actions";
+import {closeContact} from "../redux/actions";
+import {init, send} from 'emailjs-com';
 
 import './contact.scss';
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: '',
+      email: '',
+      phone: '',
+      comments: ''
+    };
     this.handleClose = this.handleClose.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    init('user_JbfWFohRc0NNaocgaVbDF');
   }
 
   handleClose() {
     this.props.closeContact();
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    send('sendgrid', 'contact_form_submission', this.state);
   }
 
   render() {
@@ -20,29 +45,36 @@ class Contact extends React.Component {
       <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
         <div>
           <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <h2>Contact Konquest</h2>
             <p>Vivamus ultricies nisi consequat erdum porttitor. Integer eu ipsum vehicula felis tincut convallis et a
               diam. </p>
             <label>
               Name
-              <input type="text"/>
+              <input type="text"
+                     name="name"
+                     value={this.state.name}
+                     onChange={this.handleInputChange}/>
             </label>
-            {/*<label>*/}
-              {/*Company*/}
-              {/*<input type="text"/>*/}
-            {/*</label>*/}
             <label>
               Email
-              <input type="text"/>
+              <input type="text"
+                     name="email"
+                     value={this.state.email}
+                     onChange={this.handleInputChange}/>
             </label>
             <label>
               Phone
-              <input type="text"/>
+              <input type="text"
+                     name="phone"
+                     value={this.state.phone}
+                     onChange={this.handleInputChange}/>
             </label>
             <label>
               Comments
-              <textarea/>
+              <textarea name="comments"
+                        value={this.state.comments}
+                        onChange={this.handleInputChange}/>
             </label>
             <button type="submit">Send</button>
           </form>

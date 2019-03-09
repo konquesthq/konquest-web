@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.0.1",
+    "emailjs-com": "^2.3.2",
     "gatsby": "^2.0.115",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-manifest": "^2.0.17",
