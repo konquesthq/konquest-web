@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {closeContact} from "../redux/actions";
 import {init, send} from 'emailjs-com';
+import {navigate} from '@reach/router';
 
 import './contact.scss';
 
@@ -38,6 +39,8 @@ class Contact extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     send('sendgrid', 'contact_form_submission', this.state);
+    this.handleClose();
+    navigate('/thanks');
   }
 
   render() {
