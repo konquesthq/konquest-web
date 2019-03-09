@@ -1,18 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { closeContact } from "../redux/actions";
 
 import './contact.scss';
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  handleClose() {
+    this.props.closeContact();
   }
 
   render() {
     return (
-      <div className="contact-form">
+      <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
         <div>
-          <button type="button" className="close-button" onClick={this.props.onClose}>Close</button>
+          <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
           <form>
             <h2>Contact Konquest</h2>
             <p>Vivamus ultricies nisi consequat erdum porttitor. Integer eu ipsum vehicula felis tincut convallis et a
@@ -58,5 +65,11 @@ export default class Contact extends React.Component {
 }
 
 Contact.propTypes = {
-  onClose: PropTypes.func.isRequired
+  isContactOpen: PropTypes.bool.isRequired
 };
+
+const mapStateToProps = ({isContactOpen}) => {
+  return {isContactOpen};
+};
+
+export default connect(mapStateToProps, {closeContact})(Contact);

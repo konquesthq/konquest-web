@@ -2,7 +2,8 @@ import {Link} from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './nav.scss';
-import {Location, navigate} from '@reach/router';
+import {Location} from '@reach/router';
+import OpenContactButton from './openContactButton';
 
 const NavLink = ({path, children}) => {
   return (
@@ -20,18 +21,13 @@ const NavLink = ({path, children}) => {
 };
 
 export default class Nav extends React.Component {
-  static handleContactOpen() {
-    navigate('#contact-form');
-  }
-
   render() {
     return (
       <nav>
         <NavLink path="/">Home</NavLink>
         <NavLink path="/pricing/">Pricing</NavLink>
         <NavLink path="/resources/">Resources</NavLink>
-        <button type="button" onClick={Nav.handleContactOpen}>Contact
-        </button>
+        <OpenContactButton>Contact</OpenContactButton>
       </nav>
     );
   }

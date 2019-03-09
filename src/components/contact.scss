@@ -2,19 +2,6 @@
 @import '../styles/forms';
 
 .site-container {
-  &.contact-open {
-    .contact-form {
-      opacity: 1;
-      width: 25%;
-      transition: width 0.2s linear;
-
-      & > div {
-        opacity: 1;
-        transition: opacity 0.3s linear 0.2s;
-      }
-    }
-  }
-
   &:not(.info) {
     .contact-form {
       &::before {
@@ -39,6 +26,17 @@
     width: 0;
     background-color: white;
     transition: width 0.2s linear;
+
+    &.open {
+      opacity: 1;
+      width: 25%;
+      transition: width 0.2s linear;
+
+      & > div {
+        opacity: 1;
+        transition: opacity 0.3s linear 0.2s;
+      }
+    }
 
     & > div {
       padding: 104px 32px 32px;

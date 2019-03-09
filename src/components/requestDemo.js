@@ -1,20 +1,16 @@
 import React from "react"
-import {navigate} from '@reach/router';
+import OpenContactButton from './openContactButton';
 
 import './requestDemo.scss';
 
 export default class RequestDemo extends React.Component {
-  static handleRequestDemo() {
-    navigate('#contact-form');
-  }
-
   render() {
     return (
       <div className="request-demo">
         <div className="demo-details">
           <p>Ut porttitor massa tellus, sit amet tempor nibh tincidunt eget. Cras volutpat interdum sem vitae vulputate.
             Morbi a dolor ut nisl ullamcorper tempor. Proin est ante, aliquet sed.</p>
-          <button type="button" onClick={RequestDemo.handleRequestDemo}>Request Demo</button>
+          <OpenContactButton>Request Demo</OpenContactButton>
         </div>
       </div>
     );
