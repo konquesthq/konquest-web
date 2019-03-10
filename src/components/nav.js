@@ -1,4 +1,4 @@
-import {Link} from 'gatsby';
+import {Link, withPrefix} from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './nav.scss';
@@ -10,8 +10,8 @@ const NavLink = ({path, children}) => {
     <Location>
       {
         ({location}) => {
-          const currentPath = location.pathname.replace('/konquest-web', ''); // hack for hosting on gh-pages
-          const isSelected = currentPath === path;
+          const isHome = path === "/";
+          const isSelected = isHome ? location.pathname === withPrefix(path) : location.pathname.startsWith(withPrefix(path));
           const selectedClass = isSelected ? "selected" : null;
           return <Link to={path} className={selectedClass}>{children}</Link>
         }
