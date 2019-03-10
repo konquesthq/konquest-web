@@ -5,6 +5,8 @@
 .site-container.home {
   .contents {
     @extend %grid;
+    grid-template-rows: 1fr auto;
+    height: calc(100vh - 245px);
 
     .intro {
       grid-column: 3 / span 5;
@@ -13,10 +15,11 @@
       h1 {
         text-align: left;
         margin-bottom: 16px;
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 40px;
+        font-weight: 800;
         line-height: 1.5;
         color: $wireframe-home-header;
+        text-transform: uppercase;
       }
 
       p {
@@ -33,6 +36,84 @@
         padding: 12px 0 14px;
         text-align: center;
         width: 214px;
+      }
+    }
+
+    .persona-navigation {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 16;
+
+      h2 {
+        height: 18px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: $wireframe-home-nav-header;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        margin-left: 32px;
+      }
+
+      ul {
+        @extend %grid;
+        grid-column-gap: 0;
+        width: 100%;
+        padding-left: 32px;
+        position: relative;
+        &::before {
+          content: '';
+          background-color: $wireframe-home-nav-bground;
+          width: 32px;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        &::after {
+          content: 'arrow_downward';
+          background-color: $wireframe-home-benefits-bground;
+          font-family: 'Material Icons', sans-serif;
+          font-size: 36px;
+          font-weight: bold;
+          color: $wireframe-home-nav-arrow;
+          grid-column: 13 / span 2;
+          height: 100%;
+          justify-content: center;
+          align-content: center;
+          display: grid;
+        }
+
+        li {
+          background-color: $wireframe-home-nav-bground;
+          border-left: 1px solid white;
+          padding: 24px 32px;
+          font-size: 14px;
+          line-height: 1.5;
+          color: $wireframe-home-nav-text;
+
+          h3 {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.53;
+            color: $wireframe-home-nav-itemheader;
+            margin-bottom: 4px;
+          }
+
+          &:nth-child(1) {
+            grid-column: 1 / span 3;
+          }
+          &:nth-child(2) {
+            grid-column: 4 / span 3;
+          }
+          &:nth-child(3) {
+            grid-column: 7 / span 3;
+          }
+          &:nth-child(4) {
+            grid-column: 10 / span 3;
+            border-right: 1px solid white;
+          }
+        }
       }
     }
   }
