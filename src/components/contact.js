@@ -8,6 +8,8 @@ import {navigate} from '@reach/router';
 
 import './contact.scss';
 
+const honeypotId = '80df4943-44b4-45a9-8359-5b2eccb787e7';
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +41,7 @@ class Contact extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    if(this.state[honeypotId]) return;
     send('sendgrid', 'contact_form_submission', this.state);
     this.handleClose();
     navigate(withPrefix('/thanks'));
@@ -82,6 +85,11 @@ class Contact extends React.Component {
                         value={this.state.comments}
                         onChange={this.handleInputChange}/>
             </label>
+            <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
+              <input type="text"
+                     name={honeypotId}
+                     tabIndex="-1" value="" onChange={this.handleInputChange}/>
+            </div>
             <button type="submit">Send</button>
           </form>
           <address className="vcard" itemScope itemType="http://schema.org/Organization">
