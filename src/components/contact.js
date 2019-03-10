@@ -1,4 +1,5 @@
 import React from 'react';
+import {withPrefix} from 'gatsby';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {closeContact} from "../redux/actions";
@@ -40,7 +41,7 @@ class Contact extends React.Component {
     event.preventDefault();
     send('sendgrid', 'contact_form_submission', this.state);
     this.handleClose();
-    navigate('/thanks');
+    navigate(withPrefix('/thanks'));
   }
 
   render() {
