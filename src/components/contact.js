@@ -54,18 +54,20 @@ class Contact extends React.Component {
             <p>Vivamus ultricies nisi consequat erdum porttitor. Integer eu ipsum vehicula felis tincut convallis et a
               diam. </p>
             <label>
-              Name
+              Name *
               <input type="text"
                      name="name"
                      value={this.state.name}
-                     onChange={this.handleInputChange}/>
+                     onChange={this.handleInputChange}
+                     required/>
             </label>
             <label>
-              Email
+              Email *
               <input type="text"
                      name="email"
                      value={this.state.email}
-                     onChange={this.handleInputChange}/>
+                     onChange={this.handleInputChange}
+                     required/>
             </label>
             <label>
               Phone
