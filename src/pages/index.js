@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Logos from "../components/logos";
+import RequestDemo from "../components/requestDemo";
 
 import "./index.scss";
 
@@ -42,7 +44,7 @@ class IndexPage extends React.Component {
     return (
       <Layout className="home">
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-        <div className="contents">
+        <section className="contents">
           <div className="intro">
             <h1>Commission. Sorted.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
@@ -50,7 +52,18 @@ class IndexPage extends React.Component {
             <button type="button">Btn Text</button>
           </div>
           <HomeNavigation/>
-        </div>
+        </section>
+        <section className="benefits">
+          <h2>This is the benefits section</h2>
+        </section>
+        <section className="partners">
+          <h2>Connect, Automate...</h2>
+        </section>
+        <section className="customers">
+          <h2>Trusted by</h2>
+          <Logos/>
+          <RequestDemo/>
+        </section>
       </Layout>
     )
   }
