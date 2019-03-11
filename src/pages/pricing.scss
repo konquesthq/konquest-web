@@ -117,6 +117,25 @@
       font-weight: 300;
       line-height: 2;
       margin: 0 auto;
+      position: relative;
+
+      span, cite {
+        z-index: 1;
+        position: relative;
+      }
+
+      &::after {
+        content: '\201D';
+        display: block;
+        font-size: 1000px;
+        color: rgba(0, 0, 0, 0.16);
+        position: absolute;
+        top: -228px;
+        right: -88px;
+        line-height: 1;
+        font-family: 'Bebas', sans-serif;
+        font-stretch: ultra-expanded;
+      }
 
       cite {
         margin-top: 72px;
