@@ -153,6 +153,10 @@
     background-color: white;
     grid-template-rows: auto 1fr auto;
 
+    h2 {
+      margin-bottom: 66px;
+    }
+
     .logos {
       grid-row: 2 / span 1;
       grid-column: 1 / span 16;
@@ -161,6 +165,7 @@
     .request-demo {
       grid-row: 3 / span 1;
       grid-column: 1 / span 16;
+      padding-bottom: 0;
     }
   }
 }
