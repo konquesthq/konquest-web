@@ -153,7 +153,6 @@
         font-weight: 300;
         line-height: 2;
         position: relative;
-        overflow: hidden;
 
         span {
           z-index: 1;
@@ -166,11 +165,13 @@
           font-size: 1000px;
           color: rgba(0, 0, 0, 0.16);
           position: absolute;
-          top: -274px;
-          right: -88px;
+          top: -160px;
+          right: 0;
           line-height: 1;
           font-family: 'Bebas', sans-serif;
           font-stretch: ultra-expanded;
+          width: 255px;
+          overflow: hidden;
         }
 
         cite {
