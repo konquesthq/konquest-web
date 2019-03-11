@@ -57,10 +57,10 @@ class IndexPage extends React.Component {
           <h2>This is the benefits section</h2>
           <div className="benefits-contents">
             <blockquote>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
+             <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
               Donec
-              a purus id ex tincidunt pulvinar.
+               a purus id ex tincidunt </span>
               <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
             </blockquote>
             <ul className="benefits-list">

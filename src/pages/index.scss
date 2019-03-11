@@ -152,6 +152,25 @@
         font-size: 18px;
         font-weight: 300;
         line-height: 2;
+        position: relative;
+        overflow: hidden;
+
+        span {
+          z-index: 1;
+          position: relative;
+        }
+
+        &::after {
+          content: '\201D';
+          display: block;
+          font-size: 1000px;
+          color: rgba(0, 0, 0, 0.16);
+          position: absolute;
+          top: -274px;
+          right: -88px;
+          line-height: 1;
+          font-family: 'Bebas', sans-serif;
+        }
 
         cite {
           font-size: 13px;
