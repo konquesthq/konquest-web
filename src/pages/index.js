@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Logos from "../components/logos";
 import RequestDemo from "../components/requestDemo";
 import Partners from '../components/partners';
+import OpenContactButton from '../components/openContactButton';
 
 import "./index.scss";
 
@@ -50,7 +51,7 @@ class IndexPage extends React.Component {
             <h1>Commission. Sorted.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
-            <button type="button">Btn Text</button>
+            <OpenContactButton>Request Demo</OpenContactButton>
           </div>
           <HomeNavigation/>
         </section>
