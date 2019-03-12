@@ -20,7 +20,7 @@
     }
   }
 
-  .contents {
+  section.contents {
     grid-template-rows: 1fr auto;
     height: calc(100vh - 245px);
 
@@ -133,7 +133,7 @@
       }
     }
   }
-  .benefits {
+  section.benefits {
     background-color: $wireframe-home-benefits-bground;
     @extend %grid;
     grid-template-rows: auto 1fr;
@@ -206,11 +206,23 @@
     }
   }
 
-  .partners {
+  main > section.partners {
     background-color: $wireframe-home-partners-bground;
+    grid-template-rows: auto auto 1fr;
+    padding: 71px 0 179px;
+
+    & > h2 {
+      margin-bottom: 25px;
+    }
+
+    & > p {
+      grid-column: 1 / span 16;
+      text-align: center;
+      margin-bottom: 76px;
+    }
   }
 
-  .customers {
+  section.customers {
     background-color: white;
     grid-template-rows: auto 1fr auto;
 

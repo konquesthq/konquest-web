@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Logos from "../components/logos";
 import RequestDemo from "../components/requestDemo";
+import Partners from '../components/partners';
 
 import "./index.scss";
 
@@ -93,6 +94,8 @@ class IndexPage extends React.Component {
         </section>
         <section className="partners">
           <h2>Connect, Automate...</h2>
+          <p>Sed in nisi efficitur, vestibulum tellus in, sagittis orci. Cras placerat enim justo, sit amet rhoncus.</p>
+          <Partners/>
         </section>
         <section className="customers">
           <h2>Trusted by</h2>
