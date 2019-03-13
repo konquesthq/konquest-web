@@ -9,39 +9,63 @@ import OpenContactButton from '../components/openContactButton';
 
 import "./index.scss";
 
-const PersonaNavigationItem = ({title, children}) => (
-  <li>
-    <h3>{title}</h3>
-    {children}
-  </li>
-);
+class PersonaSection extends React.Component {
+  render() {
+    return (
+      <div className={`persona-section ${this.props.isShown ? 'open' : ''}`}>
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
-PersonaNavigationItem.propTypes = {
-  title: PropTypes.string.isRequired,
+PersonaSection.propTypes = {
+  isShown: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 };
 
-const PersonaNavigation = () => (
-  <ul>
-    <PersonaNavigationItem title="Commercial"><p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in
-      auctor.</p></PersonaNavigationItem>
-    <PersonaNavigationItem title="Operations"><p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in
-      auctor.</p></PersonaNavigationItem>
-    <PersonaNavigationItem title="Finance"><p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
-    </PersonaNavigationItem>
-    <PersonaNavigationItem title="Sales"><p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
-    </PersonaNavigationItem>
-  </ul>
-);
+class PersonaNavigationItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-const HomeNavigation = () => (
-  <nav className="persona-navigation">
-    <h2>Choose your role or department</h2>
-    <PersonaNavigation/>
-  </nav>
-);
+  handleClick() {
+    this.props.onNavigate(this.props.title);
+  }
+
+  render() {
+    return (
+      <li className={this.props.isSelected ? 'selected' : ''} onClick={this.handleClick}>
+        <h3>{this.props.title}</h3>
+        {this.props.children}
+      </li>
+    );
+  }
+}
+
+PersonaNavigationItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  onNavigate: PropTypes.func.isRequired,
+  isSelected: PropTypes.bool.isRequired
+};
 
 class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      openSection: ''
+    };
+    this.handlePersonaNavigate = this.handlePersonaNavigate.bind(this);
+  }
+
+  handlePersonaNavigate(section) {
+    this.setState({
+      openSection: section
+    });
+  };
+
   render() {
     return (
       <Layout className="home">
@@ -53,7 +77,35 @@ class IndexPage extends React.Component {
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
             <OpenContactButton>Request Demo</OpenContactButton>
           </div>
-          <HomeNavigation/>
+          <PersonaSection id="commercial" isShown={this.state.openSection === 'Commercial'}>
+            <h2>Commercial Section</h2>
+          </PersonaSection>
+          <PersonaSection id="operations" isShown={this.state.openSection === 'Operations'}>
+            <h2>Operations Section</h2>
+          </PersonaSection>
+          <PersonaSection id="finance" isShown={this.state.openSection === 'Finance'}>
+            <h2>Finance Section</h2>
+          </PersonaSection>
+          <PersonaSection id="sales" isShown={this.state.openSection === 'Sales'}>
+            <h2>Sales Section</h2>
+          </PersonaSection>
+          <nav className="persona-navigation">
+            <h2>Choose your role or department</h2>
+            <ul>
+              <PersonaNavigationItem title="Commercial" isSelected={this.state.openSection === 'Commercial'} onNavigate={this.handlePersonaNavigate}>
+                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Operations" isSelected={this.state.openSection === 'Operations'} onNavigate={this.handlePersonaNavigate}>
+                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Finance" isSelected={this.state.openSection === 'Finance'} onNavigate={this.handlePersonaNavigate}>
+                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Sales" isSelected={this.state.openSection === 'Sales'} onNavigate={this.handlePersonaNavigate}>
+                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+              </PersonaNavigationItem>
+            </ul>
+          </nav>
         </section>
         <section className="benefits">
           <h2>This is the benefits section</h2>

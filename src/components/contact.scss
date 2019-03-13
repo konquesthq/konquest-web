@@ -26,6 +26,7 @@
     width: 0;
     background-color: white;
     transition: width 0.2s linear;
+    z-index: 3;
 
     &.open {
       opacity: 1;

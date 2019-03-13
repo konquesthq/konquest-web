@@ -58,6 +58,7 @@
     .persona-navigation {
       grid-row: 2 / span 1;
       grid-column: 1 / span 16;
+      z-index: 2;
 
       h2 {
         height: 18px;
@@ -107,6 +108,11 @@
           font-size: 14px;
           line-height: 1.5;
           color: $wireframe-home-nav-text;
+          cursor: pointer;
+
+          &.selected {
+            background-color: $wireframe-home-nav-selected;
+          }
 
           h3 {
             font-size: 15px;
@@ -132,7 +138,16 @@
         }
       }
     }
+
+    .persona-section {
+      display: none;
+
+      &.open {
+        display: block;
+      }
+    }
   }
+
   section.benefits {
     background-color: $wireframe-home-benefits-bground;
     @extend %grid;

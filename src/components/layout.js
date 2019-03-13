@@ -7,18 +7,12 @@ import "./layout.scss"
 import "./infoLayout.scss"
 
 export default class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.children = props.children;
-    this.className = props.className;
-  }
-
   render() {
     return (
       <div
-        className={`site-container ${this.className ? this.className : ''}`}>
+        className={`site-container ${this.props.className ? this.props.className : ''}`}>
         <Header/>
-        <main>{this.children}</main>
+        <main>{this.props.children}</main>
         <Footer/>
         <Contact/>
       </div>
