@@ -24,6 +24,19 @@
     grid-template-rows: 1fr auto;
     height: calc(100vh - 245px);
 
+    button {
+      @extend %btn;
+      font-size: 16px;
+      line-height: 1.88;
+      padding: 12px 0 14px;
+      text-align: center;
+      width: 214px;
+    }
+
+    & > div {
+      grid-row: 1 / span 1;
+    }
+
     .intro {
       grid-column: 3 / span 5;
       padding-top: 124px;
@@ -45,13 +58,81 @@
         color: $wireframe-home-text;
       }
 
-      button {
-        @extend %btn;
-        font-size: 16px;
-        line-height: 1.88;
-        padding: 12px 0 14px;
-        text-align: center;
-        width: 214px;
+      &.closed {
+        opacity: 0;
+      }
+    }
+
+    .persona-section {
+      width: 0;
+      overflow: hidden;
+      grid-column: 1 / span 16;
+      @extend %grid;
+
+      & > * {
+        opacity: 0;
+      }
+
+      &.open {
+        width: 100%;
+        transition: width 500ms linear;
+
+        & > * {
+          opacity: 1;
+          transition: opacity 500ms linear 500ms;
+        }
+      }
+
+      &.commercial {
+        .persona-contents {
+          grid-column: 3 / span 12;
+          padding-top: 30px;
+        }
+
+        h2 {
+          font-size: 28px;
+          font-weight: 800;
+          line-height: 1.5;
+          color: $wireframe-persona-header;
+          margin-bottom: 12px;
+        }
+
+        .columns {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+
+          ul {
+            margin-top: 24px;
+            grid-column: 1 / span 5;
+
+            li {
+              padding: 20px 25px 10px 96px;
+              box-shadow: 0 2px 12px 0 $wireframe-persona-boxshadow;
+              background-color: white;
+              font-size: 15px;
+              line-height: 1.53;
+              color: $wireframe-persona-text;
+              margin-bottom: 21px;
+
+              h3 {
+                color: $wireframe-persona-header;
+                font-weight: bold;
+                margin: 0;
+              }
+            }
+          }
+
+          .details {
+            grid-column: 7 / span 6;
+
+            p {
+              font-size: 16px;
+              line-height: 1.75;
+              color: $wireframe-persona-text;
+              margin-bottom: 40px;
+            }
+          }
+        }
       }
     }
 
@@ -136,14 +217,6 @@
             border-right: 1px solid white;
           }
         }
-      }
-    }
-
-    .persona-section {
-      display: none;
-
-      &.open {
-        display: block;
       }
     }
   }

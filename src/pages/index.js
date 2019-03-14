@@ -12,8 +12,10 @@ import "./index.scss";
 class PersonaSection extends React.Component {
   render() {
     return (
-      <div className={`persona-section ${this.props.isShown ? 'open' : ''}`}>
-        {this.props.children}
+      <div className={`persona-section ${this.props.className} ${this.props.isShown ? 'open' : ''}`}>
+        <div className="persona-contents">
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -21,7 +23,8 @@ class PersonaSection extends React.Component {
 
 PersonaSection.propTypes = {
   isShown: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired
 };
 
 class PersonaNavigationItem extends React.Component {
@@ -58,6 +61,7 @@ class IndexPage extends React.Component {
       openSection: ''
     };
     this.handlePersonaNavigate = this.handlePersonaNavigate.bind(this);
+    this.isSectionOpen = this.isSectionOpen.bind(this);
   }
 
   handlePersonaNavigate(section) {
@@ -66,42 +70,78 @@ class IndexPage extends React.Component {
     });
   };
 
+  isAnySectionOpen() {
+    return Boolean(this.state.openSection);
+  }
+
+  isSectionOpen(sectionName) {
+    return this.state.openSection === sectionName;
+  }
+
   render() {
     return (
       <Layout className="home">
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <section className="contents">
-          <div className="intro">
+          <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>
             <h1>Commission. Sorted.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
             <OpenContactButton>Request Demo</OpenContactButton>
           </div>
-          <PersonaSection id="commercial" isShown={this.state.openSection === 'Commercial'}>
-            <h2>Commercial Section</h2>
+          <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
+            <h2>This is a section heading</h2>
+            <div className="columns">
+              <ul>
+                <li>
+                  <h3>End to End Automation</h3>
+                  <p>No more spreadsheets, paper forms and emails. Less mistakes and full audit trails so you can focus
+                    on growing your business.</p>
+                </li>
+                <li>
+                  <h3>Total Flexibility</h3>
+                  <p>Manage one off bonuses or clawbacks with ease whilst automatically informing all concerned.</p>
+                </li>
+                <li>
+                  <h3>Enhanced Performance</h3>
+                  <p>Increase team motivation with one click access to personal commission pipelines for every
+                    consultant and manager.</p>
+                </li>
+              </ul>
+              <div className="details">
+                <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
+                  setup. Konquest will also drive performance by making consultant earnings visible to them in
+                  real-time, a proven motivator.</p>
+                <OpenContactButton>Request Demo</OpenContactButton>
+              </div>
+            </div>
           </PersonaSection>
-          <PersonaSection id="operations" isShown={this.state.openSection === 'Operations'}>
+          <PersonaSection className="operations" isShown={this.isSectionOpen('Operations')}>
             <h2>Operations Section</h2>
           </PersonaSection>
-          <PersonaSection id="finance" isShown={this.state.openSection === 'Finance'}>
+          <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <h2>Finance Section</h2>
           </PersonaSection>
-          <PersonaSection id="sales" isShown={this.state.openSection === 'Sales'}>
+          <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
             <h2>Sales Section</h2>
           </PersonaSection>
           <nav className="persona-navigation">
             <h2>Choose your role or department</h2>
             <ul>
-              <PersonaNavigationItem title="Commercial" isSelected={this.state.openSection === 'Commercial'} onNavigate={this.handlePersonaNavigate}>
+              <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
+                                     onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
               </PersonaNavigationItem>
-              <PersonaNavigationItem title="Operations" isSelected={this.state.openSection === 'Operations'} onNavigate={this.handlePersonaNavigate}>
+              <PersonaNavigationItem title="Operations" isSelected={this.isSectionOpen('Operations')}
+                                     onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
               </PersonaNavigationItem>
-              <PersonaNavigationItem title="Finance" isSelected={this.state.openSection === 'Finance'} onNavigate={this.handlePersonaNavigate}>
+              <PersonaNavigationItem title="Finance" isSelected={this.isSectionOpen('Finance')}
+                                     onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
               </PersonaNavigationItem>
-              <PersonaNavigationItem title="Sales" isSelected={this.state.openSection === 'Sales'} onNavigate={this.handlePersonaNavigate}>
+              <PersonaNavigationItem title="Sales" isSelected={this.isSectionOpen('Sales')}
+                                     onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
               </PersonaNavigationItem>
             </ul>
