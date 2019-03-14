@@ -122,7 +122,8 @@ class IndexPage extends React.Component {
             <ul>
               <li>
                 <h3>Auto Calculation</h3>
-                <p>Automatically calculate all your commission payments and allocate them to the right payroll periods.</p>
+                <p>Automatically calculate all your commission payments and allocate them to the right payroll
+                  periods.</p>
               </li>
               <li>
                 <h3>Centralised Date</h3>
@@ -162,7 +163,21 @@ class IndexPage extends React.Component {
             <RequestDemo/>
           </PersonaSection>
           <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
-            <h2>Sales Section</h2>
+            <h2>Total Transparency for your Reward Sytem</h2>
+            <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
+              involved in the approvals process so there’s never a nasty surprise on pay day.</p>
+            <ul>
+              <li>
+                <h3>Motivation</h3>
+                <p>One click access to commission pipelines for every consultant, real-time tracking against
+                  organisational or personal targets with notifications </p>
+              </li>
+              <li>
+                <h3>Focus</h3>
+                <p>Less time working out how much you’re getting paid, more time focused on what makes you more money!</p>
+              </li>
+            </ul>
+            <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <nav className="persona-navigation">
             <h2>Choose your role or department</h2>

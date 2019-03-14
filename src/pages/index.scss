@@ -228,6 +228,32 @@
           }
         }
       }
+
+      &.sales {
+        .persona-contents {
+          grid-column: 8 / span 8;
+
+          h2 {
+            margin-bottom: 6px;
+          }
+
+          & > p {
+            width: 60%;
+            margin-bottom: 40px;
+          }
+
+          ul {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-column-gap: 32px;
+            margin-bottom: 32px;
+
+            li {
+              padding: 20px 24px 18px 96px;
+            }
+          }
+        }
+      }
     }
 
     .persona-navigation {
