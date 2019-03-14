@@ -140,7 +140,26 @@ class IndexPage extends React.Component {
             <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
-            <h2>Finance Section</h2>
+            <h2>Donec lacinia meat lover</h2>
+            <ul>
+              <li>
+                <h3>Increased Productivity</h3>
+                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
+              </li>
+              <li>
+                <h3>Increased Productivity</h3>
+                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
+              </li>
+              <li>
+                <h3>Accuracy</h3>
+                <p>Minimize costly mistakes by alleviating the risk of human error.</p>
+              </li>
+              <li>
+                <h3>Audit Trails</h3>
+                <p>Record every transaction or event for each claim.</p>
+              </li>
+            </ul>
+            <RequestDemo/>
           </PersonaSection>
           <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
             <h2>Sales Section</h2>
