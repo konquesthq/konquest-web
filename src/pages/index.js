@@ -117,7 +117,27 @@ class IndexPage extends React.Component {
             </div>
           </PersonaSection>
           <PersonaSection className="operations" isShown={this.isSectionOpen('Operations')}>
-            <h2>Operations Section</h2>
+            <h2>Donec lacinia meat lover</h2>
+            <p>Remove spreadsheets from your commissions process with a secure, automated solution in the cloud.</p>
+            <ul>
+              <li>
+                <h3>Auto Calculation</h3>
+                <p>Automatically calculate all your commission payments and allocate them to the right payroll periods.</p>
+              </li>
+              <li>
+                <h3>Centralised Date</h3>
+                <p>Organise commission and bonus related data in one, cloud based solution.</p>
+              </li>
+              <li>
+                <h3>Secure Automation</h3>
+                <p>End to end, securely encrypted cloud solution. No more unsecure emails or corrupted spreadsheets.</p>
+              </li>
+              <li>
+                <h3>CRM Integration</h3>
+                <p>Securely integrate with your CRM via API to push sales data into Konquest</p>
+              </li>
+            </ul>
+            <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <h2>Finance Section</h2>
