@@ -61,14 +61,20 @@ class IndexPage extends React.Component {
       openSection: ''
     };
     this.handlePersonaNavigate = this.handlePersonaNavigate.bind(this);
-    this.isSectionOpen = this.isSectionOpen.bind(this);
+    this.handleClearPersona = this.handleClearPersona.bind(this);
   }
 
   handlePersonaNavigate(section) {
     this.setState({
       openSection: section
     });
-  };
+  }
+
+  handleClearPersona() {
+    this.setState({
+      openSection: ''
+    });
+  }
 
   isAnySectionOpen() {
     return Boolean(this.state.openSection);
@@ -79,6 +85,12 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    let openSectionNav = null;
+    if (this.isAnySectionOpen())
+      openSectionNav = (
+        <span className="clear-persona">{this.state.openSection}
+          <button type="button" onClick={this.handleClearPersona}>Reset</button></span>
+      );
     return (
       <Layout className="home">
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
@@ -174,13 +186,15 @@ class IndexPage extends React.Component {
               </li>
               <li>
                 <h3>Focus</h3>
-                <p>Less time working out how much you’re getting paid, more time focused on what makes you more money!</p>
+                <p>Less time working out how much you’re getting paid, more time focused on what makes you more
+                  money!</p>
               </li>
             </ul>
             <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <nav className="persona-navigation">
             <h2>Choose your role or department</h2>
+            {openSectionNav}
             <ul>
               <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
                                      onNavigate={this.handlePersonaNavigate}>

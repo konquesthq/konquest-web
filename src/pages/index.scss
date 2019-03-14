@@ -263,13 +263,39 @@
 
       h2 {
         height: 18px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+        margin-left: 32px;
+      }
+
+      h2, .clear-persona {
         font-size: 12px;
         font-weight: bold;
-        line-height: 1.5;
         color: $wireframe-home-nav-header;
-        margin-bottom: 18px;
         text-transform: uppercase;
-        margin-left: 32px;
+        display: inline-block;
+      }
+
+      .clear-persona {
+        margin-left: 8px;
+        &::before {
+          content: '|';
+          margin-right: 8px;
+          display: inline-block;
+        }
+
+        button {
+          background: none;
+          padding: 0;
+          width: auto;
+          height: auto;
+          font-size: 12px;
+          line-height: 1.5;
+          color: $wireframe-persona-clear;
+          text-decoration: underline;
+          text-transform: none;
+          margin-left: 74px;
+        }
       }
 
       ul {
