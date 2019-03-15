@@ -3,6 +3,25 @@
 @import '../styles/forms';
 
 .site-container.home {
+  background: transparent;
+  overflow-x: hidden;
+  position: relative;
+
+  &, & > * {
+    z-index: 2;
+  }
+
+  &::after {
+    content: '';
+    transform: rotate(32deg);
+    background-color: #ff3b3d;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 735.9px;
+    height: 1058.3px;
+  }
+
   main > section {
     @extend %grid;
 
@@ -22,7 +41,7 @@
 
   section.contents {
     grid-template-rows: 1fr auto;
-    height: calc(100vh - 245px);
+    height: calc(100vh - 202px);
 
     button {
       @extend %btn;
@@ -316,11 +335,11 @@
 
         &::after {
           content: 'arrow_downward';
-          background-color: $wireframe-home-benefits-bground;
+          background-color: $cardinal-regular;
           font-family: 'Material Icons', sans-serif;
           font-size: 36px;
           font-weight: bold;
-          color: $wireframe-home-nav-arrow;
+          color: $translucent;
           grid-column: 13 / span 2;
           height: 100%;
           justify-content: center;

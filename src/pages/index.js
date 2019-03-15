@@ -99,7 +99,7 @@ class IndexPage extends React.Component {
             <h1>Commission. Sorted.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
-            <OpenContactButton>Request Demo</OpenContactButton>
+            <OpenContactButton>Request a Demo</OpenContactButton>
           </div>
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
             <h2>This is a section heading</h2>

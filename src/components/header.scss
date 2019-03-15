@@ -9,9 +9,9 @@ header.site-header {
   .logo {
     font-family: 'Bebas', sans-serif;
     text-transform: uppercase;
-    background: $wireframe-link url("../images/logo-lines.svg") no-repeat center 70px;
+    background: $cardinal-regular url("../images/logo-lines.svg") no-repeat center 28px;
     background-size: 95px 98px;
-    height: 245px;
+    height: 202px;
     width: 184px;
 
     a {
@@ -21,19 +21,20 @@ header.site-header {
       display: inline-block;
       width: 100%;
       text-align: center;
-      margin-top: 187px;
+      margin-top: 142px;
     }
   }
 
   .sign-in {
-    padding: 28px 0;
-    height: 82px;
-    width: 214px;
+    padding: 20px 0;
+    height: 64px;
+    width: 172px;
     text-align: center;
-    background-color: $wireframe-link;
-    color: white;
+    background-color: $cardinal-dark;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
+    color: $translucent;
 
     &::after {
       font-family: 'Material Icons', sans-serif;
