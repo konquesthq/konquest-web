@@ -16,9 +16,9 @@
     transform: rotate(32deg);
     background-color: #ff3b3d;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 735.9px;
+    top: -102px;
+    right: -488px;
+    width: 1200px;
     height: 1058.3px;
   }
 
@@ -63,10 +63,11 @@
       h1 {
         text-align: left;
         margin-bottom: 16px;
-        font-size: 40px;
         font-weight: 800;
-        line-height: 1.5;
-        color: $wireframe-home-header;
+        color: $firefly-dark;
+        font-size: 80px;
+        line-height: 0.98;
+        font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
       }
 
@@ -74,7 +75,7 @@
         margin-bottom: 32px;
         font-size: 16px;
         line-height: 1.75;
-        color: $wireframe-home-text;
+        color: $nevada;
       }
 
       &.closed {
@@ -323,15 +324,6 @@
         width: 100%;
         padding-left: 32px;
         position: relative;
-        &::before {
-          content: '';
-          background-color: $wireframe-home-nav-bground;
-          width: 32px;
-          height: 100%;
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
 
         &::after {
           content: 'arrow_downward';
@@ -348,12 +340,12 @@
         }
 
         li {
-          background-color: $wireframe-home-nav-bground;
+          background-color: $cardinal-xx-light;
           border-left: 1px solid white;
           padding: 24px 32px;
           font-size: 14px;
           line-height: 1.5;
-          color: $wireframe-home-nav-text;
+          color: $nevada;
           cursor: pointer;
 
           &.selected {
@@ -364,8 +356,9 @@
             font-size: 15px;
             font-weight: bold;
             line-height: 1.53;
-            color: $wireframe-home-nav-itemheader;
             margin-bottom: 4px;
+            text-transform: uppercase;
+            color: $firefly-light;
           }
 
           &:nth-child(1) {
