@@ -87,7 +87,7 @@
       width: 0;
       overflow: hidden;
       grid-column: 1 / span 16;
-      @extend %grid;
+      @extend %grid-no-padding;
 
       & > * {
         opacity: 0;
@@ -285,7 +285,6 @@
         height: 18px;
         line-height: 1.5;
         margin-bottom: 18px;
-        margin-left: 32px;
       }
 
       h2, .clear-persona {
@@ -319,10 +318,9 @@
       }
 
       ul {
-        @extend %grid;
+        @extend %grid-no-padding;
         grid-column-gap: 0;
         width: 100%;
-        padding-left: 32px;
         position: relative;
 
         &::after {
@@ -381,7 +379,7 @@
 
   section.benefits {
     background-color: $wireframe-home-benefits-bground;
-    @extend %grid;
+    @extend %grid-no-padding;
     grid-template-rows: auto 1fr;
     grid-row-gap: 70px;
     font-size: 15px;
@@ -391,7 +389,7 @@
     .benefits-contents {
       grid-row: 2 / span 1;
       grid-column: 1 / span 16;
-      @extend %grid;
+      @extend %grid-no-padding;
 
       & > blockquote {
         grid-column: 2 / span 4;
