@@ -94,12 +94,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    let openSectionNav = null;
-    if (this.isAnySectionOpen())
-      openSectionNav = (
-        <span className="clear-persona">{this.state.openSection}
-          <button type="button" onClick={this.handleClearPersona}>Reset</button></span>
-      );
     return (
       <Layout className="home" ref={this.layout}>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
@@ -202,8 +196,6 @@ class IndexPage extends React.Component {
             <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <nav className="persona-navigation">
-            <h2>Choose your role or department</h2>
-            {openSectionNav}
             <ul>
               <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
                                      onNavigate={this.handlePersonaNavigate}>
