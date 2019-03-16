@@ -323,18 +323,23 @@
         width: 100%;
         position: relative;
 
-        &::after {
-          content: 'arrow_downward';
-          background-color: $cardinal-regular;
-          font-family: 'Material Icons', sans-serif;
-          font-size: 36px;
-          font-weight: bold;
-          color: $translucent;
+        li.benefits-nav {
+          font-size: 0;
+          padding: 0;
           grid-column: 13 / span 2;
-          height: 100%;
-          justify-content: center;
-          align-content: center;
-          display: grid;
+          &::after {
+            content: 'arrow_downward';
+            background-color: $cardinal-regular;
+            font-family: 'Material Icons', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: $translucent;
+            grid-column: 13 / span 2;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            display: grid;
+          }
         }
 
         li {

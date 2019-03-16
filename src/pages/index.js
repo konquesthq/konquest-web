@@ -60,8 +60,10 @@ class IndexPage extends React.Component {
     this.state = {
       openSection: ''
     };
+    this.benefitsSection = React.createRef();
     this.handlePersonaNavigate = this.handlePersonaNavigate.bind(this);
     this.handleClearPersona = this.handleClearPersona.bind(this);
+    this.handleScrollToBenefits = this.handleScrollToBenefits.bind(this);
   }
 
   handlePersonaNavigate(section) {
@@ -73,6 +75,13 @@ class IndexPage extends React.Component {
   handleClearPersona() {
     this.setState({
       openSection: ''
+    });
+  }
+
+  handleScrollToBenefits() {
+    this.benefitsSection.current.scrollIntoView({
+      alignToTop: true,
+      behavior: 'smooth'
     });
   }
 
@@ -92,7 +101,7 @@ class IndexPage extends React.Component {
           <button type="button" onClick={this.handleClearPersona}>Reset</button></span>
       );
     return (
-      <Layout className="home">
+      <Layout className="home" ref={this.layout}>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <section className="contents">
           <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>
@@ -212,6 +221,7 @@ class IndexPage extends React.Component {
                                      onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
               </PersonaNavigationItem>
+              <li className="benefits-nav" onClick={this.handleScrollToBenefits}>Benefits</li>
             </ul>
           </nav>
           <nav className="persona-radio-navigation">
@@ -234,7 +244,7 @@ class IndexPage extends React.Component {
             </ul>
           </nav>
         </section>
-        <section className="benefits">
+        <section className="benefits" ref={this.benefitsSection}>
           <h2>This is the benefits section</h2>
           <div className="benefits-contents">
             <blockquote>
