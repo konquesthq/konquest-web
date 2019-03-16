@@ -49,7 +49,7 @@ class PersonaNavigationItem extends React.Component {
 
 PersonaNavigationItem.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   onNavigate: PropTypes.func.isRequired,
   isSelected: PropTypes.bool.isRequired
 };
@@ -211,6 +211,25 @@ class IndexPage extends React.Component {
               <PersonaNavigationItem title="Sales" isSelected={this.isSectionOpen('Sales')}
                                      onNavigate={this.handlePersonaNavigate}>
                 <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+              </PersonaNavigationItem>
+            </ul>
+          </nav>
+          <nav className="persona-radio-navigation">
+            <ul>
+              <li onClick={this.handleClearPersona} className={!this.isAnySectionOpen() ? 'selected' : ''}>
+                Intro
+              </li>
+              <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
+                                     onNavigate={this.handlePersonaNavigate}>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Operations" isSelected={this.isSectionOpen('Operations')}
+                                     onNavigate={this.handlePersonaNavigate}>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Finance" isSelected={this.isSectionOpen('Finance')}
+                                     onNavigate={this.handlePersonaNavigate}>
+              </PersonaNavigationItem>
+              <PersonaNavigationItem title="Sales" isSelected={this.isSectionOpen('Sales')}
+                                     onNavigate={this.handlePersonaNavigate}>
               </PersonaNavigationItem>
             </ul>
           </nav>

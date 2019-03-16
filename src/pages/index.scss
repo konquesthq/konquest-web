@@ -377,6 +377,26 @@
     }
   }
 
+  .persona-radio-navigation {
+    position: absolute;
+    right: 32px;
+    top: calc(50vh - 71px);
+
+    li {
+      font-size: 0;
+      width: 10px;
+      height: 11px;
+      border: 2px solid $cardinal-dark;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $cardinal-dark;
+      }
+    }
+  }
+
   section.benefits {
     background-color: $wireframe-home-benefits-bground;
     @extend %grid-no-padding;
