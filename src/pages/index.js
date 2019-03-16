@@ -238,41 +238,39 @@ class IndexPage extends React.Component {
         </section>
         <section className="benefits" ref={this.benefitsSection}>
           <h2>This is the benefits section</h2>
-          <div className="benefits-contents">
-            <blockquote>
-             <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
+          <blockquote>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
               eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
               Donec
-               a purus id ex tincidunt </span>
-              <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
-            </blockquote>
-            <ul className="benefits-list">
-              <li>
-                <h3>Drive Efficiency</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
-                  volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
-                  vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
-              </li>
-              <li>
-                <h3>Drive Efficiency</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
-                  volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
-                  vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
-              </li>
-              <li>
-                <h3>Drive Efficiency</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
-                  volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
-                  vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
-              </li>
-              <li>
-                <h3>Drive Efficiency</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
-                  volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
-                  vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
-              </li>
-            </ul>
-          </div>
+               a purus id ex tincidunt
+            <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
+          </blockquote>
+          <ul className="benefits-list">
+            <li>
+              <h3>Drive Efficiency</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
+                volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
+                vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
+            </li>
+            <li>
+              <h3>Drive Efficiency</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
+                volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
+                vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
+            </li>
+            <li>
+              <h3>Drive Efficiency</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
+                volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
+                vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
+            </li>
+            <li>
+              <h3>Drive Efficiency</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
+                volutpat eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui
+                vehicula blandit. Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus.</p>
+            </li>
+          </ul>
         </section>
         <section className="partners">
           <h2>Connect, Automate...</h2>
