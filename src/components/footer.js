@@ -34,7 +34,8 @@ class MailchimpSubscribe extends React.Component {
         <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
           <input type="text"
                  name="b_1b4fcadd18b78063061131d93_f3a7dd4abc"
-                 tabIndex="-1" value="" onChange={()=>{}}/>
+                 tabIndex="-1" value="" onChange={() => {
+          }}/>
         </div>
         <button type="submit">Subscribe</button>
       </form>
@@ -51,11 +52,11 @@ class Footer extends React.Component {
           <div className="links">
             <div className="social">
               <a href="https://www.linkedin.com/company/konquest/" target="_blank"
-                 rel="noopener noreferrer">LinkedIn</a>
+                 rel="noopener noreferrer" className="linkedin">LinkedIn</a>
               <a href="https://www.facebook.com/Konquest-256106555318391/" target="_blank"
-                 rel="noopener noreferrer">Facebook</a>
-              {/*<a href="#">Instagram</a>*/}
-              <a href="https://twitter.com/KonquestHQ" target="_blank" rel="noopener noreferrer">Twitter</a>
+                 rel="noopener noreferrer" className="facebook">Facebook</a>
+              <a href="https://twitter.com/KonquestHQ" target="_blank" rel="noopener noreferrer"
+                 className="twitter">Twitter</a>
             </div>
             <address className="contact vcard" itemScope itemType="http://schema.org/Organization">
               <p>Call: <a href="tel:+441915111298" className="tel" itemProp="telephone">0191 511 1298</a>&nbsp;|&nbsp;<a

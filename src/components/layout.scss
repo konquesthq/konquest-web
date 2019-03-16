@@ -50,8 +50,13 @@ body {
 }
 
 a {
-  color: $wireframe-link;
   text-decoration: none;
+  font-weight: bold;
+  color: $cardinal-regular;
+
+  &:hover {
+    color: $cardinal-dark;
+  }
 }
 
 h1 {
@@ -61,4 +66,9 @@ h1 {
   line-height: 1.5;
   text-align: center;
   margin-bottom: 87px;
+}
+
+b {
+  color: $firefly-regular;
+  font-weight: bold;
 }

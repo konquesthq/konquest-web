@@ -24,15 +24,33 @@ footer.site-footer {
         display: inline-block;
       }
 
+      a.tel {
+        font-weight: normal;
+        color: $nevada;
+      }
+
       .social {
         margin-right: 18px;
         a {
           display: inline-block;
           font-size: 0;
           margin-right: 8px;
-
-          &:first-letter {
-            font-size: 13px;
+          width: 19px;
+          height: 19px;
+          line-height: 19px;
+          vertical-align: top;
+          background: transparent url(../images/icons/linkedin.svg) no-repeat 0 0;
+          
+          &.facebook {
+            background-image: url(../images/icons/facebook.svg);
+          }
+          
+          &.instagram {
+            background-image: url(../images/icons/instagram.svg);
+          }
+          
+          &.twitter {
+            background-image: url(../images/icons/twitter.svg);
           }
         }
       }
@@ -62,11 +80,6 @@ footer.site-footer {
               font-size: 12px;
               font-weight: 300;
             }
-
-            b {
-              font-weight: bold;
-              color: $wireframe-header;
-            }
           }
         }
 
@@ -80,22 +93,27 @@ footer.site-footer {
           @extend %btn;
           height: 38px;
           width: 120px;
+          background-color: $firefly-light;
+
+          &:hover {
+            background-color: $firefly-regular;
+          }
         }
       }
     }
   }
 
   & > .copyright {
-    background-color: $wireframe-copyright-bground;
+    background-color: $firefly-dark;
     padding: 20px 0 18px;
     text-align: center;
     font-size: 12px;
     font-weight: 300;
-    line-height: 2;
-    color: $wireframe-copyright-text;
+    line-height: 2.08;
+    color: white;
 
     b {
-      font-weight: bold;
+      color: white;
     }
 
     ul {
@@ -103,6 +121,11 @@ footer.site-footer {
 
       li {
         display: inline-block;
+
+        a {
+          color: white;
+          font-weight: 300;
+        }
 
         &::before {
           content: '|';

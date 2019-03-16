@@ -45,7 +45,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Open Sans:600,800', 'Material Icons', 'Montserrat:800']
+          families: ['Open Sans:300,600,800', 'Material Icons', 'Montserrat:800']
         },
         custom: {
           families: ['Bebas'],
