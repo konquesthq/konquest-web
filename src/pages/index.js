@@ -164,21 +164,21 @@ class IndexPage extends React.Component {
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <h2>Donec lacinia meat lover</h2>
             <ul>
-              <li>
-                <h3>Increased Productivity</h3>
-                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
-              </li>
-              <li>
-                <h3>Increased Productivity</h3>
-                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
-              </li>
-              <li>
+              <li className="accuracy">
                 <h3>Accuracy</h3>
                 <p>Minimize costly mistakes by alleviating the risk of human error.</p>
               </li>
-              <li>
+              <li className="audits">
                 <h3>Audit Trails</h3>
                 <p>Record every transaction or event for each claim.</p>
+              </li>
+              <li className="forecasting">
+                <h3>Improved Forecasting</h3>
+                <p>Realtime insight into estimated and actual commissions payable in any given period</p>
+              </li>
+              <li className="productivity">
+                <h3>Increased Productivity</h3>
+                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
               </li>
             </ul>
             <RequestDemo/>
@@ -188,12 +188,12 @@ class IndexPage extends React.Component {
             <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
               involved in the approvals process so there’s never a nasty surprise on pay day.</p>
             <ul>
-              <li>
+              <li className="motivation">
                 <h3>Motivation</h3>
                 <p>One click access to commission pipelines for every consultant, real-time tracking against
                   organisational or personal targets with notifications </p>
               </li>
-              <li>
+              <li className="focus">
                 <h3>Focus</h3>
                 <p>Less time working out how much you’re getting paid, more time focused on what makes you more
                   money!</p>

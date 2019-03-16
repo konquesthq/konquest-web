@@ -195,7 +195,8 @@
 
             li {
               padding: 96px 25px 32px;
-              background: transparent url(../images/icons/auto-calc.svg) no-repeat center 32px;
+              box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.08);
+              background: white url(../images/icons/auto-calc.svg) no-repeat center 32px;
               
               &.central-data {
                 background-image: url(../images/icons/centralisation.svg);
@@ -246,6 +247,20 @@
 
             li {
               padding: 20px 24px 12px 96px;
+              box-shadow: 0 2px 27px 0 rgba(0, 0, 0, 0.06);
+              background: white url(../images/icons/accuracy.svg) no-repeat 24px 24px;
+              
+              &.audits {
+                background-image: url(../images/icons/audit-trails.svg);
+              }
+              
+              &.forecasting {
+                background-image: url(../images/icons/forecasting.svg);
+              }
+              
+              &.productivity {
+                background-image: url(../images/icons/productivity.svg);
+              }
             }
           }
 
@@ -283,6 +298,12 @@
 
             li {
               padding: 20px 24px 18px 96px;
+              box-shadow: 0 2px 27px 0 rgba(0, 0, 0, 0.06);
+              background: white url(../images/icons/motivation.svg) no-repeat 24px 24px;
+
+              &.focus {
+                background-image: url(../images/icons/focus.svg);
+              }
             }
           }
         }
