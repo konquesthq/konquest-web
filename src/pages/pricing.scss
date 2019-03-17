@@ -1,12 +1,14 @@
 @import '../styles/palette';
 @import '../styles/grid';
+@import '../styles/forms';
 
 .pricing-overview {
   width: 100%;
   @extend %grid;
 
   .plan-details {
-    border: 1px solid $wireframe-pricing-border;
+    border: 1px solid $firefly-x-light;
+    border-radius: 6px;
     background-color: white;
     grid-column: 5 / span 3;
     height: fit-content;
@@ -16,18 +18,19 @@
     }
 
     p {
-      border-bottom: 1px solid $wireframe-pricing-border;
+      background-color: $firefly-light;
       text-transform: uppercase;
       font-size: 12px;
+      font-weight: 600;
       line-height: 1.5;
-      color: $wireframe-pricing-text;
-      padding: 45px 32px 28px;
+      color: white;
+      padding: 45px 48px 28px;
 
       .price {
-        color: $wireframe-price-text;
-        font-size: 46px;
-        line-height: 1.17;
-        font-weight: 800;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 64px;
+        line-height: 1.22;
+        font-weight: 200;
       }
     }
 
@@ -49,14 +52,12 @@
       }
 
       button {
+        @extend %btn;
         width: 100%;
         font-size: 16px;
         line-height: 1.9;
         font-weight: 600;
         padding: 12px 12px 14px;
-        background-color: $wireframe-pricing-text;
-        color: white;
-        border: none;
       }
     }
   }

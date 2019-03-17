@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Logos from "../components/logos";
 import RequestDemo from "../components/requestDemo";
+import OpenContactButton from '../components/openContactButton';
 
 import './pricing.scss';
 
@@ -21,7 +22,7 @@ const PricingPage = () => (
             <li>Feature description</li>
             <li>Feature description</li>
           </ul>
-          <button type="button">Btn Text</button>
+          <OpenContactButton>Request a Demo</OpenContactButton>
         </div>
       </section>
       <section className="faqs">

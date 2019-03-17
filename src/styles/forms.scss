@@ -5,6 +5,10 @@
   background-color: $cardinal-regular;
   text-align: center;
   border: none;
+
+  &:hover {
+    background-color: $cardinal-dark;
+  }
 }
 
 %input {

@@ -38,6 +38,10 @@ header.site-header {
     line-height: 1.5;
     color: $translucent;
 
+    &:hover {
+      background-color: $cardinal-x-dark;
+    }
+
     &::after {
       font-family: 'Material Icons', sans-serif;
       content: 'arrow_forward';
