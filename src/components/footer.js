@@ -43,11 +43,42 @@ class MailchimpSubscribe extends React.Component {
   }
 }
 
+const isOnBottom = (element) => {
+  const scrollNode = element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
+  return scrollNode.scrollHeight <= scrollNode.clientHeight + scrollNode.scrollTop;
+};
+
 class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.footerElement = React.createRef();
+    this.state = {
+      onBottom: false
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+    this.setState({
+      onBottom: isOnBottom(this.footerElement.current)
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll() {
+    this.setState({
+      onBottom: isOnBottom(this.footerElement.current)
+    });
+  }
+
   render() {
     const year = new Date().getUTCFullYear();
     return (
-      <footer className="site-footer">
+      <footer ref={this.footerElement} className={`site-footer ${this.state.onBottom ? 'bottom' : ''}`}>
         <div className="contact">
           <div className="links">
             <div className="social">

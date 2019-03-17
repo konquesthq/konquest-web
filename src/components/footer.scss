@@ -6,6 +6,11 @@ footer.site-footer {
   color: $wireframe-footer-text;
   display: block;
 
+  &.bottom > .contact {
+    bottom: 62px;
+    transition: bottom 0.2s linear;
+  }
+
   & > .contact {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -13,6 +18,8 @@ footer.site-footer {
     background-color: white;
     height: 88px;
     padding: 20px 120px 28px;
+    position: fixed;
+    bottom: 0;
 
     & > .links {
       justify-self: left;
@@ -111,6 +118,7 @@ footer.site-footer {
     font-weight: 300;
     line-height: 2.08;
     color: white;
+    margin-top: 88px;
 
     b {
       color: white;
