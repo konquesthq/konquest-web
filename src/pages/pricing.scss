@@ -110,7 +110,7 @@
   }
 
   .quote {
-    background-color: $wireframe-quote-bground;
+    background-color: $cardinal-dark;
     color: white;
     padding: 158px 0 145px;
     @extend %grid;
@@ -126,20 +126,6 @@
       span, cite {
         z-index: 1;
         position: relative;
-      }
-
-      &::after {
-        content: '\201D';
-        display: block;
-        font-size: 1000px;
-        color: rgba(0, 0, 0, 0.16);
-        position: absolute;
-        top: -414px;
-        right: -88px;
-        line-height: 1;
-        font-family: 'Bebas', sans-serif;
-        font-stretch: ultra-expanded;
-        overflow: hidden;
       }
 
       cite {
