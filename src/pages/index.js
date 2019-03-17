@@ -108,16 +108,16 @@ class IndexPage extends React.Component {
             <h2>This is a section heading</h2>
             <div className="columns">
               <ul>
-                <li>
+                <li className="automation">
                   <h3>End to End Automation</h3>
                   <p>No more spreadsheets, paper forms and emails. Less mistakes and full audit trails so you can focus
                     on growing your business.</p>
                 </li>
-                <li>
+                <li className="flexibility">
                   <h3>Total Flexibility</h3>
                   <p>Manage one off bonuses or clawbacks with ease whilst automatically informing all concerned.</p>
                 </li>
-                <li>
+                <li className="performance">
                   <h3>Enhanced Performance</h3>
                   <p>Increase team motivation with one click access to personal commission pipelines for every
                     consultant and manager.</p>
