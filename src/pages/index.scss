@@ -7,6 +7,10 @@
   overflow-x: hidden;
   position: relative;
 
+  footer.site-footer:not(.page-down) {
+    display: none;
+  }
+
   &, & > * {
     z-index: 2;
   }

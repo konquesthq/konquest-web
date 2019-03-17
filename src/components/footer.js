@@ -43,8 +43,17 @@ class MailchimpSubscribe extends React.Component {
   }
 }
 
+const getScrollNode = (element) => {
+  return element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
+};
+
+const isPageDown = (element) => {
+  const scrollNode = getScrollNode(element);
+  return scrollNode.scrollTop >= scrollNode.clientHeight;
+};
+
 const isOnBottom = (element) => {
-  const scrollNode = element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
+  const scrollNode = getScrollNode(element);
   return scrollNode.scrollHeight <= scrollNode.clientHeight + scrollNode.scrollTop;
 };
 
@@ -53,6 +62,7 @@ class Footer extends React.Component {
     super(props);
     this.footerElement = React.createRef();
     this.state = {
+      pageDown: false,
       onBottom: false
     };
     this.handleScroll = this.handleScroll.bind(this);
@@ -60,8 +70,10 @@ class Footer extends React.Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    const element = this.footerElement.current;
     this.setState({
-      onBottom: isOnBottom(this.footerElement.current)
+      pageDown: isPageDown(element),
+      onBottom: isOnBottom(element)
     });
   }
 
@@ -70,15 +82,17 @@ class Footer extends React.Component {
   }
 
   handleScroll() {
+    const element = this.footerElement.current;
     this.setState({
-      onBottom: isOnBottom(this.footerElement.current)
+      pageDown: isPageDown(element),
+      onBottom: isOnBottom(element)
     });
   }
 
   render() {
     const year = new Date().getUTCFullYear();
     return (
-      <footer ref={this.footerElement} className={`site-footer ${this.state.onBottom ? 'bottom' : ''}`}>
+      <footer ref={this.footerElement} className={`site-footer ${this.state.onBottom ? 'bottom' : ''} ${this.state.pageDown ? 'page-down' : ''}`}>
         <div className="contact">
           <div className="links">
             <div className="social">
