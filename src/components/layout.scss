@@ -60,12 +60,24 @@ a {
 }
 
 h1 {
-  color: $wireframe-header;
-  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $firefly-light;
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1.5;
-  text-align: center;
-  margin-bottom: 87px;
+  color: $firefly-light;
 }
 
 b {
