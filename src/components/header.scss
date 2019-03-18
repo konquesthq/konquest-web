@@ -1,5 +1,45 @@
 @import '../styles/palette';
 
+.site-container.scrolled {
+  header.site-header {
+    position: fixed;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 0 6px 17px 0 rgba(37, 41, 54, 0.13);
+
+    .logo {
+      background: none;
+      height: auto;
+      width: auto;
+      padding: 25px 50px 16px;
+      line-height: 0;
+      font-size: 0;
+      transition: font-size 0.2s linear, line-height 0.2s linear, padding 0.2s linear, height 0.2s linear, width 0.2s linear;
+
+      a {
+        width: 90px;
+        height: 19px;
+        display: inline-block;
+
+        .img {
+          opacity: 0;
+          height: 0 !important;
+          width: 0 !important;
+          transition: all 0.2s linear;
+        }
+
+        background-image: url(../images/brand-primary.svg);
+      }
+    }
+  }
+
+  &.page-down {
+    header.site-header {
+      display: none;
+    }
+  }
+}
+
 header.site-header {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -13,6 +53,7 @@ header.site-header {
     height: 202px;
     width: 184px;
     padding-top: 40px;
+    transition: all 0.2s linear;
 
     a {
       font-size: 0;

@@ -18,7 +18,7 @@ const Logo = () => (
         }
       }
     `}
-    render={data => <Img fixed={data.logoImage.childImageSharp.fixed} />}
+    render={data => <Img className="img" fixed={data.logoImage.childImageSharp.fixed} />}
   />
 );
 

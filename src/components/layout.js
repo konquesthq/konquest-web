@@ -10,6 +10,11 @@ const getScrollNode = (element) => {
   return element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
 };
 
+const isScrolled = (element) => {
+  const scrollNode = getScrollNode(element);
+  return scrollNode.scrollTop > 0;
+};
+
 const isPageDown = (element) => {
   const scrollNode = getScrollNode(element);
   return scrollNode.scrollTop >= scrollNode.clientHeight;
@@ -26,7 +31,8 @@ export default class Layout extends React.Component {
     this.siteContainer = React.createRef();
     this.state = {
       pageDown: false,
-      onBottom: false
+      onBottom: false,
+      scrolled: false
     };
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -36,7 +42,8 @@ export default class Layout extends React.Component {
     const element = this.siteContainer.current;
     this.setState({
       pageDown: isPageDown(element),
-      onBottom: isOnBottom(element)
+      onBottom: isOnBottom(element),
+      scrolled: isScrolled(element)
     });
   }
 
@@ -48,7 +55,8 @@ export default class Layout extends React.Component {
     const element = this.siteContainer.current;
     this.setState({
       pageDown: isPageDown(element),
-      onBottom: isOnBottom(element)
+      onBottom: isOnBottom(element),
+      scrolled: isScrolled(element)
     });
   }
 
@@ -57,6 +65,7 @@ export default class Layout extends React.Component {
     if(this.props.className) className += ` ${this.props.className}`;
     if(this.state.onBottom) className += ' bottom';
     if(this.state.pageDown) className += ' page-down';
+    if(this.state.scrolled) className += ' scrolled';
 
     return (
       <div
