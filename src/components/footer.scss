@@ -1,14 +1,16 @@
 @import "../styles/palette";
 @import "../styles/forms";
 
-footer.site-footer {
-  color: $wireframe-footer-text;
-  display: block;
-
-  &.bottom > .contact {
+.site-container.bottom {
+  footer.site-footer > .contact {
     bottom: 62px;
     transition: bottom 0.2s linear;
   }
+}
+
+footer.site-footer {
+  color: $wireframe-footer-text;
+  display: block;
 
   & > .contact {
     border-top: 1px solid #e4e4e4;
