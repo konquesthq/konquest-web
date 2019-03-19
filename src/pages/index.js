@@ -79,8 +79,12 @@ class IndexPage extends React.Component {
   }
 
   handleScrollToBenefits() {
-    this.benefitsSection.current.scrollIntoView({
-      alignToTop: true,
+    const element = this.benefitsSection.current;
+    const scrollNode = element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
+    const fullHeaderHeight = 202;
+    scrollNode.scrollTo({
+      top: scrollNode.clientHeight - fullHeaderHeight,
+      left: 0,
       behavior: 'smooth'
     });
   }
