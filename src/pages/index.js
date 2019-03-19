@@ -6,6 +6,10 @@ import Logos from "../components/logos";
 import RequestDemo from "../components/requestDemo";
 import Partners from '../components/partners';
 import OpenContactButton from '../components/openContactButton';
+import SalesImage from '../components/images/sales';
+import FinanceImage from '../components/images/finance';
+import CommercialImage from '../components/images/commercial';
+import DefaultImage from '../components/images/default';
 
 import "./index.scss";
 
@@ -103,10 +107,14 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <section className="contents">
           <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>
-            <h1>Commission. Sorted.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-              eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
-            <OpenContactButton>Request a Demo</OpenContactButton>
+            <div className="intro-contents">
+              <h1>Commission. Sorted.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
+                volutpat
+                eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
+              <OpenContactButton>Request a Demo</OpenContactButton>
+            </div>
+            <DefaultImage/>
           </div>
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
             <h2>This is a section heading</h2>
@@ -128,6 +136,7 @@ class IndexPage extends React.Component {
                 </li>
               </ul>
               <div className="details">
+                <CommercialImage/>
                 <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
                   setup. Konquest will also drive performance by making consultant earnings visible to them in
                   real-time, a proven motivator.</p>
@@ -160,44 +169,53 @@ class IndexPage extends React.Component {
             <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
-            <h2>Donec lacinia meat lover</h2>
-            <ul>
-              <li className="accuracy">
-                <h3>Accuracy</h3>
-                <p>Minimize costly mistakes by alleviating the risk of human error.</p>
-              </li>
-              <li className="audits">
-                <h3>Audit Trails</h3>
-                <p>Record every transaction or event for each claim.</p>
-              </li>
-              <li className="forecasting">
-                <h3>Improved Forecasting</h3>
-                <p>Realtime insight into estimated and actual commissions payable in any given period</p>
-              </li>
-              <li className="productivity">
-                <h3>Increased Productivity</h3>
-                <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
-              </li>
-            </ul>
-            <RequestDemo/>
+            <div className="description">
+              <h2>Donec lacinia meat lover</h2>
+              <p>Remove spreadsheets from your commissions process with a secure, automated solution in the cloud.</p>
+              <FinanceImage/>
+            </div>
+            <div className="details">
+              <ul>
+                <li className="accuracy">
+                  <h3>Accuracy</h3>
+                  <p>Minimize costly mistakes by alleviating the risk of human error.</p>
+                </li>
+                <li className="audits">
+                  <h3>Audit Trails</h3>
+                  <p>Record every transaction or event for each claim.</p>
+                </li>
+                <li className="forecasting">
+                  <h3>Improved Forecasting</h3>
+                  <p>Realtime insight into estimated and actual commissions payable in any given period</p>
+                </li>
+                <li className="productivity">
+                  <h3>Increased Productivity</h3>
+                  <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
+                </li>
+              </ul>
+              <RequestDemo/>
+            </div>
           </PersonaSection>
           <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
-            <h2>Total Transparency for your Reward Sytem</h2>
-            <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
-              involved in the approvals process so there’s never a nasty surprise on pay day.</p>
-            <ul>
-              <li className="motivation">
-                <h3>Motivation</h3>
-                <p>One click access to commission pipelines for every consultant, real-time tracking against
-                  organisational or personal targets with notifications </p>
-              </li>
-              <li className="focus">
-                <h3>Focus</h3>
-                <p>Less time working out how much you’re getting paid, more time focused on what makes you more
-                  money!</p>
-              </li>
-            </ul>
-            <OpenContactButton>Request Demo</OpenContactButton>
+            <div className="details">
+              <h2>Total Transparency for your Reward Sytem</h2>
+              <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
+                involved in the approvals process so there’s never a nasty surprise on pay day.</p>
+              <ul>
+                <li className="motivation">
+                  <h3>Motivation</h3>
+                  <p>One click access to commission pipelines for every consultant, real-time tracking against
+                    organisational or personal targets with notifications </p>
+                </li>
+                <li className="focus">
+                  <h3>Focus</h3>
+                  <p>Less time working out how much you’re getting paid, more time focused on what makes you more
+                    money!</p>
+                </li>
+              </ul>
+              <OpenContactButton>Request Demo</OpenContactButton>
+            </div>
+            <SalesImage/>
           </PersonaSection>
           <nav className="persona-navigation">
             <ul>
@@ -243,10 +261,10 @@ class IndexPage extends React.Component {
         <section className="benefits" ref={this.benefitsSection}>
           <h2>This is the benefits section</h2>
           <blockquote>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-              eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
-              Donec
-               a purus id ex tincidunt
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
+            eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
+            Donec
+            a purus id ex tincidunt
             <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
           </blockquote>
           <ul className="benefits-list">
