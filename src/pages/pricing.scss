@@ -110,7 +110,9 @@
   }
 
   .quote {
-    background-color: $cardinal-dark;
+    background: $cardinal-dark url(../images/speech.svg) no-repeat 70% 46px;
+    background-size: 364px 266.5px;
+    object-fit: contain;
     color: white;
     padding: 158px 0 145px;
     @extend %grid;
