@@ -21,11 +21,9 @@ class ResourceItemTemplate extends React.Component {
       <Layout className="resource-page">
         <SEO title={resourceItem.title}/>
         <article>
-          <header>
-            <h1>{resourceItem.title}</h1>
-            <Img fluid={resourceItem.headerImage.fluid}/>
-          </header>
           <div className="contents">
+            <Img className="img" fluid={resourceItem.headerImage.fluid}/>
+            <h1>{resourceItem.title}</h1>
             <div
               dangerouslySetInnerHTML={{
                 __html: resourceItem.content.childContentfulRichText.html,
