@@ -1,6 +1,6 @@
 @import '../styles/palette';
 
-.site-container.scrolled {
+.site-container.scrolled, .site-container.info {
   header.site-header {
     position: fixed;
     background-color: white;
@@ -28,7 +28,7 @@
           transition: all 0.2s linear;
         }
 
-        background-image: url(../images/brand-primary.svg);
+        background-image: url(../images/wordmark-primary.svg);
       }
     }
   }
