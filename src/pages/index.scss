@@ -3,9 +3,10 @@
 @import '../styles/forms';
 
 .site-container.home {
-  background: transparent;
   overflow-x: hidden;
   position: relative;
+  background: transparent url(../images/shapes/default.svg) no-repeat 910px -1290px;
+  background-size: cover;
 
   &:not(.page-down) footer.site-footer {
     display: none;
@@ -13,17 +14,6 @@
 
   &, & > * {
     z-index: 2;
-  }
-
-  &::after {
-    content: '';
-    transform: rotate(32deg);
-    background-color: $coral;
-    position: absolute;
-    top: -102px;
-    right: -488px;
-    width: 1200px;
-    height: 1058.3px;
   }
 
   main > section {
