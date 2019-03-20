@@ -99,14 +99,9 @@ footer.site-footer {
         }
 
         button {
-          @extend %btn;
+          @extend %btn-dark;
           height: 38px;
           width: 120px;
-          background-color: $firefly-light;
-
-          &:hover {
-            background-color: $firefly-regular;
-          }
         }
       }
     }

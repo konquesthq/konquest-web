@@ -11,13 +11,40 @@
   }
 }
 
+%btn-secondary {
+  @extend %btn;
+  background-color: $firefly-regular;
+
+  &:hover {
+    background-color: $firefly-dark;
+  }
+}
+
+%btn-dark {
+  @extend %btn;
+  background-color: $firefly-light;
+
+  &:hover {
+    background-color: $firefly-x-dark;
+  }
+}
+
 %input {
   height: 38px;
-  border: 1px solid $wireframe-input-border;
-  background-color: $wireframe-input-bground;
+  border: 1px solid #cdcdcd;
+  color: $firefly-x-light;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
   padding: 9px 16px;
+  outline: none;
+
+  &:focus {
+    background-color: #faf9f9;
+    border: 1px solid $firefly-x-light;
+  }
 
   &::placeholder {
-    color: $wireframe-input-placeholder;
+    opacity: 0.8;
   }
 }
