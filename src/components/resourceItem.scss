@@ -10,7 +10,7 @@ ul.resource-items {
 .resource-item {
   margin-bottom: 88px;
   background-color: white;
-  box-shadow: 0 8px 14px 0 $wireframe-resources-boxshadow;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.07);
 
   &.short {
     margin-bottom: 32px;
@@ -27,20 +27,17 @@ ul.resource-items {
       font-size: 16px;
       font-weight: bold;
       line-height: 1.5;
-      color: $wireframe-header;
       margin-bottom: 8px;
     }
 
     p {
       font-size: 15px;
       line-height: 1.53;
-      color: $wireframe-text;
     }
 
     a {
       justify-self: end;
       text-align: right;
-      color: $wireframe-resources-link;
       font-size: 16px;
       font-weight: 600;
       line-height: 1.75;
