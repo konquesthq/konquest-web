@@ -5,11 +5,12 @@ import "./legals.scss"
 
 const Legals = ({children}) => (
   <Layout className="legals">
-    <div>
-      <div className="contents">
+    <section>
+      <h1>Legals</h1>
+      <article className="contents">
         {children}
-      </div>
-    </div>
+      </article>
+    </section>
   </Layout>
 );
 
