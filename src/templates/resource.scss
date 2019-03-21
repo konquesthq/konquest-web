@@ -4,6 +4,10 @@
 .site-container.resource-page {
   background-color: #f7f7f7;
 
+  header.site-header {
+    z-index: 3;
+  }
+
   article {
     @extend %grid;
     grid-template-rows: 1fr;
@@ -22,6 +26,20 @@
       padding-bottom: 76px;
       margin-bottom: 80px;
 
+      &::after {
+        content: '';
+        display: block;
+        width: 761px;
+        height: 915px;
+        background-color: $coral;
+        position: absolute;
+        top: -174px;
+        right: -228px;
+        transform: rotate(33deg);
+        opacity: 0.88;
+        z-index: 1;
+      }
+
       & > * {
         grid-column: 3 / span 8;
       }
@@ -31,6 +49,7 @@
         grid-row: 1 / span 1;
         margin-bottom: 8px;
         margin-top: -405px;
+        z-index: 2;
       }
 
       h1 {
