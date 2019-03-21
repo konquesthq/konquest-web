@@ -103,7 +103,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <Layout className="home" ref={this.layout}>
+      <Layout className={`home ${this.state.openSection.toLowerCase()}`} ref={this.layout}>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <section className="contents">
           <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>

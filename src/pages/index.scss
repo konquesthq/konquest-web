@@ -5,8 +5,27 @@
 .site-container.home {
   overflow-x: hidden;
   position: relative;
-  background: transparent url(../images/shapes/default.svg) no-repeat 910px -1290px;
-  background-size: cover;
+  background: transparent url(../images/shapes/default.svg) no-repeat 910px -1010px;
+
+  &.commercial {
+    background-image: url(../images/shapes/commercial.svg);
+    background-position: 864px -1464px;
+  }
+
+  &.sales {
+    background-image: url(../images/shapes/sales.svg);
+    background-position: -1536px -330px;
+  }
+
+  &.finance {
+    background-image: url(../images/shapes/sales.svg);
+    background-position: -1150px -314px;
+  }
+
+  &.operations {
+    background-image: url(../images/shapes/operations.svg);
+    background-position: -1074px -580px;
+  }
 
   &:not(.page-down) footer.site-footer {
     display: none;
@@ -199,10 +218,12 @@
 
           h2 {
             margin-bottom: 8px;
+            color: white;
           }
 
           & > p {
             width: 50%;
+            color: white;
           }
 
           ul {
@@ -252,11 +273,13 @@
             h2 {
               padding: 0 20%;
               margin-bottom: 4px;
+              color: white;
             }
 
             p {
               margin-bottom: 30px;
               padding: 0 20%;
+              color: white;
             }
 
             .img {
