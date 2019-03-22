@@ -40,6 +40,10 @@
       display: none;
     }
   }
+
+  & > main {
+    padding-top: 136px;
+  }
 }
 
 .site-container.scrolled, .site-container.info {
