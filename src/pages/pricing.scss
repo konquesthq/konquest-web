@@ -109,16 +109,38 @@
   @media(max-width: exclusive-breakpoint($small-laptop)) {
     .plan-details {
       grid-column: 2 / span 4;
+
+      p .price {
+        font-size: 48px;
+      }
+
+      button {
+        font-size: 13px;
+      }
     }
 
     .faqs {
       grid-column: 6 / span 6;
+
+      .faq-items {
+        dt {
+          font-size: 14px;
+        }
+
+        dd {
+          font-size: 13px;
+        }
+      }
     }
   }
 
   @media(max-width: exclusive-breakpoint($large-tablet)) {
     .plan-details {
       grid-column: 1 / span 3;
+
+      .features ul {
+        padding-left: 16px;
+      }
     }
 
     .faqs {
@@ -193,6 +215,11 @@
 
     .quote blockquote {
       grid-column: 4 / span 7;
+      font-size: 15px;
+
+      cite {
+        text-align: center;
+      }
     }
   }
 
