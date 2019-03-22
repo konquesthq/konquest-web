@@ -176,4 +176,11 @@ footer.site-footer {
       }
     }
   }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    & > .contact {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
 }

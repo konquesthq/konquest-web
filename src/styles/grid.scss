@@ -15,6 +15,11 @@
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 40px;
   }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 32px;
+  }
 }
 
 %grid {
@@ -27,5 +32,9 @@
 
   @media(max-width: exclusive-breakpoint($small-laptop)) {
     padding: 0 40px;
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    padding: 0 32px;
   }
 }
