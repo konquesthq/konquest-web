@@ -1,6 +1,8 @@
 @import '../styles/palette';
 @import '../styles/grid';
 @import '../styles/forms';
+@import '../styles/breakpoints';
+@import '../styles/functions';
 
 .request-demo {
   @extend %grid;
@@ -23,6 +25,12 @@
       line-height: 1.53;
       width: 160px;
       padding: 12px 0;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    & > div {
+      grid-column: 3 / span 8;
     }
   }
 }

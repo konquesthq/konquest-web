@@ -1,10 +1,20 @@
+@import "../styles/breakpoints";
+@import "../styles/functions";
+
 .logos {
   text-align: center;
 
   li {
     display: inline-block;
-    width: 138px;
-    margin-right: 48px;
+    width: 162px;
+    margin-right: 24px;
     max-height: 100px;
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    li {
+      margin-right: 15px;
+      widtH: 111px;
+    }
   }
 }

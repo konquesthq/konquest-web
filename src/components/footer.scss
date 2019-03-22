@@ -51,15 +51,15 @@ footer.site-footer {
           line-height: 19px;
           vertical-align: top;
           background: transparent url(../images/icons/linkedin.svg) no-repeat 0 0;
-          
+
           &.facebook {
             background-image: url(../images/icons/facebook.svg);
           }
-          
+
           &.instagram {
             background-image: url(../images/icons/instagram.svg);
           }
-          
+
           &.twitter {
             background-image: url(../images/icons/twitter.svg);
           }
@@ -146,6 +146,34 @@ footer.site-footer {
     & > .contact {
       padding-left: 24px;
       padding-right: 24px;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    & > .contact {
+      padding: 11px 40px 19px;
+
+      & > .links .social {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      & > .subscribe {
+        form {
+          label {
+            display: block;
+            margin-bottom: 4px;
+
+            span:last-child {
+              display: none;
+            }
+          }
+
+          input {
+            margin-left: 0;
+          }
+        }
+      }
     }
   }
 }

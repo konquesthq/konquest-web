@@ -105,6 +105,16 @@
       grid-column: 8 / span 8;
     }
   }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    .plan-details {
+      grid-column: 2 / span 4;
+    }
+
+    .faqs {
+      grid-column: 6 / span 6;
+    }
+  }
 }
 
 .testimonial {
@@ -163,6 +173,16 @@
 
     .quote blockquote {
       grid-column: 6 / span 7;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    .current-customers .logos {
+      grid-column: 3 / span 8;
+    }
+
+    .quote blockquote {
+      grid-column: 4 / span 7;
     }
   }
 }
