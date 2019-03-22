@@ -1,6 +1,8 @@
 @import '../styles/palette';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
-.site-container.scrolled, .site-container.info {
+@mixin fixed-header() {
   header.site-header {
     position: fixed;
     background-color: white;
@@ -37,6 +39,16 @@
     header.site-header {
       display: none;
     }
+  }
+}
+
+.site-container.scrolled, .site-container.info {
+  @include fixed-header();
+}
+
+.site-container {
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    @include fixed-header();
   }
 }
 

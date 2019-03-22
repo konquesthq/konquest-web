@@ -1,5 +1,7 @@
 @import "../styles/palette";
 @import "../styles/forms";
+@import "../styles/functions";
+@import "../styles/breakpoints";
 
 .site-container.bottom {
   footer.site-footer > .contact {
@@ -137,6 +139,13 @@ footer.site-footer {
           margin: 0 4px;
         }
       }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    & > .contact {
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 }

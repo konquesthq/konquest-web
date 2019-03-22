@@ -1,0 +1,7 @@
+/*
+ exclude the actual value from the breakpoint so max-width can be used for
+ retrofitting responsive in non-mobile first css
+*/
+@function exclusive-breakpoint($size) {
+  @return $size - 1px;
+}

@@ -1,6 +1,8 @@
 @import '../styles/palette';
 @import '../styles/grid';
 @import '../styles/forms';
+@import '../styles/breakpoints';
+@import '../styles/functions';
 
 .pricing-overview {
   width: 100%;
@@ -93,6 +95,16 @@
       }
     }
   }
+
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    .plan-details {
+      grid-column: 3 / span 4;
+    }
+
+    .faqs {
+      grid-column: 8 / span 8;
+    }
+  }
 }
 
 .testimonial {
@@ -141,6 +153,16 @@
           font-weight: normal;
         }
       }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    .current-customers .logos {
+      grid-column: 3 / span 12;
+    }
+
+    .quote blockquote {
+      grid-column: 6 / span 7;
     }
   }
 }
