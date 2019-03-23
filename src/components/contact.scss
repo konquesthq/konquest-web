@@ -1,5 +1,7 @@
 @import '../styles/palette';
 @import '../styles/forms';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 @import './sidePanel';
 
 .site-container {
@@ -113,6 +115,46 @@
         p {
           margin-bottom: 0;
         }
+      }
+    }
+
+    @media(max-width: exclusive-breakpoint($small-tablet)) {
+      & > div {
+        h2 {
+          text-align: center;
+        }
+
+        form {
+          label {
+            font-size: 15px;
+
+            input, textarea {
+              width: 100%;
+            }
+          }
+
+          button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            font-size: 16px;
+            padding: 21px;
+          }
+        }
+
+        address {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media(max-height: exclusive-breakpoint(960px)) {
+    & > div {
+      address {
+        display: none;
       }
     }
   }
