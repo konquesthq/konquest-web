@@ -11,7 +11,6 @@
 }
 
 footer.site-footer {
-  color: $wireframe-footer-text;
   display: block;
 
   & > .contact {
@@ -181,6 +180,32 @@ footer.site-footer {
     & > .contact {
       padding-left: 32px;
       padding-right: 32px;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    & > .contact {
+      position: static;
+      display: block;
+      height: auto;
+
+      & > * {
+        display: block;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+
+      & > .subscribe {
+        input {
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    & > .copyright {
+      margin-top: 0;
     }
   }
 }

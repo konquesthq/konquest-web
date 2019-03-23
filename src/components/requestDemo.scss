@@ -6,7 +6,8 @@
 
 .request-demo {
   @extend %grid;
-  padding: 80px 0 90px;
+  padding-top: 80px;
+  padding-bottom: 90px;
 
   & > div {
     grid-column: 5 / span 8;
@@ -25,6 +26,7 @@
       line-height: 1.53;
       width: 160px;
       padding: 12px 0;
+      align-self: center;
     }
   }
 
@@ -42,6 +44,12 @@
   @media(max-width: exclusive-breakpoint($large-tablet)) {
     & > div {
       grid-column: 2 / span 6;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    & > div {
+      grid-column: 1 / span 8;
     }
   }
 }

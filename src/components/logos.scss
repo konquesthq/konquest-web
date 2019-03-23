@@ -24,4 +24,15 @@
       width: 94px;
     }
   }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    display: block;
+
+    li {
+      margin: 0 auto;
+      display: block;
+      width: 60%;
+      max-height: 100%;
+    }
+  }
 }
