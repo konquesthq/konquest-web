@@ -185,6 +185,8 @@
         & > div {
           blockquote {
             width: 60%;
+            padding-left: 40px;
+            padding-right: 40px;
 
             &::after {
               display: none;
@@ -223,6 +225,8 @@
         & > div {
           blockquote {
             width: 80%;
+            padding-left: 32px;
+            padding-right: 32px;
           }
         }
       }
@@ -256,6 +260,8 @@
         & > div {
           blockquote {
             width: 100%;
+            padding-left: 24px;
+            padding-right: 24px;
           }
         }
       }
