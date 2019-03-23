@@ -50,6 +50,7 @@ ul.resource-items {
     padding: 40px 32px 24px;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-row-gap: 8px;
 
     h2 {
       font-size: 16px;

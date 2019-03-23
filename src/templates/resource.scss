@@ -5,16 +5,13 @@
 
 .site-container.resource-page {
   background-color: #f7f7f7;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 
   header.site-header {
     z-index: 3;
-  }
-
-  main {
-    position: relative;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
   }
 
   article {
@@ -178,21 +175,99 @@
 
       & > .contents {
         grid-column: 2 / span 10;
+        margin-top: 325px;
 
         .img {
           margin-top: -325px;
+        }
+
+        & > div {
+          blockquote {
+            width: 60%;
+
+            &::after {
+              display: none;
+            }
+          }
         }
       }
     }
 
     .recent-articles {
+      & > h2 {
+        grid-column: 1 / span 12;
+      }
+
       .resource-items {
         grid-template-columns: repeat(2, 1fr);
-        grid-column: 3 / span 10;
+        grid-column: 2 / span 10;
 
         li:nth-child(n+3) {
           display: none;
         }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    article {
+      & > .contents {
+        grid-column: 2 / span 6;
+        margin-top: 195px;
+
+        .img {
+          margin-top: -195px;
+        }
+
+        & > div {
+          blockquote {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .recent-articles {
+      & > h2 {
+        grid-column: 1 / span 8;
+      }
+
+      .resource-items {
+        grid-column: 2 / span 6;
+
+        .resource-item, .resource-item .details {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    article {
+      & > .contents {
+        grid-column: 1 / span 8;
+        margin-top: 80px;
+
+        .img {
+          margin-top: -80px;
+        }
+
+        & > div {
+          blockquote {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .recent-articles {
+      & > h2 {
+        grid-column: 1 / span 8;
+      }
+
+      .resource-items {
+        grid-column: 2 / span 6;
+        grid-template-columns: 1fr;
       }
     }
   }
