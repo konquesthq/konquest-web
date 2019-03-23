@@ -171,8 +171,29 @@
   }
 
   @media(max-width: exclusive-breakpoint($small-laptop)) {
-    article::after {
-      display: none;
+    article {
+      &::after {
+        display: none;
+      }
+
+      & > .contents {
+        grid-column: 2 / span 10;
+
+        .img {
+          margin-top: -325px;
+        }
+      }
+    }
+
+    .recent-articles {
+      .resource-items {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: 3 / span 10;
+
+        li:nth-child(n+3) {
+          display: none;
+        }
+      }
     }
   }
 }
