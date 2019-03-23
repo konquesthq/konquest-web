@@ -40,7 +40,7 @@ class ResourceItemTemplate extends React.Component {
                   <li key={node.id}>
                     <ShortResourceItem resourceItem={node}/>
                   </li>
-                ))}
+                ))
             }
           </ul>
         </div>

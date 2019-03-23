@@ -38,10 +38,11 @@
       grid-row: auto;
       background-color: white;
       box-shadow: 0 2px 66px 0 rgba(0, 0, 0, 0.19);
-      @extend %grid-no-padding;
+      display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: auto auto 1fr;
       grid-row-gap: 24px;
+      grid-column-gap: 0;
       padding-bottom: 76px;
       margin-bottom: 80px;
 
