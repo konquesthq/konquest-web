@@ -55,6 +55,14 @@
   @media(max-width: exclusive-breakpoint($hd-display)) {
     @include fixed-header();
   }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    &.page-down {
+      header.site-header {
+        display: grid !important;
+      }
+    }
+  }
 }
 
 header.site-header {
