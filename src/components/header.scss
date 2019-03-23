@@ -195,6 +195,10 @@ header.site-header {
   }
 
   @media(max-width: exclusive-breakpoint($small-tablet)) {
+    .logo {
+      padding-left: 24px !important;
+    }
+
     .nav-container {
       .sign-in {
         width: 100%;
