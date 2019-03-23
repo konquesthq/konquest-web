@@ -7,6 +7,7 @@
 .site-container {
   .contact-form {
     @include side-panel();
+    z-index: 4;
 
     &.open {
       .close-button {
