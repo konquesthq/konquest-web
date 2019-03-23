@@ -1,10 +1,38 @@
 @import '../styles/palette';
 @import '../styles/grid';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 ul.resource-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 32px;
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    grid-template-columns: repeat(2, 1fr);
+
+    li:nth-child(n+3) {
+      .resource-item {
+        margin-bottom: 32px;
+        .img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    grid-template-columns: 1fr;
+
+    li:nth-child(n+2) {
+      .resource-item {
+        margin-bottom: 32px;
+        .img {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .resource-item {

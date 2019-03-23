@@ -1,5 +1,7 @@
 @import '../styles/palette';
 @import '../styles/grid';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 .site-container.resources {
   background-color: #f7f7f7;
@@ -10,8 +12,24 @@
       grid-column: 3 / span 12;
     }
   }
-  
+
   .request-demo > .demo-details {
     background-color: white;
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    .contents {
+      & > div {
+        grid-column: 1 / span 12;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    .contents {
+      & > div {
+        grid-column: 1 / span 8;
+      }
+    }
   }
 }

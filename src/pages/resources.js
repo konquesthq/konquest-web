@@ -12,7 +12,7 @@ class ResourceListPage extends React.Component {
     let extraResourceItems = null;
     if (resourceItems.length > 3) {
       extraResourceItems = (
-        <ul className="resource-items">
+        <React.Fragment>
           {resourceItems
             .slice(3)
             .map(({node}) => (
@@ -20,7 +20,7 @@ class ResourceListPage extends React.Component {
                 <ShortResourceItem resourceItem={node}/>
               </li>
             ))}
-        </ul>
+        </React.Fragment>
       );
     }
     return (
@@ -37,8 +37,8 @@ class ResourceListPage extends React.Component {
                     <ResourceItem resourceItem={node}/>
                   </li>
                 ))}
+              {extraResourceItems}
             </ul>
-            {extraResourceItems}
           </div>
         </div>
         <RequestDemo/>

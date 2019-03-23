@@ -6,7 +6,7 @@ import './resourceItem.scss';
 
 export const ResourceItem = ({resourceItem}) => (
   <div className="resource-item">
-    <Img fluid={resourceItem.headerImage.fluid} />
+    <Img className="img" fluid={resourceItem.headerImage.fluid} />
     <div className="details">
       <h2>{resourceItem.title}</h2>
       <p>Etiam in faucibus lectus, ut lobortis ex. Pellentese habitant morbi tristique senectus et netus. Prae interdum
