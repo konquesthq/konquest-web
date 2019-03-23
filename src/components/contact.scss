@@ -1,26 +1,14 @@
 @import '../styles/palette';
 @import '../styles/forms';
+@import './sidePanel';
 
 .site-container {
   .contact-form {
-    position: fixed;
-    border-left: 1px solid #dedede;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background-color: white;
-    transition: width 0.2s linear;
-    z-index: 3;
+    @include side-panel();
 
     &.open {
-      opacity: 1;
-      width: 25%;
-      transition: width 0.2s linear;
-
-      & > div {
-        opacity: 1;
-        transition: opacity 0.3s linear 0.2s;
+      .close-button {
+        display: block;
       }
     }
 
@@ -38,6 +26,7 @@
         outline: none;
         cursor: pointer;
         padding: 0;
+        display: none;
 
         &::after {
           font-family: 'Material Icons', sans-serif;

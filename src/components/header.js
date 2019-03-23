@@ -23,6 +23,20 @@ const Logo = () => (
 );
 
 export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+    this.handleToggleOpen = this.handleToggleOpen.bind(this);
+  }
+
+  handleToggleOpen() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
+
   render() {
     return (
       <header className='site-header'>
@@ -32,8 +46,11 @@ export default class Header extends React.Component {
             Konquest
           </Link>
         </div>
-        <Nav/>
-        <a href="https://app.konquest.io" className="sign-in">Sign In</a>
+        <div className={`nav-container ${this.state.open ? 'open' : ''}`}>
+          <Nav/>
+          <a href="https://app.konquest.io" className="sign-in">Sign In</a>
+        </div>
+        <button className="open-nav" type="button" onClick={this.handleToggleOpen}>Open Navigation</button>
       </header>
     );
   }

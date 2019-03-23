@@ -1,0 +1,22 @@
+@mixin side-panel() {
+  position: fixed;
+  border-left: 1px solid #dedede;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: white;
+  transition: width 0.2s linear;
+  z-index: 3;
+
+  &.open {
+    opacity: 1;
+    width: 504px;
+    transition: width 0.2s linear;
+
+    & > div {
+      opacity: 1;
+      transition: opacity 0.3s linear 0.2s;
+    }
+  }
+}

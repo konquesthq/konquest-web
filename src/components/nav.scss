@@ -1,24 +1,32 @@
 @import '../styles/palette';
 
-nav {
-  justify-self: end;
+nav.site-nav {
   display: inline-block;
-  a, button {
-    font-weight: 800;
-    margin-left: 30px;
+  ul {
+    list-style: none;
     display: inline-block;
-    line-height: 1.5;
-    padding: 20px 0 4px;
-    color: $cardinal-x-dark;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    cursor: pointer;
 
-    &:hover, &.selected {
-      border-bottom: 3px solid $cardinal-x-dark;
+    li {
+      display: inline-block;
+
+      a, button {
+        font-weight: 800;
+        margin-left: 30px;
+        line-height: 1.5;
+        padding: 20px 0 4px;
+        color: $cardinal-x-dark;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline;
+
+        &:hover, &.selected {
+          border-bottom: 3px solid $cardinal-x-dark;
+        }
+      }
     }
   }
 }
