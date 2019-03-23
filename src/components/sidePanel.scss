@@ -1,3 +1,6 @@
+@import '../styles/functions';
+@import '../styles/breakpoints';
+
 @mixin side-panel() {
   position: fixed;
   border-left: 1px solid #dedede;
@@ -14,9 +17,15 @@
     width: 504px;
     transition: width 0.2s linear;
 
-    & > div {
+    & > * {
       opacity: 1;
       transition: opacity 0.3s linear 0.2s;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    &.open {
+      width: 100%;
     }
   }
 }
