@@ -674,6 +674,11 @@
             padding-top: 88px;
             grid-column: 2 / span 13;
 
+            h2 {
+              font-size: 24px;
+              line-height: 1.5;
+            }
+
             .details {
               ul li {
                 background: none;
@@ -708,7 +713,7 @@
             }
 
             .demo {
-              grid-column: 8 / span 6;
+              grid-column: 8 / span 5;
 
               & > p {
                 display: none;
@@ -841,6 +846,100 @@
                   background-image: none;
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    background-position: 574px -1164px;
+
+    &.commercial {
+      background-position: 456px -1264px;
+    }
+
+    .persona-radio-navigation {
+      display: none;
+    }
+
+    section.contents {
+      .intro {
+        grid-column: 1 / span 12;
+
+        .intro-contents {
+          grid-column: 2 / span 4;
+          margin-top: 226px;
+
+          h1 {
+            font-size: 22px;
+            line-height: 1.5;
+          }
+
+          button {
+            font-size: 13px;
+          }
+        }
+
+        .img {
+          grid-column: 6 / span 6;
+          max-height: 272px;
+          margin-top: 202px;
+        }
+      }
+
+      .persona-section {
+        grid-column: 1 / span 12;
+
+        &.commercial {
+          .persona-contents {
+            grid-column: 2 / span 10;
+
+            h2 {
+              font-size: 18px;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+
+      .persona-navigation {
+        margin-bottom: 50px;
+        grid-column: 2 / span 10;
+
+        ul {
+          grid-template-columns: repeat(4, 1fr);
+          grid-column-gap: 0;
+          grid-template-rows: 1fr auto;
+          grid-row-gap: 32px;
+
+          li {
+            grid-column: auto !important;
+            width: 100%;
+
+            &.benefits-nav {
+              grid-row: 2 / span 1;
+              grid-column: 1 / span 4 !important;
+              line-height: 1;
+
+              &::after {
+                background-color: white;
+                color: $cardinal-regular;
+              }
+
+              &:hover::after {
+                background-color: white;
+                color: $cardinal-dark;
+              }
+            }
+
+            h3 {
+              text-align: center;
+            }
+
+            p {
+              display: none;
             }
           }
         }
