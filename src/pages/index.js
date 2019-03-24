@@ -159,7 +159,7 @@ class IndexPage extends React.Component {
                   periods.</p>
               </li>
               <li className="central-data">
-                <h3>Centralised Date</h3>
+                <h3>Centralised Data</h3>
                 <p>Organise commission and bonus related data in one, cloud based solution.</p>
               </li>
               <li className="secure-auto">
