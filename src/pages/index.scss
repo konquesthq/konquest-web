@@ -922,6 +922,8 @@
               grid-row: 2 / span 1;
               grid-column: 1 / span 4 !important;
               line-height: 1;
+              justify-self: center;
+              width: auto;
 
               &::after {
                 background-color: white;
