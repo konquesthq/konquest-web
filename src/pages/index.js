@@ -85,9 +85,9 @@ class IndexPage extends React.Component {
   handleScrollToBenefits() {
     const element = this.benefitsSection.current;
     const scrollNode = element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
-    const fullHeaderHeight = 202;
+    const fixedHeaderHeight = 65;
     scrollNode.scrollTo({
-      top: scrollNode.clientHeight - fullHeaderHeight,
+      top: scrollNode.clientHeight - fixedHeaderHeight,
       left: 0,
       behavior: 'smooth'
     });
