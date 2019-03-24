@@ -1,6 +1,8 @@
 @import '../styles/palette';
 @import '../styles/grid';
 @import '../styles/forms';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 .site-container.info {
   display: block;
@@ -31,6 +33,16 @@
     .sign-in {
       @extend %btn-dark;
     }
+
+    .open-nav {
+      &::after {
+        color: white;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
 
   footer {
@@ -60,5 +72,61 @@
       line-height: 1.71;
       color: white;
     }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    background-size: 46% 54%;
+
+    & > main {
+      .contents {
+        grid-column: 5 / span 7;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    background-size: 46% 42%;
+    background-position: -112px bottom;
+
+    header.site-header {
+      .nav-container {
+        nav.site-nav {
+          a, button {
+            color: $firefly-regular;
+
+            &:hover {
+              color: $firefly-regular;
+              border-color: $firefly-regular;
+            }
+          }
+        }
+      }
+    }
+
+    & > main {
+      .contents {
+        margin-top: 200px;
+        grid-column: 2 / span 6;
+
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    background-size: 82% 42%;
+    background-position: -142px bottom;
+
+    & > main {
+      .contents {
+        grid-column: 1 / span 8;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($smart-phone)) {
+    background-size: 116% 42%;
   }
 }
