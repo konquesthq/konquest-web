@@ -20,6 +20,10 @@
     grid-template-columns: 1fr auto;
     grid-column-gap: 16px;
 
+    p {
+      align-self: center;
+    }
+
     button {
       @extend %btn;
       font-size: 15px;
@@ -30,13 +34,25 @@
     }
   }
 
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    & > div {
+      p {
+        font-size: 14px !important;
+        line-height: 1.5;
+      }
+    }
+  }
+
   @media(max-width: exclusive-breakpoint($small-laptop)) {
     & > div {
       grid-column: 3 / span 8;
-      font-size: 13px;
+
+      p {
+        font-size: 13px !important;
+      }
 
       button {
-        font-size: 13px;
+        font-size: 13px !important;
       }
     }
   }

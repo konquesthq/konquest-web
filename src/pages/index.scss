@@ -632,6 +632,10 @@
       padding-top: 65px;
     }
 
+    &.finance {
+      background-position: -1298px -314px;
+    }
+
     section.contents {
       height: calc(100vh - 65px);
 
@@ -679,7 +683,7 @@
                 }
 
                 h3 {
-                  color: #0f0f0f;
+                  color: $persona-header;
                   font-size: 14px;
                   line-height: 1.5;
                 }
@@ -692,7 +696,7 @@
 
               p {
                 display: block;
-                color: #5d5f64;
+                color: $persona-text;
                 font-size: 14px;
                 line-height: 1.5;
               }
@@ -734,6 +738,58 @@
               margin-left: auto;
               margin-right: auto;
               display: block;
+            }
+          }
+        }
+
+        &.finance {
+          .persona-contents {
+            padding-top: 70px;
+
+            .description {
+              h2 {
+                font-size: 20px;
+                line-height: 1.5;
+                margin-bottom: 48px;
+              }
+
+              p {
+                display: none;
+              }
+
+              .img {
+                max-width: 90%;
+              }
+            }
+
+            .details {
+              padding-top: 68px;
+
+              ul li {
+                background: none;
+                box-shadow: none;
+                padding: 0;
+
+                &.audits {
+                  background-image: none;
+                }
+
+                &.forecasting {
+                  background-image: none;
+                }
+
+                &.productivity {
+                  background-image: none;
+                }
+
+                h3 {
+                  color: $persona-header;
+                }
+
+                p {
+                  color: $persona-text;
+                }
+              }
             }
           }
         }
