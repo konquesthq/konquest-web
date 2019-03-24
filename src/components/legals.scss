@@ -1,5 +1,7 @@
 @import '../styles/palette';
 @import '../styles/grid';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 .site-container.legals {
   background-color: #f7f7f7;
@@ -52,6 +54,42 @@
           font-size: 16px;
           line-height: 1.75;
         }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-laptop)) {
+    main > section {
+      h1 {
+        grid-column: 1 / span 12;
+      }
+
+      .contents {
+        grid-column: 2 / span 10;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    main > section {
+      h1 {
+        grid-column: 1 / span 8;
+      }
+
+      .contents {
+        grid-column: 2 / span 6;
+
+        & > div {
+          grid-column: 2 / span 10;
+        }
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    main > section {
+      .contents {
+        grid-column: 1 / span 8;
       }
     }
   }
