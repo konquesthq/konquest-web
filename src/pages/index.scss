@@ -1,6 +1,8 @@
 @import '../styles/palette';
 @import '../styles/grid';
 @import '../styles/forms';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 .site-container.home {
   overflow-x: hidden;
@@ -139,19 +141,16 @@
         p {
           font-size: 16px;
           line-height: 1.75;
-          color: $wireframe-persona-text;
         }
 
         ul {
           li {
-            box-shadow: 0 2px 12px 0 $wireframe-persona-boxshadow;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
             background-color: white;
             font-size: 15px;
             line-height: 1.53;
-            color: $wireframe-persona-text;
 
             h3 {
-              color: $wireframe-persona-header;
               font-weight: bold;
               line-height: 1.53;
             }
@@ -173,30 +172,37 @@
           display: grid;
           grid-template-columns: repeat(12, 1fr);
 
-          ul {
-            margin-top: 24px;
+          .details {
             grid-column: 1 / span 5;
 
-            li {
-              padding: 20px 25px 10px 96px;
-              margin-bottom: 21px;
-              background: rgba(255, 255, 255, 0.16) url(../images/icons/auto-calc.svg) no-repeat 24px 24px;
+            ul {
+              margin-top: 24px;
 
-              &.flexibility {
-                background-image: url(../images/icons/flexibility.svg);
-              }
+              li {
+                padding: 20px 25px 10px 96px;
+                margin-bottom: 21px;
+                background: rgba(255, 255, 255, 0.16) url(../images/icons/auto-calc.svg) no-repeat 24px 24px;
 
-              &.performance {
-                background-image: url(../images/icons/motivation.svg);
-              }
+                &.flexibility {
+                  background-image: url(../images/icons/flexibility.svg);
+                }
 
-              h3 {
-                margin: 0;
+                &.performance {
+                  background-image: url(../images/icons/motivation.svg);
+                }
+
+                h3 {
+                  margin: 0;
+                }
               }
+            }
+
+            & > p {
+              display: none;
             }
           }
 
-          .details {
+          .demo {
             grid-column: 7 / span 6;
 
             .img {
@@ -618,6 +624,99 @@
       grid-row: 3 / span 1;
       grid-column: 1 / span 16;
       padding-bottom: 0;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($hd-display)) {
+    & > main {
+      padding-top: 65px;
+    }
+
+    section.contents {
+      height: calc(100vh - 65px);
+
+      .intro {
+        .intro-contents {
+          margin-top: 148px;
+
+          grid-column: 2 / span 5;
+
+          h1 {
+            font-size: 50px;
+            line-height: 1;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.5;
+          }
+        }
+
+        .img {
+          margin-top: 118px;
+          max-height: 308px;
+        }
+      }
+
+      .persona-section {
+        &.commercial {
+          .persona-contents {
+            padding-top: 88px;
+            grid-column: 2 / span 13;
+
+            .details {
+              ul li {
+                background: none;
+                padding: 0;
+                box-shadow: none;
+
+                &.flexibility {
+                  background-image: none;
+                }
+
+                &.performance {
+                  background-image: none;
+                }
+
+                h3 {
+                  color: #0f0f0f;
+                  font-size: 14px;
+                  line-height: 1.5;
+                }
+
+                p {
+                  font-size: 14px;
+                  line-height: 1.5;
+                }
+              }
+
+              p {
+                display: block;
+                color: #5d5f64;
+                font-size: 14px;
+                line-height: 1.5;
+              }
+            }
+
+            .demo {
+              grid-column: 8 / span 6;
+
+              & > p {
+                display: none;
+              }
+
+              .img {
+                max-height: 327px;
+                max-width: 80%;
+              }
+
+              button {
+                margin-top: 30px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

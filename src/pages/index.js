@@ -119,23 +119,28 @@ class IndexPage extends React.Component {
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
             <h2>This is a section heading</h2>
             <div className="columns">
-              <ul>
-                <li className="automation">
-                  <h3>End to End Automation</h3>
-                  <p>No more spreadsheets, paper forms and emails. Less mistakes and full audit trails so you can focus
-                    on growing your business.</p>
-                </li>
-                <li className="flexibility">
-                  <h3>Total Flexibility</h3>
-                  <p>Manage one off bonuses or clawbacks with ease whilst automatically informing all concerned.</p>
-                </li>
-                <li className="performance">
-                  <h3>Enhanced Performance</h3>
-                  <p>Increase team motivation with one click access to personal commission pipelines for every
-                    consultant and manager.</p>
-                </li>
-              </ul>
               <div className="details">
+                <ul>
+                  <li className="automation">
+                    <h3>End to End Automation</h3>
+                    <p>No more spreadsheets, paper forms and emails. Less mistakes and full audit trails so you can focus
+                      on growing your business.</p>
+                  </li>
+                  <li className="flexibility">
+                    <h3>Total Flexibility</h3>
+                    <p>Manage one off bonuses or clawbacks with ease whilst automatically informing all concerned.</p>
+                  </li>
+                  <li className="performance">
+                    <h3>Enhanced Performance</h3>
+                    <p>Increase team motivation with one click access to personal commission pipelines for every
+                      consultant and manager.</p>
+                  </li>
+                </ul>
+                <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
+                  setup. Konquest will also drive performance by making consultant earnings visible to them in
+                  real-time, a proven motivator.</p>
+              </div>
+              <div className="demo">
                 <CommercialImage/>
                 <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
                   setup. Konquest will also drive performance by making consultant earnings visible to them in
