@@ -860,6 +860,27 @@
       background-position: 456px -1264px;
     }
 
+    &.operations {
+      background-position: -1304px -628px;
+
+      section.contents .persona-navigation ul li {
+        &.benefits-nav {
+          background-color: transparent;
+          border: none;
+
+          &::after {
+            color: white;
+            background-color: transparent;
+          }
+
+          &:hover::after, &.selected::after {
+            color: white;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
     .persona-radio-navigation {
       display: none;
     }
@@ -900,6 +921,22 @@
               font-size: 18px;
               line-height: 1.5;
             }
+          }
+        }
+
+        &.operations {
+          .persona-contents {
+            grid-column: 1 / span 12;
+
+            ul {
+              grid-column-gap: 40px;
+            }
+          }
+        }
+
+        &.finance {
+          .persona-contents {
+            
           }
         }
       }
