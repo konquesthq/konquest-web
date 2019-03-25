@@ -955,11 +955,23 @@
             }
 
             .details {
-              grid-column: 1 / span 6;
+              grid-column: 6 / span 7;
 
               .request-demo {
                 margin-left: -120px;
               }
+            }
+          }
+        }
+
+        &.sales {
+          .persona-contents {
+            .img {
+              grid-column: 1 / span 5;
+            }
+
+            .details {
+              grid-column: 6 / span 7;
             }
           }
         }
