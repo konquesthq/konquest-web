@@ -644,6 +644,7 @@
 
     section.contents {
       height: calc(100vh - 65px);
+      min-height: 770px;
 
       .intro {
         .intro-contents {
