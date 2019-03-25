@@ -881,6 +881,10 @@
       }
     }
 
+    &.finance {
+      background-position: -1440px -628px;
+    }
+
     .persona-radio-navigation {
       display: none;
     }
@@ -936,7 +940,27 @@
 
         &.finance {
           .persona-contents {
-            
+            .description {
+              grid-column: 1 / span 5;
+
+              h2 {
+                font-size: 18px;
+                padding: 0;
+              }
+
+              .img {
+                max-width: 100%;
+                height: 180px;
+              }
+            }
+
+            .details {
+              grid-column: 1 / span 6;
+
+              .request-demo {
+                margin-left: -120px;
+              }
+            }
           }
         }
       }
