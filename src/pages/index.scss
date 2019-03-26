@@ -1037,5 +1037,25 @@
         padding-bottom: 40px;
       }
     }
+
+    main > section.partners {
+      padding: 70px 40px;
+
+      & > h2, & > p {
+        grid-column: 1 / span 12;
+      }
+
+      & > ul.partners {
+        grid-column: 1 / span 12;
+      }
+    }
+
+    main > section.customers {
+      padding: 70px 40px;
+
+      & > h2, & > ul.logos, & > .request-demo {
+        grid-column: 1 / span 12;
+      }
+    }
   }
 }
