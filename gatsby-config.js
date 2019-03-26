@@ -52,6 +52,13 @@ module.exports = {
           urls: ['fonts.css']
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-P6QFBFG',
+        includeInDevelopment: false
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
