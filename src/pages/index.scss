@@ -1058,4 +1058,49 @@
       }
     }
   }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    background-position: 322px -1124px;
+
+    section.contents {
+      .intro {
+        grid-column: 1 / span 8;
+
+        .intro-contents {
+          grid-column: 1 / span 4;
+
+          h1 {
+            font-size: 18px;
+          }
+        }
+
+        .img {
+          grid-column: 5 / span 4;
+          max-height: 178px;
+          margin-top: 238px;
+        }
+      }
+
+      .persona-section {
+        grid-column: 1 / span 8;
+      }
+
+      .persona-navigation {
+        grid-column: 2 / span 6;
+        margin-bottom: 32px;
+
+        ul {
+          grid-row-gap: 24px;
+
+          li {
+            padding: 16px 24px;
+
+            h3 {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
