@@ -17,10 +17,9 @@ const PricingPage = () => (
         <p><span className="price">£10</span> user/month</p>
         <div className="features">
           <ul>
-            <li>Feature description</li>
-            <li>Feature description</li>
-            <li>Feature description</li>
-            <li>Feature description</li>
+            <li>Unlimited schemes: Simple, Team, Override.</li>
+            <li>CRM Integration</li>
+            <li>Support by Humans</li>
           </ul>
           <OpenContactButton>Request a Demo</OpenContactButton>
         </div>
