@@ -1233,59 +1233,92 @@
       grid-template-rows: repeat(3, auto);
       grid-row-gap: 32px;
       margin: 0;
-      padding-top: 40px;
+      padding-top: 0;
+      padding-bottom: 68px;
 
       & > h2, & > ul.benefits-list, & > blockquote {
         grid-column: 1 / span 8;
       }
 
-      & > h2 {
+      & > blockquote {
         grid-row: 1 / span 1;
+        margin: 0 -32px;
+        padding: 82px 124px;
+        background-position: 92% top;
+        font-size: 14px;
+
+        cite {
+          text-align: center;
+        }
+      }
+
+      & > h2 {
+        grid-row: 2 / span 1;
         margin: 0;
+        font-size: 24px;
+        margin-top: 16px;
       }
 
       & > ul.benefits-list {
-        grid-row: 2 / span 1;
-        padding-bottom: 32px;
-      }
-
-      & > blockquote {
         grid-row: 3 / span 1;
-        margin: 0 -32px;
-        padding: 40px 32px;
-        background-position: 92% top;
+        padding-bottom: 32px;
+
+        h3 {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 13px;
+        }
       }
     }
 
     main > section.partners {
-      padding: 40px;
+      padding: 48px 32px;
 
       & > h2, & > p, & > ul.partners {
         grid-column: 1 / span 8;
       }
 
-      ul.partners {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-row-gap: 24px;
+      h2 {
+        font-size: 16px;
+      }
 
+      p {
+        font-size: 13px;
+      }
+
+      ul.partners {
         li {
-          padding: 32px;
+          padding: 12px;
 
           .img {
-            max-width: 80%;
+            max-width: 100%;
             width: auto;
             height: auto;
+          }
+
+          p {
+            display: none;
           }
         }
       }
     }
 
     main > section.customers {
-      padding: 40px;
+      padding: 48px 32px;
 
       & > h2, & > ul.logos, & > .request-demo {
         grid-column: 1 / span 8;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+
+      .request-demo {
+        padding-top: 24px;
       }
     }
   }
