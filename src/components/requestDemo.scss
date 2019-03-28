@@ -60,6 +60,7 @@
   @media(max-width: exclusive-breakpoint($large-tablet)) {
     & > div {
       grid-column: 2 / span 6;
+      padding: 16px 24px;
     }
   }
 
