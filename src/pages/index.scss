@@ -931,6 +931,10 @@
               font-size: 18px;
               line-height: 1.5;
             }
+
+            .img {
+              max-width: 100%;
+            }
           }
         }
 
@@ -1088,6 +1092,20 @@
 
       .persona-section {
         grid-column: 1 / span 8;
+
+        &.commercial {
+          .persona-contents {
+            grid-column: 1 / span 8;
+
+            .details {
+              grid-column: 1 / span 6;
+            }
+
+            .demo {
+              grid-column: 8 / span 5;
+            }
+          }
+        }
       }
 
       .persona-navigation {
