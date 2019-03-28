@@ -897,6 +897,12 @@
     }
 
     section.contents {
+      button {
+        font-size: 13px;
+        width: auto;
+        padding: 12px 24px 14px;
+      }
+
       .intro {
         grid-column: 1 / span 12;
 
@@ -1090,6 +1096,14 @@
       background-position: -1446px -636px;
     }
 
+    &.finance {
+      background-position: -1476px -628px;
+    }
+
+    &.sales {
+      background-position: -1572px -330px;
+    }
+
     section.contents {
       min-height: 810px;
 
@@ -1168,6 +1182,29 @@
 
               .request-demo {
                 margin-left: -240px;
+              }
+            }
+          }
+        }
+
+        &.sales {
+          .persona-contents {
+            grid-column: 1 / span 8;
+
+            .img {
+              grid-column: 1 / span 4;
+              max-height: 170px;
+            }
+
+            .details {
+              grid-column: 5 / span 8;
+
+              ul {
+                display: block;
+
+                li {
+                  margin-bottom: 12px;
+                }
               }
             }
           }
