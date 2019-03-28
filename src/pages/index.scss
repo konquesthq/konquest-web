@@ -149,6 +149,7 @@
             background-color: white;
             font-size: 15px;
             line-height: 1.53;
+            border-radius: 4px;
 
             h3 {
               font-weight: bold;
@@ -1071,7 +1072,23 @@
   @media(max-width: exclusive-breakpoint($large-tablet)) {
     background-position: 322px -1124px;
 
+    section.contents .persona-navigation ul li {
+      &.benefits-nav {
+        display: none;
+      }
+    }
+
+    &.commercial {
+      background-position: 364px -1270px;
+    }
+
+    &.operations {
+      background-position: -1446px -636px;
+    }
+
     section.contents {
+      min-height: 810px;
+
       .intro {
         grid-column: 1 / span 8;
 
@@ -1103,6 +1120,31 @@
 
             .demo {
               grid-column: 8 / span 5;
+            }
+          }
+        }
+
+        &.operations {
+          .persona-contents {
+            padding-top: 30px;
+            grid-column: 1 / span 8;
+
+            & > p {
+              width: 80%;
+            }
+
+            ul {
+              grid-template-rows: repeat(2, 1fr);
+              grid-template-columns: repeat(2, 1fr);
+              grid-row-gap: 25px;
+
+              li {
+                padding: 88px 16px 16px;
+
+                h3 {
+                  margin-bottom: 8px;
+                }
+              }
             }
           }
         }
