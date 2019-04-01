@@ -109,15 +109,13 @@ class IndexPage extends React.Component {
           <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>
             <div className="intro-contents">
               <h1>Commission. Sorted.</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla
-                volutpat
-                eget. Duis non massa iaculis, euismod nunc quis, egestas metus. </p>
+              <p>Konquest automatically calculates your sales commissions, no matter how complex they are, allocating them to the right period and exposing earning pipelines to your team. No more spreadsheets. Just Konquest.</p>
               <OpenContactButton>Request a Demo</OpenContactButton>
             </div>
             <DefaultImage/>
           </div>
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
-            <h2>This is a section heading</h2>
+            <h2>Automate. Motivate.</h2>
             <div className="columns">
               <div className="details">
                 <ul>
@@ -151,7 +149,7 @@ class IndexPage extends React.Component {
             </div>
           </PersonaSection>
           <PersonaSection className="operations" isShown={this.isSectionOpen('Operations')}>
-            <h2>Donec lacinia meat lover</h2>
+            <h2>Secure, Intelligent Automation</h2>
             <p>Remove spreadsheets from your commissions process with a secure, automated solution in the cloud.</p>
             <ul>
               <li className="auto-calc">
@@ -177,7 +175,7 @@ class IndexPage extends React.Component {
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <div className="description">
-              <h2>Donec lacinia meat lover</h2>
+              <h2>Minimise Errors and Payslip Queries</h2>
               <p>Minimize errors and improve efficiency by removing manual input from your commission claim process. All
                 the while ensuring every transaction is recorded in a transparent audit trail.</p>
               <FinanceImage/>
@@ -206,19 +204,17 @@ class IndexPage extends React.Component {
           </PersonaSection>
           <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
             <div className="details">
-              <h2>Total Transparency for your Reward System</h2>
+              <h2>A Transparent Reward System for All</h2>
               <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
-                involved in the approvals process so there’s never a nasty surprise on pay day.</p>
+                involved in the approvals process so there's never a nasty surprise on pay day.</p>
               <ul>
                 <li className="motivation">
                   <h3>Motivation</h3>
-                  <p>One click access to commission pipelines for every consultant, real-time tracking against
-                    organizational or personal targets with notifications [will move to a gamified experience in a near
-                    future release].</p>
+                  <p>One click access to commission pipelines for all, real-time tracking against company or personal commission targets with alerts and earnings summaries.</p>
                 </li>
                 <li className="focus">
                   <h3>Focus</h3>
-                  <p>Less time working out how much you’re getting paid, more time focused on what makes you more
+                  <p>Less time working out how much you're getting paid, more time focused on what makes you more
                     money!</p>
                 </li>
               </ul>
@@ -268,7 +264,7 @@ class IndexPage extends React.Component {
           </nav>
         </section>
         <section className="benefits" ref={this.benefitsSection}>
-          <h2>This is the benefits section</h2>
+          <h2>Why Konquest?</h2>
           <blockquote>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
             eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
@@ -283,7 +279,7 @@ class IndexPage extends React.Component {
                 managing commission, saving you substantial amounts of time every month – time that could and should be
                 spent driving revenue and profitability.</p>
               <p>By integrating with your CRM, or using a Konquest custom interface through which to record deal data,
-                the process from calculation to approval can be almost entirely automated. Anything that can’t be
+                the process from calculation to approval can be almost entirely automated. Anything that can't be
                 automatically calculated, such as guaranteed bonus for new starters, or deductions such as clawbacks,
                 can be added in a couple of clicks.</p>
               <p>The end result is a dramatic reduction in manual input, not to mention monthly headaches!</p>
@@ -300,7 +296,7 @@ class IndexPage extends React.Component {
             <li>
               <h3>Increased Performance</h3>
               <p>Konquest shows your team their estimated and secured earnings for current and future months.
-                Associating their efforts to their personal outcome so clearly is a powerful motivator – who doesn’t
+                Associating their efforts to their personal outcome so clearly is a powerful motivator – who doesn't
                 want to see their commission pot increase?!</p>
               <p>Add in progress indicators against organisational or personal targets and you can expect a real
                 increase in performance company wide.</p>
@@ -315,12 +311,12 @@ class IndexPage extends React.Component {
           </ul>
         </section>
         <section className="partners">
-          <h2>Connect, Automate...</h2>
-          <p>Sed in nisi efficitur, vestibulum tellus in, sagittis orci. Cras placerat enim justo, sit amet rhoncus.</p>
+          <h2>Integration Partners</h2>
+          <p>Easy Integration with your CRM or Timesheet solution using the Konquest API.</p>
           <Partners/>
         </section>
         <section className="customers">
-          <h2>Trusted by</h2>
+          <h2>Loved by</h2>
           <Logos/>
           <RequestDemo/>
         </section>

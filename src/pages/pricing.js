@@ -28,25 +28,21 @@ const PricingPage = () => (
         <h2>FAQs</h2>
         <div className="faq-items">
           <dl>
-            <dt>Here is a question about pricing?</dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget.
+            <dt>Do I need to commit to a lengthy contract?</dt>
+            <dd>Nope. Konquest is available to all customers on a rolling monthly basis. If you'd prefer to pay for upfront for a longer period in exchange for a discount then we'd be delighted to discuss this with you.
             </dd>
-            <dt>Here is a question about another concern on two lines?</dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget.
+            <dt>Why is there a setup fee?</dt>
+            <dd>We'd really rather not charge this, but the reality is that there is a lot of effort required from us to get you setup. This process includes the calibration of all of your commission schemes, as well as your CRM/timesheet integration(s)*
             </dd>
-            <dt>And who on earth are you?</dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget.
+            <dt>My commission scheme is complex, are you sure you can accommodate?</dt>
+            <dd>Whilst we can't guarantee we can accommodate every scheme on Earth, we've designed Konquest to be incredibly
+              flexible. As a rule, as long as the data needed for any calculation is available, we can help you. So far, we're yet to run into a scenario we can't handle.
             </dd>
-            <dt>Why haven't you bought yet?</dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada odio, eget vulputate
-              ipsum blandit eget.
+            <dt>Can I have a free trial?</dt>
+            <dd>Sadly not, we're sorry. The setup process takes too much time for us to do it for free. Your minimum commitment would be our one off setup cost plus the total cost of 1 month's subscription.
             </dd>
-            <dt>Another question?</dt>
-            <dd>No more.</dd>
           </dl>
+          <p className="caveat">* The standard one off setup fee includes integration with any of our existing integration partners. Should you use a different system, please reach out to us so we can discuss integration with you on an individual basis. Our policy is to never charge where it is avoidable.</p>
         </div>
       </section>
     </div>

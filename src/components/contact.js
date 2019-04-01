@@ -53,9 +53,8 @@ class Contact extends React.Component {
         <div>
           <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
           <form onSubmit={this.handleSubmit}>
-            <h2>Contact Konquest</h2>
-            <p>Vivamus ultricies nisi consequat erdum porttitor. Integer eu ipsum vehicula felis tincut convallis et a
-              diam. </p>
+            <h2>We'd love to hear from you!</h2>
+            <p>Got a question? Please complete our contact form anda member of the team will get back to you asap.</p>
             <label>
               Name *
               <input type="text"
@@ -95,11 +94,11 @@ class Contact extends React.Component {
           <address className="vcard" itemScope itemType="http://schema.org/Organization">
             <span className="org" itemProp="name">Konquest</span>
             <div className="adr" itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-              <span className="street-address" itemProp="streetAddress">Address 1</span>
-              {/*<span className="extended-address" itemProp="extendedAddress">Address 2</span>*/}
-              <span className="locality" itemProp="addressLocality">Address 2</span>
-              <span className="region" itemProp="addressRegion">Address 3</span>
-              <span className="postal-code" itemProp="postalCode">Address 4</span>
+              <span className="street-address" itemProp="streetAddress">Ye Olde Hundred</span>
+              {<span className="extended-address" itemProp="extendedAddress">69 Church Way</span>}
+              <span className="locality" itemProp="addressLocality">North Shields</span>
+              {/*<span className="region" itemProp="addressRegion">Address 3</span>*/}
+              <span className="postal-code" itemProp="postalCode">NE29 0AE</span>
             </div>
             <p>Call:&nbsp;<a href="tel:+441915111298" className="tel" itemProp="telephone">0191 511 1298</a></p>
             <p><a href="mailto:hello@konquest.io" className="email" itemProp="email">hello@konquest.io</a></p>

@@ -6,9 +6,8 @@ const ThanksPage = () => (
   <Layout className="info">
     <div className="contents">
       <SEO title="Thank You"/>
-      <h1>Message Received, Thank You</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-        eget.</p>
+      <h1>Roger that! Thank you!</h1>
+      <p>Thanks for getting in touch with us, rest assured we'll be in touch very soon.</p>
     </div>
   </Layout>
 );

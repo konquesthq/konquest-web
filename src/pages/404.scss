@@ -6,6 +6,18 @@
   overflow: hidden;
 
   .contents {
+    z-index: 1;
+
+    a, button {
+      font-weight: bold;
+      background: none;
+      border: none;
+      padding: 0;
+      color: white;
+      outline: none;
+      font-size: 14px;
+    }
+
     &::after {
       content: '404';
       position: absolute;
@@ -16,6 +28,7 @@
       opacity: 0.02;
       color: white;
       font-weight: bold;
+      z-index: -1;
     }
   }
 

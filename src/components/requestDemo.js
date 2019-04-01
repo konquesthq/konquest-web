@@ -8,7 +8,7 @@ export default class RequestDemo extends React.Component {
     return (
       <div className="request-demo">
         <div className="demo-details">
-          <p>Ut porttitor massa tellus, sit amet tempor nibh tincidunt eget.</p>
+          <p>Can you spare 30mins? We'd love to show you Konquest!</p>
           <OpenContactButton>Request Demo</OpenContactButton>
         </div>
       </div>

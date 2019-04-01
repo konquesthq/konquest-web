@@ -93,6 +93,12 @@
           margin-bottom: 24px;
         }
       }
+
+      .caveat {
+        font-size: 13px;
+        font-weight: 300;
+        font-style: italic;
+      }
     }
   }
 
@@ -149,7 +155,7 @@
   }
 
   @media(max-width: exclusive-breakpoint($small-tablet)) {
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-row-gap: 70px;
 
     .plan-details {
