@@ -1494,6 +1494,27 @@
             }
           }
         }
+
+        &.finance {
+          .persona-contents {
+            grid-template-rows: repeat(1, auto);
+            grid-row-gap: 64px;
+
+            & > .description {
+              grid-column: 1 / span 8;
+            }
+
+            & > .details {
+              padding-top: 0;
+              grid-column: 1 / span 8;
+              display: block;
+
+              .request-demo {
+                margin: 0;
+              }
+            }
+          }
+        }
       }
     }
 
