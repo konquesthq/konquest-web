@@ -199,8 +199,9 @@ footer.site-footer {
       }
 
       & > .subscribe {
-        input {
+        form input {
           margin-bottom: 4px;
+          width: 254px;
         }
       }
     }
