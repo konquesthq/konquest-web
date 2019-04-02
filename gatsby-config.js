@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Konquest`,
-    description: `Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme setup.`,
-    author: `@johnjkerr`,
+    description: `Konquest automatically calculates your sales commissions, no matter how complex they are, allocating them to the right period and exposing earning pipelines to your team. No more spreadsheets. Just Konquest.`,
+    author: `@KonquestHQ`,
   },
   pathPrefix: "/konquest-web",
   plugins: [
