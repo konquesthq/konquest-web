@@ -127,7 +127,7 @@
     }
   }
 
-  @media(max-width: exclusive-breakpoint($smart-phone)) {
+  @media(max-width: exclusive-breakpoint($large-phone)) {
     background-size: 116% 42%;
   }
 }
