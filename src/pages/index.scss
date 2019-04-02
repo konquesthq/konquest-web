@@ -1334,8 +1334,8 @@
 
   @media(max-width: exclusive-breakpoint($small-tablet)) {
     background-image: url(../images/shapes/default.svg), url(../images/shapes/sales.svg);
-    background-position: 252px -142px, -770px 1938px;
-    background-size: 1000px, 1000px;
+    background-position: 252px -142px, -770px 1938px !important;
+    background-size: 1000px, 1000px !important;
 
     section.contents {
       grid-template-rows: repeat(5, auto);
@@ -1421,8 +1421,8 @@
   }
 
   @media(max-width: exclusive-breakpoint($large-phone)) {
-    background-position: 190px -42px, -738px 1980px;
-    background-size: 500px, 500px;
+    background-position: 190px -42px, -498px 1834px !important;
+    background-size: 500px, 800px !important;
 
     main > section.contents {
       .intro {
@@ -1472,6 +1472,24 @@
                   display: block;
                   margin: 0 auto;
                 }
+              }
+            }
+          }
+        }
+
+        &.operations {
+          .persona-contents {
+            & > p {
+              width: 100%;
+            }
+
+            & > ul {
+              grid-template-rows: repeat(4, 1fr);
+              grid-template-columns: 1fr;
+
+              li {
+                width: 94%;
+                margin: 0 auto;
               }
             }
           }
