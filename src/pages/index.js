@@ -226,19 +226,19 @@ class IndexPage extends React.Component {
             <ul>
               <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+                <p>For business owners, MD's and Sales Directors</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Operations" isSelected={this.isSectionOpen('Operations')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+                <p>For Operations Directors and IT Managers</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Finance" isSelected={this.isSectionOpen('Finance')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+                <p>For the finance team, from FD to Payroll Administrators</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Sales" isSelected={this.isSectionOpen('Sales')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>Ut imperdiet sed felis vitae aliquam. Pellent posuere metus in auctor.</p>
+                <p>For the business end of the team - Sales Execs and Recruitment Consultants</p>
               </PersonaNavigationItem>
               <li className="benefits-nav" onClick={this.handleScrollToBenefits}>Benefits</li>
             </ul>
