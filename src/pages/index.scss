@@ -1403,7 +1403,32 @@
   }
 
   @media(max-width: exclusive-breakpoint($large-phone)) {
+    main > section.benefits {
+      & > blockquote {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      & > ul.benefits-list {
+        display: block;
+
+        li {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    main > section.partners {
+      ul.partners {
+        grid-column: 1 / span 8;
+      }
+    }
+
     main > section.customers {
+      & > ul.logos li {
+        width: 80%;
+      }
+
       .request-demo {
         padding: 0;
       }
