@@ -1326,7 +1326,7 @@
 
   @media(max-width: exclusive-breakpoint($small-tablet)) {
     background-image: url(../images/shapes/default.svg), url(../images/shapes/sales.svg);
-    background-position: 252px -142px, -738px 1980px;
+    background-position: 252px -142px, -770px 1938px;
     background-size: 1000px, 1000px;
 
     section.contents {
@@ -1350,8 +1350,16 @@
         width: 100%;
         overflow: auto;
 
+        &.commercial {
+          .persona-contents {
+            padding-top: 0;
+          }
+        }
+
         &.operations {
           .persona-contents {
+            padding-top: 0;
+
             h2 {
               color: $firefly-light;
             }
@@ -1364,6 +1372,8 @@
 
         &.finance {
           .persona-contents {
+            padding-top: 0;
+
             .description {
               h2 {
                 color: $firefly-light;
@@ -1403,6 +1413,31 @@
   }
 
   @media(max-width: exclusive-breakpoint($large-phone)) {
+    background-position: 190px -42px, -738px 1980px;
+    background-size: 500px, 500px;
+
+    main > section.contents {
+      .intro {
+        grid-template-rows: repeat(2, auto);
+        grid-row-gap: 64px;
+
+        .img {
+          grid-row: 1 / span 1;
+          grid-column: 1 / span 8;
+        }
+
+        .intro-contents {
+          grid-row: 2 / span 1;
+          grid-column: 1/ span 8;
+
+          button {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
     main > section.benefits {
       & > blockquote {
         padding-left: 32px;
