@@ -69,4 +69,19 @@
       grid-column: 1 / span 8;
     }
   }
+
+  @media(max-width: exclusive-breakpoint($large-phone)) {
+    & > div {
+      display: block;
+
+      p {
+        margin-bottom: 16px;
+      }
+
+      button {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
 }

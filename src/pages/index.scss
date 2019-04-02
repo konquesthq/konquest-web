@@ -1401,4 +1401,12 @@
       }
     }
   }
+
+  @media(max-width: exclusive-breakpoint($large-phone)) {
+    main > section.customers {
+      .request-demo {
+        padding: 0;
+      }
+    }
+  }
 }

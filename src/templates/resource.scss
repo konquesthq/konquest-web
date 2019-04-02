@@ -278,4 +278,12 @@
       }
     }
   }
+
+  @media(max-width: exclusive-breakpoint($large-phone)) {
+    .recent-articles {
+      .resource-items {
+        grid-column: 1 / span 8;
+      }
+    }
+  }
 }
