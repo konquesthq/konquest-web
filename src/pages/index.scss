@@ -949,6 +949,10 @@
           .persona-contents {
             grid-column: 1 / span 12;
 
+            h2 {
+              font-size: 18px;
+            }
+
             ul {
               grid-column-gap: 40px;
             }
@@ -993,6 +997,10 @@
 
             .details {
               grid-column: 6 / span 7;
+
+              h2 {
+                font-size: 18px;
+              }
             }
           }
         }
@@ -1433,6 +1441,39 @@
           button {
             display: block;
             margin: 0 auto;
+          }
+        }
+      }
+
+      .persona-section {
+        &.commercial {
+          .persona-contents {
+            .columns {
+              grid-template-rows: repeat(2, auto);
+              grid-row-gap: 64px;
+
+              & > div {
+                grid-column: 1 / span 12;
+              }
+
+              & > .details {
+                grid-row: 1 / span 1;
+              }
+
+              & > .demo {
+                grid-row: 2 / span 1;
+
+                .img {
+                  max-width: 100%;
+                  margin-bottom: 32px;
+                }
+
+                button {
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+            }
           }
         }
       }
