@@ -1,5 +1,6 @@
 @import '../styles/reset';
 @import '../styles/palette';
+@import '../styles/breakpoints';
 
 * {
   box-sizing: border-box;
@@ -83,4 +84,23 @@ h2 {
 b {
   color: $firefly-regular;
   font-weight: bold;
+}
+
+@media(min-width: $max-supported) {
+  html {
+    max-width: $max-supported;
+    margin: 0 auto;
+  }
+
+  header {
+    max-width: $max-supported;
+  }
+
+  footer {
+    max-width: $max-supported;
+
+    & > .contact {
+      max-width: $max-supported;
+    }
+  }
 }
