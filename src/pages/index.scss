@@ -1497,7 +1497,7 @@
 
         &.finance {
           .persona-contents {
-            grid-template-rows: repeat(1, auto);
+            grid-template-rows: repeat(2, auto);
             grid-row-gap: 64px;
 
             & > .description {
@@ -1511,6 +1511,30 @@
 
               .request-demo {
                 margin: 0;
+              }
+            }
+          }
+        }
+
+        &.sales {
+          .persona-contents {
+            padding-top: 0;
+            grid-template-rows: repeat(2, auto);
+            grid-row-gap: 48px;
+
+            & > .img {
+              grid-row: 1 / span 1;
+              grid-column: 1 / span 8;
+              margin-top: 0;
+            }
+
+            & > .details {
+              grid-column: 1 / span 8;
+              grid-row: 2 /span 1;
+
+              button {
+                display: block;
+                margin: 0 auto;
               }
             }
           }
