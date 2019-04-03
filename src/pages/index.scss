@@ -9,53 +9,6 @@
   position: relative;
   background: transparent url(../images/shapes/default.svg) no-repeat 910px -1010px;
 
-  &::before, &::after {
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-  }
-
-  & > header.site-header {
-    z-index: auto;
-
-    .logo {
-      opacity: 0;
-      z-index: 5;
-      animation: logo-show 0.2s linear 0.2s 1 forwards;
-    }
-  }
-
-  @keyframes logo-show {
-    0% { opacity: 0; position: absolute; top: 0; left: 0; }
-    100% { opacity: 1; position: relative; }
-  }
-
-  &::before {
-    background-color: $cardinal-regular;
-    left: 0;
-    z-index: 4;
-    animation: red-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0.7s 1 forwards;
-  }
-
-  &::after {
-    background-color: white;
-    left: -1vw;
-    z-index: 3;
-    animation: white-wipe 1.5s cubic-bezier(0.499, 0, 0, 1) 1.5s 1 forwards;
-  }
-
-  @keyframes red-wipe {
-    0% { left: 0; }
-    100% { left: 100vw; }
-  }
-
-  @keyframes white-wipe {
-    0% { left: -1vw; }
-    100% { left: 100vw; }
-  }
-
   &.commercial {
     background-image: url(../images/shapes/commercial.svg);
     background-position: 864px -1464px;
@@ -683,6 +636,55 @@
       grid-row: 3 / span 1;
       grid-column: 1 / span 16;
       padding-bottom: 0;
+    }
+  }
+
+  @media(min-width: $hd-display) {
+    &::before, &::after {
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+    }
+
+    & > header.site-header {
+      z-index: auto;
+
+      .logo {
+        opacity: 0;
+        z-index: 5;
+        animation: logo-show 0.2s linear 0.2s 1 forwards;
+      }
+    }
+
+    @keyframes logo-show {
+      0% { opacity: 0; position: absolute; top: 0; left: 0; }
+      100% { opacity: 1; position: relative; }
+    }
+
+    &::before {
+      background-color: $cardinal-regular;
+      left: 0;
+      z-index: 4;
+      animation: red-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0.7s 1 forwards;
+    }
+
+    &::after {
+      background-color: white;
+      left: -1vw;
+      z-index: 3;
+      animation: white-wipe 1.5s cubic-bezier(0.499, 0, 0, 1) 1.5s 1 forwards;
+    }
+
+    @keyframes red-wipe {
+      0% { left: 0; }
+      100% { left: 100vw; }
+    }
+
+    @keyframes white-wipe {
+      0% { left: -1vw; }
+      100% { left: 100vw; }
     }
   }
 
