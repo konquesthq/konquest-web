@@ -51,19 +51,15 @@ const Partners = () => (
   <ul className="partners">
     <li>
       <PartnerLogo partnerImage="partnerOneImage"/>
-      <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
     </li>
     <li>
       <PartnerLogo partnerImage="partnerTwoImage"/>
-      <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
     </li>
     <li>
       <PartnerLogo partnerImage="partnerThreeImage"/>
-      <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
     </li>
     <li>
       <PartnerLogo partnerImage="partnerFourImage"/>
-      <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
     </li>
   </ul>
 );

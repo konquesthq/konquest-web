@@ -686,6 +686,22 @@
       0% { left: -1vw; }
       100% { left: 100vw; }
     }
+
+    //main > section.contents {
+    //  .intro {
+    //    .intro-contents {
+    //      button {
+    //        opacity: 0;
+    //        animation: button-show 0.15s linear 2.3s 1 forwards;
+    //      }
+    //    }
+    //  }
+    //}
+    //
+    //@keyframes button-show {
+    //  0% { opacity: 0 }
+    //  100% { opacity: 1 }
+    //}
   }
 
   @media(max-width: exclusive-breakpoint($hd-display)) {
