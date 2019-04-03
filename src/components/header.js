@@ -12,13 +12,13 @@ const Logo = () => (
         logoImage: file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
             fixed(height: 82, width: 78) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
       }
     `}
-    render={data => <Img className="img" fixed={data.logoImage.childImageSharp.fixed} />}
+    render={data => <Img className="img" fixed={data.logoImage.childImageSharp.fixed} fadeIn={false} />}
   />
 );
 
