@@ -9,28 +9,28 @@ const PartnerLogo = ({partnerImage}) => (
   <StaticQuery
     query={graphql`
       query {
-        partnerOneImage: file(relativePath: { eq: "logos/bullhorn.png" }) {
+        partnerOneImage: file(relativePath: { eq: "logos/partner-bullhorn.png" }) {
           childImageSharp {
             fluid(maxWidth: 234) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        partnerTwoImage: file(relativePath: { eq: "logos/accessgroup.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 234, maxHeight: 150) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        },
-        partnerThreeImage: file(relativePath: { eq: "logos/engage.png" }) {
+        partnerTwoImage: file(relativePath: { eq: "logos/partner-accessgroup.png" }) {
           childImageSharp {
             fluid(maxWidth: 234) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        partnerFourImage: file(relativePath: { eq: "logos/vincere.png" }) {
+        partnerThreeImage: file(relativePath: { eq: "logos/partner-engage.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 234) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        partnerFourImage: file(relativePath: { eq: "logos/partner-vincere.png" }) {
           childImageSharp {
             fluid(maxWidth: 234) {
               ...GatsbyImageSharpFluid

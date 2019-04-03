@@ -9,35 +9,35 @@ const Logo = ({customerImage}) => (
   <StaticQuery
     query={graphql`
       query {
-        customerOneImage: file(relativePath: { eq: "konquest_logo.png" }) {
+        customerOneImage: file(relativePath: { eq: "logos/customer-theojames.png" }) {
           childImageSharp {
             fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        customerTwoImage: file(relativePath: { eq: "logos/cpsgroup.png" }) {
+        customerTwoImage: file(relativePath: { eq: "logos/customer-cps.png" }) {
           childImageSharp {
             fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        customerThreeImage: file(relativePath: { eq: "konquest_logo.png" }) {
+        customerThreeImage: file(relativePath: { eq: "logos/customer-gem.png" }) {
           childImageSharp {
             fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        customerFourImage: file(relativePath: { eq: "logos/premiergroup.png" }) {
+        customerFourImage: file(relativePath: { eq: "logos/customer-premiergroup.png" }) {
           childImageSharp {
             fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         },
-        customerFiveImage: file(relativePath: { eq: "logos/lennonwright.png" }) {
+        customerFiveImage: file(relativePath: { eq: "logos/customer-lennonwright.png" }) {
           childImageSharp {
             fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid
@@ -57,10 +57,10 @@ Logo.propTypes = {
 const Logos = () => (
   <ul className="logos">
     <li><Logo customerImage="customerOneImage"/></li>
-    <li><Logo customerImage="customerOneImage"/></li>
+    <li><Logo customerImage="customerTwoImage"/></li>
     <li><Logo customerImage="customerThreeImage"/></li>
-    <li><Logo customerImage="customerOneImage"/></li>
-    <li><Logo customerImage="customerOneImage"/></li>
+    <li><Logo customerImage="customerFourImage"/></li>
+    <li><Logo customerImage="customerFiveImage"/></li>
   </ul>
 );
 
