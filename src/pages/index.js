@@ -86,11 +86,15 @@ class IndexPage extends React.Component {
     const element = this.benefitsSection.current;
     const scrollNode = element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
     const fixedHeaderHeight = 65;
-    scrollNode.scrollTo({
-      top: scrollNode.clientHeight - fixedHeaderHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if(scrollNode.scrollTo) {
+      scrollNode.scrollTo({
+        top: scrollNode.clientHeight - fixedHeaderHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      scrollNode.scrollTop = scrollNode.clientHeight - fixedHeaderHeight;
+    }
   }
 
   isAnySectionOpen() {
