@@ -76,10 +76,6 @@
       grid-row: 1 / span 1;
       @extend %grid-no-padding;
 
-      &.closed {
-        display: none;
-      }
-
       .intro-contents {
         grid-column: 3 / span 5;
         margin-top: 124px;
@@ -110,24 +106,29 @@
       }
     }
 
+    .intro.closed, .persona-section:not(.open) {
+      width: 0;
+      overflow: hidden;
+
+      & > * {
+        opacity: 0;
+      }
+    }
+
+    .intro:not(.closed), .persona-section.open {
+      width: 100%;
+
+      & > * {
+        opacity: 1;
+        transition: opacity 0.8s linear;
+      }
+    }
+
     .persona-section {
       width: 0;
       overflow: hidden;
       grid-column: 1 / span 16;
       @extend %grid-no-padding;
-
-      & > * {
-        opacity: 0;
-      }
-
-      &.open {
-        width: 100%;
-
-        & > * {
-          opacity: 1;
-          transition: opacity 500ms linear;
-        }
-      }
 
       .persona-contents {
         padding-top: 30px;
@@ -687,21 +688,45 @@
       100% { left: 100vw; }
     }
 
-    //main > section.contents {
-    //  .intro {
-    //    .intro-contents {
-    //      button {
-    //        opacity: 0;
-    //        animation: button-show 0.15s linear 2.3s 1 forwards;
-    //      }
-    //    }
-    //  }
-    //}
-    //
-    //@keyframes button-show {
-    //  0% { opacity: 0 }
-    //  100% { opacity: 1 }
-    //}
+    main > section.contents {
+      .intro {
+        .intro-contents {
+          button {
+            opacity: 0;
+            animation: button-show 0.15s linear 2.3s 1 forwards;
+          }
+        }
+      }
+    }
+
+    @keyframes button-show {
+      0% { opacity: 0 }
+      100% { opacity: 1 }
+    }
+
+    main > section.contents {
+      .persona-section.open, .intro:not(.closed) {
+        & > * {
+          transition: opacity 0.8s linear 1s;
+        }
+
+        &::after {
+          content: '';
+          background-color: $cardinal-regular;
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          left: 100vw;
+          animation: persona-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0s 1 forwards;
+        }
+      }
+    }
+
+    @keyframes persona-wipe {
+      0% { left: 100vw; }
+      100% { left: -100vw; }
+    }
   }
 
   @media(max-width: exclusive-breakpoint($hd-display)) {
