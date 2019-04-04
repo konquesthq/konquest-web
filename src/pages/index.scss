@@ -707,7 +707,7 @@
     main > section.contents {
       .persona-section.open, .intro:not(.closed) {
         & > * {
-          transition: opacity 0.8s linear 1s;
+          transition: opacity 0.8s linear 0.7s;
         }
 
         &::after {
@@ -717,15 +717,15 @@
           height: 100vh;
           position: absolute;
           top: 0;
-          left: 100vw;
-          animation: persona-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0s 1 forwards;
+          left: 0;
+          animation: persona-wipe 0.8s cubic-bezier(0.42, 0, 0.178, 0.918) 0s 1 forwards;
         }
       }
     }
 
     @keyframes persona-wipe {
-      0% { left: 100vw; }
-      100% { left: -100vw; }
+      0% { left: 0; }
+      100% { left: 100vw; }
     }
   }
 
