@@ -33,6 +33,7 @@
 
         &::after {
           font-family: 'Material Icons', sans-serif;
+          font-feature-settings: "liga";
           content: 'close';
           font-size: 22px;
         }

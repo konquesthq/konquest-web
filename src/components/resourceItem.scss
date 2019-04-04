@@ -73,6 +73,7 @@ ul.resource-items {
 
       &::after {
         font-family: 'Material Icons', sans-serif;
+        font-feature-settings: "liga";
         content: 'arrow_forward';
         margin-left: 12px;
         font-size: 18px;
