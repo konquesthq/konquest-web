@@ -25,7 +25,7 @@ class ResourceListPage extends React.Component {
     }
     return (
       <Layout className="resources">
-        <SEO title="Resources" keywords={[`resources`, `blog`]}/>
+        <SEO title="Resources" keywords={[`konquest`, `resources`, `blog`]}/>
         <h1>Resources</h1>
         <div className="contents">
           <div>

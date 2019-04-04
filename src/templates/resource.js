@@ -19,7 +19,7 @@ class ResourceItemTemplate extends React.Component {
     const recent = this.props.data.recent.edges;
     return (
       <Layout className="resource-page">
-        <SEO title={resourceItem.title}/>
+        <SEO title={resourceItem.title} keywords={[`konquest`, `resources`, `blog`]}/>
         <article>
           <div className="contents">
             <Img className="img" fluid={resourceItem.headerImage.fluid}/>

@@ -9,7 +9,7 @@ import './pricing.scss';
 
 const PricingPage = () => (
   <Layout>
-    <SEO title="Pricing"/>
+    <SEO title="Pricing" keywords={[`konquest`, `commission`, `sales`, `recruitment`, `pricing`]}/>
     <h1>Pricing</h1>
     <div className="pricing-overview">
       <section className="plan-details">
