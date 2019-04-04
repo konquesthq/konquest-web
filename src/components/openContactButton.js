@@ -15,7 +15,7 @@ class OpenContactButton extends React.Component {
 
   render() {
     return (
-      <button type="button" onClick={this.handleRequestDemo}>{this.props.children}</button>
+      <button type="button" className="open-contact-form" onClick={this.handleRequestDemo}>{this.props.children}</button>
     );
   }
 }

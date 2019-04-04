@@ -43,7 +43,7 @@ class PersonaNavigationItem extends React.Component {
 
   render() {
     return (
-      <li className={this.props.isSelected ? 'selected' : ''} onClick={this.handleClick}>
+      <li className={`${this.props.title.toLowerCase()}-persona-navigation ${this.props.isSelected ? 'selected' : ''}`} onClick={this.handleClick}>
         <h3>{this.props.title}</h3>
         {this.props.children}
       </li>
@@ -249,7 +249,7 @@ class IndexPage extends React.Component {
           </nav>
           <nav className="persona-radio-navigation">
             <ul>
-              <li onClick={this.handleClearPersona} className={!this.isAnySectionOpen() ? 'selected' : ''}>
+              <li onClick={this.handleClearPersona} className={`intro-persona-navigation ${!this.isAnySectionOpen() ? 'selected' : ''}`}>
                 Intro
               </li>
               <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
