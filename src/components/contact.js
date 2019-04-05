@@ -41,10 +41,19 @@ class Contact extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if(this.state[honeypotId]) return;
+    if (this.state[honeypotId]) return;
     send('sendgrid', 'contact_form_submission', this.state);
     this.handleClose();
-    navigate(withPrefix('/thanks'));
+    const form = event.target;
+    fetch("/", {
+      method: "POST",
+      headers: {"Content-Type": "application/x-www-form-urlencoded"},
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => navigate(withPrefix('/thanks')));
   }
 
   render() {
@@ -53,7 +62,7 @@ class Contact extends React.Component {
         <div>
           <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
           <form onSubmit={this.handleSubmit} name="contact" data-netlify="true" data-netlify-honeypot={honeypotId}>
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="contact"/>
             <h2>We'd love to hear from you!</h2>
             <p>Got a question? Please complete our contact form anda member of the team will get back to you asap.</p>
             <label>
