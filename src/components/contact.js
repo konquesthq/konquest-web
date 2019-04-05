@@ -10,6 +10,12 @@ import './contact.scss';
 
 const honeypotId = '80df4943-44b4-45a9-8359-5b2eccb787e7';
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
