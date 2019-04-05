@@ -52,7 +52,8 @@ class Contact extends React.Component {
       <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
         <div>
           <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} name="contact" data-netlify="true" data-netlify-honeypot={honeypotId}>
+            <input type="hidden" name="form-name" value="contact" />
             <h2>We'd love to hear from you!</h2>
             <p>Got a question? Please complete our contact form anda member of the team will get back to you asap.</p>
             <label>
