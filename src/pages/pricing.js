@@ -17,9 +17,12 @@ const PricingPage = () => (
         <p><span className="price">£10</span> user/month</p>
         <div className="features">
           <ul>
-            <li>Unlimited schemes: Simple, Team, Override.</li>
-            <li>CRM Integration</li>
-            <li>Support by Humans</li>
+            <li>Unlimited bonus & commission schemes</li>
+            <li>CRM and Timesheet Integration or</li>
+            <li>Custom interfaces</li>
+            <li>Custom approval process</li>
+            <li>Individual dashboard</li>
+            <li>Support by humans</li>
           </ul>
           <OpenContactButton>Request a Demo</OpenContactButton>
         </div>
@@ -53,10 +56,8 @@ const PricingPage = () => (
       </section>
       <section className="quote">
         <blockquote>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-          eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit. Donec
-          a purus id ex tincidunt pulvinar.
-          <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
+          Konquest removed a headache we go through every month with our commissions, but for me the real win is putting our consultants earnings right in front of them, they love that.
+          <cite>Mark Bracknall, <span className="company">Director, Theo James</span></cite>
         </blockquote>
       </section>
     </div>

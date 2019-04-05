@@ -270,11 +270,8 @@ class IndexPage extends React.Component {
         <section className="benefits" ref={this.benefitsSection}>
           <h2>Why Konquest?</h2>
           <blockquote>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-            eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
-            Donec
-            a purus id ex tincidunt
-            <cite>Jack Skellington, <span className="company">Halloween Inc</span></cite>
+            Konquest removed a headache we go through every month with our commissions, but for me the real win is putting our consultants earnings right in front of them, they love that.
+            <cite>Mark Bracknall, <span className="company">Director, Theo James</span></cite>
           </blockquote>
           <ul className="benefits-list">
             <li>
