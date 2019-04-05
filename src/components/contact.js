@@ -10,12 +10,6 @@ import './contact.scss';
 
 const honeypotId = '80df4943-44b4-45a9-8359-5b2eccb787e7';
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
-
 class Contact extends React.Component {
   constructor(props) {
     super(props);
@@ -50,16 +44,7 @@ class Contact extends React.Component {
     if (this.state[honeypotId]) return;
     send('sendgrid', 'contact_form_submission', this.state);
     this.handleClose();
-    const form = event.target;
-    fetch("/", {
-      method: "POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state
-      })
-    })
-      .then(() => navigate(withPrefix('/thanks')));
+    navigate(withPrefix('/thanks'));
   }
 
   render() {
@@ -67,8 +52,7 @@ class Contact extends React.Component {
       <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
         <div>
           <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
-          <form onSubmit={this.handleSubmit} name="contact" data-netlify="true" data-netlify-honeypot={honeypotId}>
-            <input type="hidden" name="form-name" value="contact"/>
+          <form onSubmit={this.handleSubmit}>
             <h2>We'd love to hear from you!</h2>
             <p>Got a question? Please complete our contact form anda member of the team will get back to you asap.</p>
             <label>
