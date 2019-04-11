@@ -16,7 +16,28 @@ const propTypes = {
 class ResourceItemTemplate extends React.Component {
   render() {
     const resourceItem = this.props.data.item;
-    const recent = this.props.data.recent.edges;
+    const recent = this.props.data.recent;
+
+    let recentArticles;
+
+    if(recent) {
+      recentArticles = (
+        <div className="recent-articles">
+          <h2>Recent Articles</h2>
+          <ul className="resource-items">
+            {
+              recent.edges
+                .map(({node}) => (
+                  <li key={node.id}>
+                    <ShortResourceItem resourceItem={node}/>
+                  </li>
+                ))
+            }
+          </ul>
+        </div>
+      );
+    }
+
     return (
       <Layout className="resource-page">
         <SEO title={resourceItem.title} keywords={[`konquest`, `resources`, `blog`]}/>
@@ -31,19 +52,7 @@ class ResourceItemTemplate extends React.Component {
             />
           </div>
         </article>
-        <div className="recent-articles">
-          <h2>Recent Articles</h2>
-          <ul className="resource-items">
-            {
-              recent
-                .map(({node}) => (
-                  <li key={node.id}>
-                    <ShortResourceItem resourceItem={node}/>
-                  </li>
-                ))
-            }
-          </ul>
-        </div>
+        {recentArticles}
         <RequestDemo/>
       </Layout>
     )
@@ -58,6 +67,9 @@ export const resourceItemQuery = graphql`
   query($id: String!) {
     item: contentfulResourceItem(id: { eq: $id }) {
       title,
+      description {
+        description
+      },
       content {
         childContentfulRichText {
           html

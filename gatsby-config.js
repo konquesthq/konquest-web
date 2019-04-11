@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const { BLOCKS } = require('@contentful/rich-text-types');
+
 module.exports = {
   siteMetadata: {
     title: `Konquest`,
@@ -40,7 +42,20 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    `@contentful/gatsby-transformer-contentful-richtext`,
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderOptions: {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              return `<img src='${
+                node.data.target.fields.file['en-US'].url
+                }' />`
+            },
+          }
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
