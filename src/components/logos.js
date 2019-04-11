@@ -22,7 +22,7 @@ const Logos = () => (
       <ul className="logos">
         {
           data.contentfulLogos.logos.map(node => (
-            <li>
+            <li key={node.id}>
               <Img className="img" fluid={node.fluid}/>
             </li>
           ))

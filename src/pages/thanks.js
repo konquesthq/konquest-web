@@ -1,15 +1,34 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import {graphql} from "gatsby";
 
-const ThanksPage = () => (
+const ThanksPage = ({data}) => (
   <Layout className="info">
     <div className="contents">
       <SEO title="Thank You"/>
-      <h1>Roger that! Thank you!</h1>
-      <p>Thanks for getting in touch with us, rest assured we'll be in touch very soon.</p>
+      <h1>{data.contentfulInfo.displayTitle}</h1>
+      <div dangerouslySetInnerHTML={{
+        __html: data.contentfulInfo.content.childContentfulRichText.html,
+      }}>
+      </div>
     </div>
   </Layout>
 );
 
 export default ThanksPage;
+
+export const thankYouQuery = graphql`
+  {
+    contentfulInfo(title: { eq: "Thank You" }) {
+      id,
+      title,
+      displayTitle,
+      content {
+        childContentfulRichText {
+          html
+        }
+      }
+    }
+  }
+`;
