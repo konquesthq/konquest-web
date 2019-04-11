@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
+import {StaticQuery, graphql} from "gatsby";
 import Img from "gatsby-image";
 
 import './logos.scss';
@@ -9,58 +9,31 @@ const Logo = ({customerImage}) => (
   <StaticQuery
     query={graphql`
       query {
-        customerOneImage: file(relativePath: { eq: "logos/customer-theojames.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        },
-        customerTwoImage: file(relativePath: { eq: "logos/customer-cps.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        },
-        customerThreeImage: file(relativePath: { eq: "logos/customer-gem.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        },
-        customerFourImage: file(relativePath: { eq: "logos/customer-premiergroup.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        },
-        customerFiveImage: file(relativePath: { eq: "logos/customer-lennonwright.png" }) {
-          childImageSharp {
-            fluid(maxHeight: 100) {
-              ...GatsbyImageSharpFluid
+        contentfulLogos	{
+          logos {
+            id,
+            fluid(maxHeight: 112) {
+              ...GatsbyContentfulFluid
             }
           }
         }
       }
     `}
-    render={data => <Img className="img" fluid={data[customerImage].childImageSharp.fluid} />}
+    render={data => <Img className="img" fluid={data.contentfulLogos.logos[customerImage].fluid}/>}
   />
 );
 
 Logo.propTypes = {
-  customerImage: PropTypes.string.isRequired
+  customerImage: PropTypes.number.isRequired
 };
 
 const Logos = () => (
   <ul className="logos">
-    <li><Logo customerImage="customerOneImage"/></li>
-    <li><Logo customerImage="customerTwoImage"/></li>
-    <li><Logo customerImage="customerThreeImage"/></li>
-    <li><Logo customerImage="customerFourImage"/></li>
-    <li><Logo customerImage="customerFiveImage"/></li>
+    <li><Logo customerImage={0}/></li>
+    <li><Logo customerImage={1}/></li>
+    <li><Logo customerImage={2}/></li>
+    <li><Logo customerImage={3}/></li>
+    <li><Logo customerImage={4}/></li>
   </ul>
 );
 

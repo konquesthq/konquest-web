@@ -1428,6 +1428,14 @@
       padding-top: 0;
       padding-bottom: 68px;
 
+      .intro.closed, .persona-section:not(.open) {
+        width: 100%;
+
+        & > * {
+          opacity: 1;
+        }
+      }
+
       & > div {
         grid-row: auto;
         padding: 68px 0 32px;

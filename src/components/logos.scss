@@ -12,6 +12,7 @@
 
     .img {
       width: 100%;
+      min-height: 61px;
       max-height: 100%;
     }
   }
@@ -27,6 +28,10 @@
     li {
       margin-right: 12px;
       width: 94px;
+
+      .img {
+        min-height: 54px;
+      }
     }
   }
 
@@ -39,6 +44,10 @@
       width: 60%;
       max-height: 100%;
       height: 100%;
+
+      .img {
+        min-height: 112px;
+      }
     }
   }
 }
