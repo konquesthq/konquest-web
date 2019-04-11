@@ -1,4 +1,6 @@
-@import '../styles/palette.scss';
+@import '../styles/palette';
+@import '../styles/functions';
+@import '../styles/breakpoints';
 
 ul.partners {
   grid-column: 3 / span 12;
@@ -19,6 +21,31 @@ ul.partners {
       width: 100%;
       max-height: 150px;
       margin: 0 auto 15px;
+      min-height: 96px;
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-tablet)) {
+    li {
+      .img {
+        min-height: 76px;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($small-tablet)) {
+    li {
+      .img {
+        min-height: 160px;
+      }
+    }
+  }
+
+  @media(max-width: exclusive-breakpoint($large-phone)) {
+    li {
+      .img {
+        min-height: 120px;
+      }
     }
   }
 }
