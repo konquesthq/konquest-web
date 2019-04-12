@@ -9,6 +9,7 @@ module.exports = {
     title: `Konquest`,
     description: `Konquest automatically calculates your sales commissions, no matter how complex they are, allocating them to the right period and exposing earning pipelines to your team. No more spreadsheets. Just Konquest.`,
     author: `@KonquestHQ`,
+    siteUrl: `https://www.konquest.io`
   },
   pathPrefix: "/konquest-web",
   plugins: [
