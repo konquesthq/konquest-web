@@ -49,7 +49,7 @@ class MailchimpSubscribe extends React.Component {
 }
 
 MailchimpSubscribe.propTypes = {
-  content: PropTypes.object.required
+  content: PropTypes.object.isRequired
 };
 
 class Footer extends React.Component {
