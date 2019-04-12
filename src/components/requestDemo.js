@@ -1,17 +1,30 @@
 import React from "react"
 import OpenContactButton from './openContactButton';
+import {graphql, StaticQuery} from "gatsby";
 
 import './requestDemo.scss';
 
 export default class RequestDemo extends React.Component {
   render() {
     return (
-      <div className="request-demo">
-        <div className="demo-details">
-          <p>Can you spare 30mins? We'd love to show you Konquest!</p>
-          <OpenContactButton>Request Demo</OpenContactButton>
-        </div>
-      </div>
+      <StaticQuery
+        query={graphql`
+          query {
+            contentfulRequestDemo(title: { eq: "Request Demo" })	{
+              text,
+              buttonText
+            }
+          }
+        `}
+        render={data => (
+          <div className="request-demo">
+            <div className="demo-details">
+              <p>{data.contentfulRequestDemo.text}</p>
+              <OpenContactButton>{data.contentfulRequestDemo.buttonText}</OpenContactButton>
+            </div>
+          </div>
+        )}
+      />
     );
   }
 }
