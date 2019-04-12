@@ -12,6 +12,7 @@ import CommercialImage from '../components/images/commercial';
 import DefaultImage from '../components/images/default';
 
 import "./index.scss";
+import {graphql} from "gatsby";
 
 class PersonaSection extends React.Component {
   render() {
@@ -112,9 +113,9 @@ class IndexPage extends React.Component {
         <section className="contents">
           <div className={`intro ${this.isAnySectionOpen() ? 'closed' : ''}`}>
             <div className="intro-contents">
-              <h1>Commission. Sorted.</h1>
-              <p>Konquest automatically calculates your sales commissions, no matter how complex they are, allocating them to the right period and exposing earning pipelines to your team. No more spreadsheets. Just Konquest.</p>
-              <OpenContactButton>Request a Demo</OpenContactButton>
+              <h1>{this.props.data.home.displayTitle}</h1>
+              <p>{this.props.data.home.introText.introText}</p>
+              <OpenContactButton>{this.props.data.home.ctaText}</OpenContactButton>
             </div>
             <DefaultImage/>
           </div>
@@ -268,56 +269,31 @@ class IndexPage extends React.Component {
           </nav>
         </section>
         <section className="benefits" ref={this.benefitsSection}>
-          <h2>Why Konquest?</h2>
+          <h2>{this.props.data.home.benefitsTitle}</h2>
           <blockquote>
-            Konquest removed a headache we go through every month with our commissions, but for me the real win is putting our consultants earnings right in front of them, they love that.
-            <cite>Mark Bracknall, <span className="company">Director, Theo James</span></cite>
+            {this.props.data.quote.quote.quote}
+            <cite>{this.props.data.quote.citationPerson}, <span className="company">{this.props.data.quote.citationCompany}</span></cite>
           </blockquote>
           <ul className="benefits-list">
-            <li>
-              <h3>Drive Efficiency</h3>
-              <p>Konquest dramatically reduces the amount of time and effort your organisation needs to put into
-                managing commission, saving you substantial amounts of time every month – time that could and should be
-                spent driving revenue and profitability.</p>
-              <p>By integrating with your CRM, or using a Konquest custom interface through which to record deal data,
-                the process from calculation to approval can be almost entirely automated. Anything that can't be
-                automatically calculated, such as guaranteed bonus for new starters, or deductions such as clawbacks,
-                can be added in a couple of clicks.</p>
-              <p>The end result is a dramatic reduction in manual input, not to mention monthly headaches!</p>
-            </li>
-            <li>
-              <h3>Increased Engagement</h3>
-              <p>Konquest brings total transparency to your rewards program by ensuring that every member of your team
-                knows exactly how your schemes work and what that means to them for any given period in real time.</p>
-              <p>Estimated and secured earnings are visible for all, and any time something changes the effected team
-                member is notified which helps alleviate any nasty surprises come pay day, as well as giving them an
-                opportunity to take any necessary or expected actions.</p>
-              <p>The result is an informed and engaged team who trust you and your process.</p>
-            </li>
-            <li>
-              <h3>Increased Performance</h3>
-              <p>Konquest shows your team their estimated and secured earnings for current and future months.
-                Associating their efforts to their personal outcome so clearly is a powerful motivator – who doesn't
-                want to see their commission pot increase?!</p>
-              <p>Add in progress indicators against organisational or personal targets and you can expect a real
-                increase in performance company wide.</p>
-            </li>
-            <li>
-              <h3>Ensure Accuracy and Accountability</h3>
-              <p>Konquest automatically calculates everything for you based on your unique commission schemes. This
-                means the chances of an error are greatly reduced, and because we record every event associated with
-                claims, each stakeholder is accountable to their own actions. Be that the deal data entered by
-                consultants, an approval actioned by a manager, or a clawback added by your FD.</p>
-            </li>
+            {this.props.data.benefits.edges.map(({node}) => (
+              <li>
+                <h3>{node.displayTitle}</h3>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: node.text.childContentfulRichText.html,
+                  }}
+                />
+              </li>
+            ))}
           </ul>
         </section>
         <section className="partners">
-          <h2>Integration Partners</h2>
-          <p>Easy Integration with your CRM or Timesheet solution using the Konquest API.</p>
+          <h2>{this.props.data.home.partnersTitle}</h2>
+          <p>{this.props.data.home.partnersText.partnersText}</p>
           <Partners/>
         </section>
         <section className="customers">
-          <h2>Loved by</h2>
+          <h2>{this.props.data.home.customersTitle}</h2>
           <Logos/>
           <RequestDemo/>
         </section>
@@ -327,3 +303,40 @@ class IndexPage extends React.Component {
 };
 
 export default IndexPage;
+
+export const indexQuery = graphql`
+  query {
+    home: contentfulHome(title: { eq: "Home" }) {
+      displayTitle,
+      introText {
+        introText
+      },
+      ctaText,
+      benefitsTitle,
+      partnersTitle,
+      partnersText {
+        partnersText
+      },
+      customersTitle
+    }
+    benefits: allContentfulBenefit(sort: { fields: [createdAt], order: [ASC]}) {
+      edges {
+        node {
+          displayTitle,
+          text {
+            childContentfulRichText {
+              html
+            }
+          }
+        }
+      }
+    }
+    quote: contentfulQuote(title: { eq: "Quote" }) {
+      quote {
+        quote
+      },
+      citationPerson,
+      citationCompany
+    }
+  }
+`;

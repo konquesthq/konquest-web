@@ -71,7 +71,7 @@ export const pricingQuery = graphql`
         caveat
       }
     }
-    faqs: allContentfulFaq {
+    faqs: allContentfulFaq(sort: { fields: [createdAt], order: [ASC]}) {
       edges {
         node {
           question {
