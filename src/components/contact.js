@@ -1,5 +1,5 @@
 import React from 'react';
-import {withPrefix} from 'gatsby';
+import {graphql, StaticQuery, withPrefix} from 'gatsby';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {closeContact} from "../redux/actions";
@@ -49,62 +49,90 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
-        <div>
-          <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
-          <form onSubmit={this.handleSubmit}>
-            <h2>We'd love to hear from you!</h2>
-            <p>Got a question? Please complete our contact form anda member of the team will get back to you asap.</p>
-            <label>
-              Name *
-              <input type="text"
-                     name="name"
-                     value={this.state.name}
-                     onChange={this.handleInputChange}
-                     required/>
-            </label>
-            <label>
-              Email *
-              <input type="text"
-                     name="email"
-                     value={this.state.email}
-                     onChange={this.handleInputChange}
-                     required/>
-            </label>
-            <label>
-              Phone
-              <input type="text"
-                     name="phone"
-                     value={this.state.phone}
-                     onChange={this.handleInputChange}/>
-            </label>
-            <label>
-              Comments
-              <textarea name="comments"
-                        value={this.state.comments}
-                        onChange={this.handleInputChange}/>
-            </label>
-            <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
-              <input type="text"
-                     name={honeypotId}
-                     tabIndex="-1" value="" onChange={this.handleInputChange}/>
+      <StaticQuery
+        query={graphql`
+          query {
+            contentfulContactForm(title: { eq: "Contact Form" })	{
+              displayTitle,
+              introText {
+                introText
+              },
+              submitButtonText,
+              contactCompanyName,
+              contactStreetAddress,
+              contactExtendedAddress,
+              contactLocality,
+              contactPostalCode,
+              contactTelephone,
+              contactInternationalTelephone,
+              contactEmail
+            }
+          }
+        `}
+        render={data => {
+          const formContent = data.contentfulContactForm;
+          return (
+            <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
+              <div>
+                <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
+                <form onSubmit={this.handleSubmit}>
+                  <h2>{formContent.displayTitle}</h2>
+                  <p>{formContent.introText.introText}</p>
+                  <label>
+                    Name *
+                    <input type="text"
+                           name="name"
+                           value={this.state.name}
+                           onChange={this.handleInputChange}
+                           required/>
+                  </label>
+                  <label>
+                    Email *
+                    <input type="text"
+                           name="email"
+                           value={this.state.email}
+                           onChange={this.handleInputChange}
+                           required/>
+                  </label>
+                  <label>
+                    Phone
+                    <input type="text"
+                           name="phone"
+                           value={this.state.phone}
+                           onChange={this.handleInputChange}/>
+                  </label>
+                  <label>
+                    Comments
+                    <textarea name="comments"
+                              value={this.state.comments}
+                              onChange={this.handleInputChange}/>
+                  </label>
+                  <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
+                    <input type="text"
+                           name={honeypotId}
+                           tabIndex="-1" value="" onChange={this.handleInputChange}/>
+                  </div>
+                  <button type="submit">{formContent.submitButtonText}</button>
+                </form>
+                <address className="vcard" itemScope itemType="http://schema.org/Organization">
+                  <span className="org" itemProp="name">{formContent.contactCompanyName}</span>
+                  <div className="adr" itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+                    <span className="street-address" itemProp="streetAddress">{formContent.contactStreetAddress}</span>
+                    <span className="extended-address"
+                          itemProp="extendedAddress">{formContent.contactExtendedAddress}</span>
+                    <span className="locality" itemProp="addressLocality">{formContent.contactLocality}</span>
+                    <span className="postal-code" itemProp="postalCode">{formContent.contactPostalCode}</span>
+                  </div>
+                  <p>Call:&nbsp;<a href={`tel:${formContent.contactInternationalTelephone}`} className="tel"
+                                   itemProp="telephone">{formContent.contactTelephone}</a></p>
+                  <p><a href={`mailto:${formContent.contactEmail}`} className="email"
+                        itemProp="email">{formContent.contactEmail}</a></p>
+                </address>
+              </div>
             </div>
-            <button type="submit">Send</button>
-          </form>
-          <address className="vcard" itemScope itemType="http://schema.org/Organization">
-            <span className="org" itemProp="name">Konquest</span>
-            <div className="adr" itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-              <span className="street-address" itemProp="streetAddress">Ye Olde Hundred</span>
-              {<span className="extended-address" itemProp="extendedAddress">69 Church Way</span>}
-              <span className="locality" itemProp="addressLocality">North Shields</span>
-              {/*<span className="region" itemProp="addressRegion">Address 3</span>*/}
-              <span className="postal-code" itemProp="postalCode">NE29 0AE</span>
-            </div>
-            <p>Call:&nbsp;<a href="tel:+441915111298" className="tel" itemProp="telephone">0191 511 1298</a></p>
-            <p><a href="mailto:hello@konquest.io" className="email" itemProp="email">hello@konquest.io</a></p>
-          </address>
-        </div>
-      </div>
+          )}
+        }
+      />
     );
   }
 }
