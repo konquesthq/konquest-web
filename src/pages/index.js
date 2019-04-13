@@ -120,88 +120,78 @@ class IndexPage extends React.Component {
             <DefaultImage/>
           </div>
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
-            <h2>Automate. Motivate.</h2>
+            <h2>{this.props.data.commercial.displayTitle}</h2>
             <div className="columns">
               <div className="details">
                 <ul>
                   <li className="automation">
-                    <h3>End to End Automation</h3>
-                    <p>No more spreadsheets, paper forms and emails. Less mistakes and full audit trails so you can
-                      focus
-                      on growing your business.</p>
+                    <h3>{this.props.data.commercial.automationTitle}</h3>
+                    <p>{this.props.data.commercial.automationText.automationText}</p>
                   </li>
                   <li className="flexibility">
-                    <h3>Total Flexibility</h3>
-                    <p>Manage one off bonuses or clawbacks with ease whilst automatically informing all concerned.</p>
+                    <h3>{this.props.data.commercial.flexibilityTitle}</h3>
+                    <p>{this.props.data.commercial.flexibilityText.flexibilityText}</p>
                   </li>
                   <li className="performance">
-                    <h3>Enhanced Performance</h3>
-                    <p>Increase team motivation with one click access to personal commission pipelines for every
-                      consultant and manager.</p>
+                    <h3>{this.props.data.commercial.performanceTitle}</h3>
+                    <p>{this.props.data.commercial.performanceText.performanceText}</p>
                   </li>
                 </ul>
-                <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
-                  setup. Konquest will also drive performance by making consultant earnings visible to them in
-                  real-time, a proven motivator.</p>
+                <p>{this.props.data.commercial.introText.introText}</p>
               </div>
               <div className="demo">
                 <CommercialImage/>
-                <p>Take the pain out of payroll with auto-calculation of commissions, no matter how complex your scheme
-                  setup. Konquest will also drive performance by making consultant earnings visible to them in
-                  real-time, a proven motivator.</p>
-                <OpenContactButton>Request Demo</OpenContactButton>
+                <p>{this.props.data.commercial.introText.introText}</p>
+                <OpenContactButton>{this.props.data.commercial.ctaText}</OpenContactButton>
               </div>
             </div>
           </PersonaSection>
           <PersonaSection className="operations" isShown={this.isSectionOpen('Operations')}>
-            <h2>Secure, Intelligent Automation</h2>
-            <p>Remove spreadsheets from your commissions process with a secure, automated solution in the cloud.</p>
+            <h2>{this.props.data.operations.displayTitle}</h2>
+            <p>{this.props.data.operations.introText.introText}</p>
             <ul>
               <li className="auto-calc">
-                <h3>Auto Calculation</h3>
-                <p>Konquest automatically calculates all of your commission payments and allocates them to the right
-                  payroll periods.</p>
+                <h3>{this.props.data.operations.autoCalculationTitle}</h3>
+                <p>{this.props.data.operations.autoCalculationText.autoCalculationText}</p>
               </li>
               <li className="central-data">
-                <h3>Centralised Data</h3>
-                <p>Organise all of your commission and bonus related data in one, cloud based solution.</p>
+                <h3>{this.props.data.operations.centralisedDataTitle}</h3>
+                <p>{this.props.data.operations.centralisedDataText.centralisedDataText}</p>
               </li>
               <li className="secure-auto">
-                <h3>Secure Automation</h3>
-                <p>No more insecure emails or corrupted spreadsheets. Konquest offers a securely encrypted, end to end
-                  solution in the cloud.</p>
+                <h3>{this.props.data.operations.secureAutomationTitle}</h3>
+                <p>{this.props.data.operations.secureAutomationText.secureAutomationText}</p>
               </li>
               <li className="crm">
-                <h3>CRM Integration</h3>
-                <p>Securely integrate with your CRM via API to push sales data into Konquest.</p>
+                <h3>{this.props.data.operations.crmTitle}</h3>
+                <p>{this.props.data.operations.crmText.crmText}</p>
               </li>
             </ul>
             <OpenContactButton>Request Demo</OpenContactButton>
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <div className="description">
-              <h2>Minimise Errors and Payslip Queries</h2>
-              <p>Minimize errors and improve efficiency by removing manual input from your commission claim process. All
-                the while ensuring every transaction is recorded in a transparent audit trail.</p>
+              <h2>{this.props.data.finance.displayTitle}</h2>
+              <p>{this.props.data.finance.introText.introText}</p>
               <FinanceImage/>
             </div>
             <div className="details">
               <ul>
                 <li className="accuracy">
-                  <h3>Accuracy</h3>
-                  <p>Minimize costly mistakes by alleviating the risk of human error.</p>
+                  <h3>{this.props.data.finance.accuracyTitle}</h3>
+                  <p>{this.props.data.finance.accuracyText.accuracyText}</p>
                 </li>
                 <li className="audits">
-                  <h3>Audit Trails</h3>
-                  <p>Record every transaction or event for each claim.</p>
+                  <h3>{this.props.data.finance.auditsTitle}</h3>
+                  <p>{this.props.data.finance.auditsText.auditsText}</p>
                 </li>
                 <li className="forecasting">
-                  <h3>Improved Forecasting</h3>
-                  <p>Realtime insight into estimated and actual commissions payable in any given period.</p>
+                  <h3>{this.props.data.finance.forecastingTitle}</h3>
+                  <p>{this.props.data.finance.forecastingText.forecastingText}</p>
                 </li>
                 <li className="productivity">
-                  <h3>Increased Productivity</h3>
-                  <p>Less time spent calculating commissions and chasing claim submissions with total automation.</p>
+                  <h3>{this.props.data.finance.productivityTitle}</h3>
+                  <p>{this.props.data.finance.productivityText.productivityText}</p>
                 </li>
               </ul>
               <RequestDemo/>
@@ -209,21 +199,19 @@ class IndexPage extends React.Component {
           </PersonaSection>
           <PersonaSection className="sales" isShown={this.isSectionOpen('Sales')}>
             <div className="details">
-              <h2>A Transparent Reward System for All</h2>
-              <p>Understand how much you are earning before you earn it, automatically compile commission claims and be
-                involved in the approvals process so there's never a nasty surprise on pay day.</p>
+              <h2>{this.props.data.sales.displayTitle}</h2>
+              <p>{this.props.data.sales.introText.introText}</p>
               <ul>
                 <li className="motivation">
-                  <h3>Motivation</h3>
-                  <p>One click access to commission pipelines for all, real-time tracking against company or personal commission targets with alerts and earnings summaries.</p>
+                  <h3>{this.props.data.sales.motivationTitle}</h3>
+                  <p>{this.props.data.sales.motivationText.motivationText}</p>
                 </li>
                 <li className="focus">
-                  <h3>Focus</h3>
-                  <p>Less time working out how much you're getting paid, more time focused on what makes you more
-                    money!</p>
+                  <h3>{this.props.data.sales.focusTitle}</h3>
+                  <p>{this.props.data.sales.focusText.focusText}</p>
                 </li>
               </ul>
-              <OpenContactButton>Request Demo</OpenContactButton>
+              <OpenContactButton>{this.props.data.sales.ctaText}</OpenContactButton>
             </div>
             <SalesImage/>
           </PersonaSection>
@@ -231,19 +219,19 @@ class IndexPage extends React.Component {
             <ul>
               <PersonaNavigationItem title="Commercial" isSelected={this.isSectionOpen('Commercial')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>For business owners, MD's and Sales Directors</p>
+                <p>{this.props.data.commercial.navigationText}</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Operations" isSelected={this.isSectionOpen('Operations')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>For Operations Directors and IT Managers</p>
+                <p>{this.props.data.operations.navigationText}</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Finance" isSelected={this.isSectionOpen('Finance')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>For the finance team, from FD to Payroll Administrators</p>
+                <p>{this.props.data.finance.navigationText}</p>
               </PersonaNavigationItem>
               <PersonaNavigationItem title="Sales" isSelected={this.isSectionOpen('Sales')}
                                      onNavigate={this.handlePersonaNavigate}>
-                <p>For the business end of the team - Sales Execs and Recruitment Consultants</p>
+                <p>{this.props.data.sales.navigationText}</p>
               </PersonaNavigationItem>
               <li className="benefits-nav" onClick={this.handleScrollToBenefits}>Benefits</li>
             </ul>
@@ -318,6 +306,89 @@ export const indexQuery = graphql`
         partnersText
       },
       customersTitle
+    }
+    commercial: contentfulCommercialPersona(title: { eq: "Persona - Commercial" }) {
+      displayTitle,
+      navigationText,
+      introText {
+        introText
+      },
+      ctaText,
+      automationTitle,
+      automationText {
+        automationText
+      },
+      flexibilityTitle,
+      flexibilityText {
+        flexibilityText
+      },
+      performanceTitle,
+      performanceText {
+        performanceText
+      }
+    }
+    operations: contentfulOperationsPersona(title: { eq: "Persona - Operations" }) {
+      displayTitle,
+      navigationText,
+      introText {
+        introText
+      },
+      ctaText,
+      autoCalculationTitle,
+      autoCalculationText {
+        autoCalculationText
+      },
+      centralisedDataTitle,
+      centralisedDataText {
+        centralisedDataText
+      },
+      secureAutomationTitle,
+      secureAutomationText {
+        secureAutomationText
+      },
+      crmTitle,
+      crmText {
+        crmText
+      }
+    }
+    finance: contentfulFinancePersona(title: { eq: "Persona - Finance" }) {
+      displayTitle,
+      navigationText,
+      introText {
+        introText
+      },
+      accuracyTitle,
+      accuracyText {
+        accuracyText
+      },
+      auditsTitle,
+      auditsText {
+        auditsText
+      },
+      forecastingTitle,
+      forecastingText {
+        forecastingText
+      },
+      productivityTitle,
+      productivityText {
+        productivityText
+      }
+    }
+    sales: contentfulSalesPersona(title: { eq: "Persona - Sales" }) {
+      displayTitle,
+      navigationText,
+      introText {
+        introText
+      },
+      ctaText,
+      motivationTitle,
+      motivationText {
+        motivationText
+      },
+      focusTitle,
+      focusText {
+        focusText
+      }
     }
     benefits: allContentfulBenefit(sort: { fields: [createdAt], order: [ASC]}) {
       edges {
