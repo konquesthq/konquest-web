@@ -6,10 +6,7 @@ import Logos from "../components/logos";
 import RequestDemo from "../components/requestDemo";
 import Partners from '../components/partners';
 import OpenContactButton from '../components/openContactButton';
-import SalesImage from '../components/images/sales';
-import FinanceImage from '../components/images/finance';
-import CommercialImage from '../components/images/commercial';
-import DefaultImage from '../components/images/default';
+import Img from "gatsby-image";
 
 import "./index.scss";
 import {graphql} from "gatsby";
@@ -117,7 +114,7 @@ class IndexPage extends React.Component {
               <p>{this.props.data.home.introText.introText}</p>
               <OpenContactButton>{this.props.data.home.ctaText}</OpenContactButton>
             </div>
-            <DefaultImage/>
+            <Img className="img" fluid={this.props.data.home.image.fluid}/>
           </div>
           <PersonaSection className="commercial" isShown={this.isSectionOpen('Commercial')}>
             <h2>{this.props.data.commercial.displayTitle}</h2>
@@ -140,7 +137,7 @@ class IndexPage extends React.Component {
                 <p>{this.props.data.commercial.introText.introText}</p>
               </div>
               <div className="demo">
-                <CommercialImage/>
+                <Img className="img" fluid={this.props.data.commercial.image.fluid}/>
                 <p>{this.props.data.commercial.introText.introText}</p>
                 <OpenContactButton>{this.props.data.commercial.ctaText}</OpenContactButton>
               </div>
@@ -167,13 +164,13 @@ class IndexPage extends React.Component {
                 <p>{this.props.data.operations.crmText.crmText}</p>
               </li>
             </ul>
-            <OpenContactButton>Request Demo</OpenContactButton>
+            <OpenContactButton>{this.props.data.operations.ctaText}</OpenContactButton>
           </PersonaSection>
           <PersonaSection className="finance" isShown={this.isSectionOpen('Finance')}>
             <div className="description">
               <h2>{this.props.data.finance.displayTitle}</h2>
               <p>{this.props.data.finance.introText.introText}</p>
-              <FinanceImage/>
+              <Img className="img" fluid={this.props.data.finance.image.fluid}/>
             </div>
             <div className="details">
               <ul>
@@ -213,7 +210,7 @@ class IndexPage extends React.Component {
               </ul>
               <OpenContactButton>{this.props.data.sales.ctaText}</OpenContactButton>
             </div>
-            <SalesImage/>
+            <Img className="img" fluid={this.props.data.sales.image.fluid}/>
           </PersonaSection>
           <nav className="persona-navigation">
             <ul>
@@ -296,6 +293,11 @@ export const indexQuery = graphql`
   query {
     home: contentfulHome(title: { eq: "Home" }) {
       displayTitle,
+      image {
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid
+        }
+      },
       introText {
         introText
       },
@@ -310,6 +312,11 @@ export const indexQuery = graphql`
     commercial: contentfulCommercialPersona(title: { eq: "Persona - Commercial" }) {
       displayTitle,
       navigationText,
+      image {
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid
+        }
+      },
       introText {
         introText
       },
@@ -354,6 +361,11 @@ export const indexQuery = graphql`
     finance: contentfulFinancePersona(title: { eq: "Persona - Finance" }) {
       displayTitle,
       navigationText,
+      image {
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid
+        }
+      },
       introText {
         introText
       },
@@ -377,6 +389,11 @@ export const indexQuery = graphql`
     sales: contentfulSalesPersona(title: { eq: "Persona - Sales" }) {
       displayTitle,
       navigationText,
+      image {
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid
+        }
+      },
       introText {
         introText
       },
