@@ -4,8 +4,8 @@
 @import '../styles/breakpoints';
 @import './sidePanel';
 
-.site-container {
-  .contact-form {
+.site-container, .site-container.home {
+  & > .contact-form {
     @include side-panel();
     z-index: 4;
 
