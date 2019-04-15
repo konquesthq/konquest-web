@@ -641,7 +641,7 @@
     }
   }
 
-  @media(min-width: $hd-display) {
+  @media(min-width: $small-tablet) {
     &::before, &::after {
       content: '';
       width: 100vw;

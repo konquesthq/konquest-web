@@ -261,7 +261,7 @@ class IndexPage extends React.Component {
           </blockquote>
           <ul className="benefits-list">
             {this.props.data.benefits.edges.map(({node}) => (
-              <li>
+              <li key={node.id}>
                 <h3>{node.displayTitle}</h3>
                 <div
                   dangerouslySetInnerHTML={{
@@ -410,6 +410,7 @@ export const indexQuery = graphql`
     benefits: allContentfulBenefit(sort: { fields: [createdAt], order: [ASC]}) {
       edges {
         node {
+          id,
           displayTitle,
           text {
             childContentfulRichText {

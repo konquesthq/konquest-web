@@ -19,7 +19,7 @@ const PricingPage = ({data}) => (
         <div className="features">
           <ul>
             {data.pricing.features.map(feature => (
-              <li>{feature}</li>
+              <li key={feature}>{feature}</li>
             ))}
           </ul>
           <OpenContactButton>Request a Demo</OpenContactButton>
@@ -30,7 +30,7 @@ const PricingPage = ({data}) => (
         <div className="faq-items">
           <dl>
             {data.faqs.edges.map(({node}) => (
-              <React.Fragment>
+              <React.Fragment key={node.id}>
                 <dt>{node.question.question}</dt>
                 <dd>{node.answer.answer}</dd>
               </React.Fragment>
@@ -74,6 +74,7 @@ export const pricingQuery = graphql`
     faqs: allContentfulFaq(sort: { fields: [createdAt], order: [ASC]}) {
       edges {
         node {
+          id,
           question {
             question
           },
