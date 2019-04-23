@@ -86,6 +86,10 @@ b {
   font-weight: bold;
 }
 
+.CookieDeclaration {
+  display: none;
+}
+
 @media(min-width: $max-supported) {
   html {
     max-width: $max-supported;
