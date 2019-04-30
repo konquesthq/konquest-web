@@ -8,8 +8,11 @@
   & > .contact-form {
     @include side-panel();
     z-index: 4;
+    visibility: hidden;
 
     &.open {
+      visibility: visible;
+
       .close-button {
         display: block;
       }
