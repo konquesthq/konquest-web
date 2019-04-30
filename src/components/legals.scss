@@ -90,6 +90,7 @@
     main > section {
       .contents {
         grid-column: 1 / span 8;
+        grid-column-gap: 0;
       }
     }
   }
