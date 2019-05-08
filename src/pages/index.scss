@@ -641,6 +641,20 @@
     }
   }
 
+  @media(max-height: 800px) {
+    section.contents {
+      .intro {
+        .intro-contents {
+          margin-top: 84px !important;
+        }
+
+        .img {
+          margin-top: 84px !important;
+        }
+      }
+    }
+  }
+
   @media(min-width: $small-tablet) {
     &::before, &::after {
       content: '';
@@ -980,7 +994,7 @@
     }
 
     &.finance {
-      background-position: -1440px -628px;
+      background-position: -1400px -628px;
     }
 
     .persona-radio-navigation {
@@ -1196,7 +1210,7 @@
     }
 
     &.finance {
-      background-position: -1476px -628px;
+      background-position: -1400px -628px;
     }
 
     &.sales {
