@@ -75,9 +75,25 @@ class Contact extends React.Component {
             <div className={`contact-form ${this.props.isContactOpen ? 'open' : ''} `}>
               <div>
                 <button type="button" className="close-button" onClick={this.handleClose}>Close</button>
-                <form onSubmit={this.handleSubmit}>
+                <div className="address">
                   <h2>{formContent.displayTitle}</h2>
                   <p>{formContent.introText.introText}</p>
+                  <address className="vcard" itemScope itemType="http://schema.org/Organization">
+                    <span className="org" itemProp="name">{formContent.contactCompanyName}</span>
+                    <div className="adr" itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+                      <span className="street-address" itemProp="streetAddress">{formContent.contactStreetAddress}</span>
+                      <span className="extended-address"
+                            itemProp="extendedAddress">{formContent.contactExtendedAddress}</span>
+                      <span className="locality" itemProp="addressLocality">{formContent.contactLocality}</span>
+                      <span className="postal-code" itemProp="postalCode">{formContent.contactPostalCode}</span>
+                    </div>
+                    <p>Call:&nbsp;<a href={`tel:${formContent.contactInternationalTelephone}`} className="tel"
+                                     itemProp="telephone">{formContent.contactTelephone}</a></p>
+                    <p><a href={`mailto:${formContent.contactEmail}`} className="email"
+                          itemProp="email">{formContent.contactEmail}</a></p>
+                  </address>
+                </div>
+                <form onSubmit={this.handleSubmit}>
                   <label>
                     Name *
                     <input type="text"
@@ -114,20 +130,6 @@ class Contact extends React.Component {
                   </div>
                   <button type="submit">{formContent.submitButtonText}</button>
                 </form>
-                <address className="vcard" itemScope itemType="http://schema.org/Organization">
-                  <span className="org" itemProp="name">{formContent.contactCompanyName}</span>
-                  <div className="adr" itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-                    <span className="street-address" itemProp="streetAddress">{formContent.contactStreetAddress}</span>
-                    <span className="extended-address"
-                          itemProp="extendedAddress">{formContent.contactExtendedAddress}</span>
-                    <span className="locality" itemProp="addressLocality">{formContent.contactLocality}</span>
-                    <span className="postal-code" itemProp="postalCode">{formContent.contactPostalCode}</span>
-                  </div>
-                  <p>Call:&nbsp;<a href={`tel:${formContent.contactInternationalTelephone}`} className="tel"
-                                   itemProp="telephone">{formContent.contactTelephone}</a></p>
-                  <p><a href={`mailto:${formContent.contactEmail}`} className="email"
-                        itemProp="email">{formContent.contactEmail}</a></p>
-                </address>
               </div>
             </div>
           )}

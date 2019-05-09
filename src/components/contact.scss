@@ -12,6 +12,7 @@
 
     &.open {
       visibility: visible;
+      width: 976px;
 
       .close-button {
         display: block;
@@ -19,7 +20,10 @@
     }
 
     & > div {
-      padding: 104px 32px 32px;
+      padding: 86px 32px 32px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-column-gap: 32px;
       opacity: 0;
 
       .close-button {
@@ -42,20 +46,59 @@
         }
       }
 
-      h2 {
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 1.39;
-        margin-bottom: 8px;
-      }
+      .address {
+        grid-column: 1 / span 4;
 
-      p {
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 24px;
+        h2 {
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 1.39;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.5;
+          margin-bottom: 24px;
+        }
+
+        address {
+          font-size: 14px;
+          line-height: 1.5;
+          color: #757575;
+
+          .org {
+            font-weight: bold;
+            color: #4a4f55;
+          }
+
+          .adr {
+            margin-bottom: 12px;
+
+            span {
+              display: block;
+            }
+          }
+
+          a.tel {
+            font-weight: normal;
+            color: #4a4f55;
+          }
+
+          a.email {
+            color: $firefly-light;
+            font-weight: bold;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+        }
       }
 
       form {
+        grid-column: 5 / span 4;
+
         label {
           display: block;
           margin-bottom: 16px;
@@ -66,7 +109,7 @@
 
           input, textarea {
             display: block;
-            width: 75%;
+            width: 100%;
             @extend %input;
             margin-top: 4px;
           }
@@ -88,54 +131,37 @@
           padding: 12px 8px;
         }
       }
+    }
 
-      address {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #757575;
-
-        .org {
-          font-weight: bold;
-          color: #4a4f55;
-        }
-
-        .adr {
-          margin-bottom: 12px;
-
-          span {
-            display: block;
-          }
-        }
-
-        a.tel {
-          font-weight: normal;
-          color: #4a4f55;
-        }
-
-        a.email {
-          color: $firefly-light;
-          font-weight: bold;
-        }
-
-        p {
-          margin-bottom: 0;
-        }
+    @media(max-width: exclusive-breakpoint(976px)) {
+      &.open {
+        width: 100%;
       }
     }
 
     @media(max-width: exclusive-breakpoint($small-tablet)) {
       & > div {
-        h2 {
-          text-align: center;
+        grid-template-rows: repeat(2, auto);
+
+        .address {
+          grid-row: 1 / span 1;
+          grid-column: 1 / span 8;
+
+          h2 {
+            text-align: center;
+          }
+
+          address {
+            display: none;
+          }
         }
 
         form {
+          grid-row: 2 / span 1;
+          grid-column: 1 / span 8;
+
           label {
             font-size: 15px;
-
-            input, textarea {
-              width: 100%;
-            }
           }
 
           button {
@@ -152,14 +178,6 @@
         address {
           display: none;
         }
-      }
-    }
-  }
-
-  @media(max-height: exclusive-breakpoint(960px)) {
-    & > div {
-      address {
-        display: none;
       }
     }
   }
