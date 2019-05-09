@@ -9,6 +9,7 @@
     @include side-panel();
     z-index: 4;
     visibility: hidden;
+    overflow-x: auto;
 
     &.open {
       visibility: visible;
