@@ -71,6 +71,20 @@ class Footer extends React.Component {
               subscribeSubText,
               subscribeButtonText
             }
+            socialLinks: allContentfulSocialLink(sort: { fields: [updatedAt], order: [ASC]}) {
+              edges {
+                node {
+                  id,
+                  text,
+                  url,
+                  image {
+                    file {
+                      url
+                    }
+                  }
+                }
+              }
+            }
           }
         `}
         render={data => (
@@ -78,12 +92,9 @@ class Footer extends React.Component {
             <div className="contact">
               <div className="links">
                 <div className="social">
-                  <a href="https://www.linkedin.com/company/konquest/" target="_blank"
-                     rel="noopener noreferrer" className="linkedin">LinkedIn</a>
-                  <a href="https://www.facebook.com/Konquest-256106555318391/" target="_blank"
-                     rel="noopener noreferrer" className="facebook">Facebook</a>
-                  <a href="https://twitter.com/KonquestHQ" target="_blank" rel="noopener noreferrer"
-                     className="twitter">Twitter</a>
+                  {data.socialLinks.edges.map(({node}) => (
+                    <a key={node.id} href={node.url} target="_blank" rel="noopener noreferrer" style={{backgroundImage: `url(${node.image.file.url})`}}>{node.text}</a>
+                  ))}
                 </div>
                 <address className="contact vcard" itemScope itemType="http://schema.org/Organization">
                   <p>Call: <a href={`tel:${data.contentfulFooter.contactInternationalTelephone}`} className="tel"
