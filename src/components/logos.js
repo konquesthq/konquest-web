@@ -11,7 +11,7 @@ const Logos = () => (
         contentfulLogos(title: { eq: "Customer Logos" })	{
           logos {
             id,
-            fluid(maxHeight: 112) {
+            fluid(maxHeight: 234) {
               ...GatsbyContentfulFluid
             }
           }
