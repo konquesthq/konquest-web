@@ -755,7 +755,6 @@
 
     section.contents {
       height: calc(100vh - 65px);
-      min-height: 770px;
 
       .intro {
         .intro-contents {
@@ -1218,8 +1217,6 @@
     }
 
     section.contents {
-      min-height: 810px;
-
       .intro {
         grid-column: 1 / span 8;
 
