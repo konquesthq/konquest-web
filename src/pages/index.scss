@@ -1522,6 +1522,12 @@
         }
       }
     }
+
+    main > section.customers {
+      & > ul.logos li {
+        height: auto;
+      }
+    }
   }
 
   @media(max-width: exclusive-breakpoint($large-phone)) {
