@@ -76,6 +76,14 @@ module.exports = {
         includeInDevelopment: false
       }
     },
+    {
+      resolve: 'gatsby-plugin-hubspot',
+      options: {
+        trackingCode: '4729779',
+        respectDNT: true,
+        productionOnly: true
+      }
+    },
     'gatsby-plugin-sitemap'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
