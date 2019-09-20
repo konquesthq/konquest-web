@@ -9,7 +9,7 @@ const Logo = () => (
   <StaticQuery
     query={graphql`
       query {
-        logoImage: file(relativePath: { eq: "logo.png" }) {
+        logoImage: file(relativePath: { eq: "logo-solid.png" }) {
           childImageSharp {
             fixed(height: 82, width: 78) {
               ...GatsbyImageSharpFixed_noBase64
