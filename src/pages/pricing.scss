@@ -27,12 +27,33 @@
       line-height: 1.5;
       color: white;
       padding: 45px 48px 28px;
+      position: relative;
+
+      .price-from {
+        display: block;
+        position: relative;
+        bottom: -8px;
+      }
 
       .price {
         font-family: 'Montserrat', sans-serif;
         font-size: 64px;
         line-height: 1.22;
         font-weight: 200;
+      }
+
+      .caveat {
+        font-size: 0.8em;
+        text-transform: initial;
+        font-style: italic;
+        position: absolute;
+        bottom: 4px;
+        right: 8px;
+        font-weight: normal;
+      }
+
+      .caveat-marker {
+        vertical-align: super;
       }
     }
 
