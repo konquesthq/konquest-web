@@ -20,7 +20,7 @@ export default class RequestDemo extends React.Component {
           <div className="request-demo">
             <div className="demo-details">
               <p>{data.contentfulRequestDemo.text}</p>
-              <OpenContactButton>{data.contentfulRequestDemo.buttonText}</OpenContactButton>
+              <OpenContactButton contactMode={"Demo"}>{data.contentfulRequestDemo.buttonText}</OpenContactButton>
             </div>
           </div>
         )}

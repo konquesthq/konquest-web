@@ -1,7 +1,7 @@
-import { OPEN_CONTACT, CLOSE_CONTACT } from "./actionTypes";
+import { OPEN_CONTACT, CLOSE_CONTACT, OPEN_DEMO } from "./actionTypes";
 
-export const openContact = () => ({
-  type: OPEN_CONTACT
+export const openContact = (isDemoRequest = false) => ({
+  type: isDemoRequest ? OPEN_DEMO : OPEN_CONTACT
 });
 
 export const closeContact = () => ({

@@ -42,7 +42,8 @@ class Contact extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (this.state[honeypotId]) return;
-    send('sendgrid', 'contact_form_submission', this.state);
+    const template = this.props.isDemoRequest ? 'demo_request_submission' : 'contact_form_submission';
+    send('sendgrid', template, this.state);
     this.handleClose();
     navigate(withPrefix('/thanks'));
   }
@@ -140,11 +141,12 @@ class Contact extends React.Component {
 }
 
 Contact.propTypes = {
-  isContactOpen: PropTypes.bool.isRequired
+  isContactOpen: PropTypes.bool.isRequired,
+  isDemoRequest: PropTypes.bool
 };
 
-const mapStateToProps = ({isContactOpen}) => {
-  return {isContactOpen};
+const mapStateToProps = ({isContactOpen,isDemoRequest}) => {
+  return {isContactOpen,isDemoRequest};
 };
 
 export default connect(mapStateToProps, {closeContact})(Contact);
