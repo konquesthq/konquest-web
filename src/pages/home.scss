@@ -97,3 +97,11 @@
     }
   }
 }
+
+@media (max-width: exclusive-breakpoint($large-tablet)) {
+  .site-container-updated.home {
+    main > section {
+        column-gap: 0px;
+    }
+  }
+}

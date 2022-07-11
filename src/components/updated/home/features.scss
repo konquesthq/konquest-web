@@ -124,7 +124,14 @@ section.features {
     grid-row: 1;
     max-width: 100% !important;
     grid-column: 1 / span 2;
+    h5 {
+      white-space: normal !important;
+    }
+    p {
+      padding-right: 0 !important;
+    }
   }
+
   .feature-list {
     grid-row: 2;
     grid-column: 1;
@@ -145,5 +152,11 @@ section.features {
   }
   p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: exclusive-breakpoint($large-phone)) {
+  .open-contact-form {
+    width: 100% !important;
   }
 }
