@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from 'prop-types';
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Logos from "../components/logos";
-import RequestDemo from "../components/requestDemo";
-import Partners from '../components/partners';
-import OpenContactButton from '../components/openContactButton';
 import Img from "gatsby-image";
+import PropTypes from 'prop-types';
+import React from "react";
+import Layout from "../components/layout";
+import Logos from "../components/logos";
+import OpenContactButton from '../components/openContactButton';
+import Partners from '../components/partners';
+import RequestDemo from "../components/requestDemo";
+import SEO from "../components/seo";
 
+import { graphql } from "gatsby";
 import "./index.scss";
-import {graphql} from "gatsby";
 
 class PersonaSection extends React.Component {
   render() {

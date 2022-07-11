@@ -1,0 +1,74 @@
+@import "../../../styles/palette";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
+section.elements {
+  .summary {
+    padding-top: 200px;
+    grid-column: 1 / span 16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 2rem;
+    }
+    .summary-cards {
+      width: 100%;
+      display: grid;
+      @media (max-width: exclusive-breakpoint($large-tablet)) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 2rem;
+      }
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+      grid-gap: 10px;
+      justify-content: center;
+      justify-items: center;
+    }
+    .summary-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+      gap: 1rem;
+      .summary-image {
+        height: 350px;
+        width: 100%;
+        > div {
+          height: 100%;
+        }
+      }
+
+      h5 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        color: $firefly-dark;
+        font-size: 1rem;
+      }
+
+      p {
+        text-align: start;
+        padding: 0 2rem;
+        font-size: 1rem;
+        color: $firefly-x-light;
+      }
+      @media (max-width: exclusive-breakpoint($small-laptop) ) and (min-width: exclusive-breakpoint($large-tablet)) {
+        .summary-image {
+          height: 250px;
+        }
+
+        h5 {
+          font-size: 0.8rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
