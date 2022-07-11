@@ -24,8 +24,8 @@ const HomeIntro: React.FC = () => {
     }
   `);
   return (
-    <section className="elements">
-      <div className={`intro`}>
+    <section className="intro">
+
         <div className="intro-contents">
           <h2>The best way to manage, track and process commission for the recruitment industry</h2>
           <p>
@@ -46,7 +46,7 @@ const HomeIntro: React.FC = () => {
           ]}
           fadeIn={false}
         />
-      </div>
+   
     </section>
   );
 };

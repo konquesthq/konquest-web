@@ -30,53 +30,51 @@ const HomeSummary: React.FC = () => {
     }
   `);
   return (
-    <section className="elements">
-      <div className="summary">
-        <h3>Everything you need to seamlessly handle commission</h3>
-        <div className="summary-cards">
-          <div className="summary-card">
-            <div className="summary-image">
-              <GatsbyImage
-                imgStyle={{ objectFit: `contain` }}
-                className="summary-image"
-                fluid={homeSummaryImages.illustration.childImageSharp.fluid}
-              />
-            </div>
-            <h5>Handle complex rules and schemes</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
-              Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum
-              ac at justo con equit tulbuae recti
-            </p>
+    <section className="summary">
+      <h3>Everything you need to seamlessly handle commission</h3>
+      <div className="summary-cards">
+        <div className="summary-card">
+          <div className="summary-image">
+            <GatsbyImage
+              imgStyle={{ objectFit: `contain` }}
+              className="summary-image"
+              fluid={homeSummaryImages.illustration.childImageSharp.fluid}
+            />
           </div>
-          <div className="summary-card">
-            <div className="summary-image">
-              <GatsbyImage
-                imgStyle={{ objectFit: `contain` }}
-                fluid={homeSummaryImages.illustrationCrm.childImageSharp.fluid}
-              />
-            </div>
-            <h5>Automate deals, claims and currencies</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
-              Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum
-              ac at justo con equit tulbuae recti
-            </p>
+          <h5>Handle complex rules and schemes</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
+            Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum ac
+            at justo con equit tulbuae recti
+          </p>
+        </div>
+        <div className="summary-card">
+          <div className="summary-image">
+            <GatsbyImage
+              imgStyle={{ objectFit: `contain` }}
+              fluid={homeSummaryImages.illustrationCrm.childImageSharp.fluid}
+            />
           </div>
-          <div className="summary-card">
-            <div className="summary-image">
-              <GatsbyImage
-                imgStyle={{ objectFit: `contain` }}
-                fluid={homeSummaryImages.illustrationClawbacks.childImageSharp.fluid}
-              />
-            </div>
-            <h5>Transparent approvals and clawbacks</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
-              Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum
-              ac at justo con equit tulbuae recti
-            </p>
+          <h5>Automate deals, claims and currencies</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
+            Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum ac
+            at justo con equit tulbuae recti
+          </p>
+        </div>
+        <div className="summary-card">
+          <div className="summary-image">
+            <GatsbyImage
+              imgStyle={{ objectFit: `contain` }}
+              fluid={homeSummaryImages.illustrationClawbacks.childImageSharp.fluid}
+            />
           </div>
+          <h5>Transparent approvals and clawbacks</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
+            Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor te es fermentum ac
+            at justo con equit tulbuae recti
+          </p>
         </div>
       </div>
     </section>

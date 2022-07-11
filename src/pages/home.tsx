@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../components/seo";
+import HomeFeatures from "../components/updated/home/features";
 import HomeIntro from "../components/updated/home/intro";
 import HomeSummary from "../components/updated/home/summary";
 import Layout from "../components/updated/layout.updated";
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <SEO title="Home" keywords={[`konquest`, `commission`, `sales`, `recruitment`]} />
       <HomeIntro />
       <HomeSummary />
+      <HomeFeatures />
     </Layout>
   );
 };
