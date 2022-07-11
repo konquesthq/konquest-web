@@ -22,7 +22,7 @@ section.summary {
   }
   .summary-cards {
     width: 100%;
-    
+
     grid-row: 2;
     grid-column: 1 / span 16;
     display: grid;
@@ -62,6 +62,7 @@ section.summary {
       padding: 0 2rem;
       font-size: 1rem;
       color: $firefly-x-light;
+      line-height: 1.5rem;
     }
     @media (max-width: exclusive-breakpoint($small-laptop)) and (min-width: exclusive-breakpoint($large-tablet)) {
       .summary-image {

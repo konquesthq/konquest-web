@@ -24,6 +24,7 @@ section.features {
     font-weight: 800;
     color: $firefly-dark;
     font-size: 1rem;
+    
   }
 
   .feature-panels {
@@ -70,6 +71,7 @@ section.features {
       font-size: 1rem;
       color: $firefly-x-light;
       padding-right: 50px;
+      line-height: 1.5rem;
     }
     @media (max-width: exclusive-breakpoint($small-laptop)) and (min-width: exclusive-breakpoint($large-tablet)) {
       h5 {
