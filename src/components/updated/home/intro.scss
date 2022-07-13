@@ -57,13 +57,13 @@ section.intro {
   }
 
   .open-contact-form {
-    background-color: $firefly-light;
+    background-color: $firefly-light !important;
     border-radius: 5px;
     cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     &:hover {
-      background-color: $firefly-x-light;
+      background-color: $firefly-x-light !important;
     }
   }
 }

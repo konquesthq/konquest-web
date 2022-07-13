@@ -1,0 +1,50 @@
+section.testimonial {
+  grid-column: 1 / span 16;
+  display: flex !important;
+  justify-content: center;
+  padding: 0 2rem;
+  .testimonial-content {
+    max-width: 600px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    background-image: url('../../../images/quotemark.png');
+    background-size: 170px;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    > p {
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      .testimonial-author-image {
+        > img {
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+      .testimonial-author-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: .8rem;
+        .testimonial-author-name {
+          display: flex;
+          
+          h5 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+}

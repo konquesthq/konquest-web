@@ -4,52 +4,67 @@
 @import "../../../styles/functions";
 @import "../../../styles/breakpoints";
 
-section.features {
+section.targets {
   padding-top: 50px;
   grid-row: 1 / span 1;
   grid-column: 1 / span 16;
-  grid-template-rows: 1fr auto !important;
 
-
-
-  h5 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    color: $firefly-dark;
-    font-size: 1rem;
-    
-  }
-
-  .feature-panels {
-    grid-row: 2;
+  .targets-content {
     width: 100%;
     @media (min-width: exclusive-breakpoint($hd-display)) {
       padding: 0 1rem;
     }
-    grid-column: 1 / span 16;
+    grid-column: 2 / span 13;
     display: grid;
-    @media (max-width: exclusive-breakpoint($large-tablet)) {
+    @media (max-width: exclusive-breakpoint($small-laptop)) {
       grid-template-columns: 1fr 1fr;
+      grid-column: 1 / span 16;
       grid-template-rows: auto;
       grid-gap: 2rem;
+      padding: 0 2rem;
     }
-    grid-template-columns: repeat(3, minmax(300px, 550px));
+    align-items: center;
+    grid-template-columns: 1fr repeat(2, minmax(300px, 400px));
     grid-gap: 10px;
     justify-content: center;
     justify-items: center;
   }
-  .features-summary {
-    margin-top: -3rem;
+
+  .target-image {
+    grid-column: 2;
+    width: 100%;
+    max-height: 400px;
+
+    &:last-child {
+      grid-column: 3;
+    }
+
+    @media (max-width: exclusive-breakpoint($small-laptop)) {
+      grid-row: 2;
+      grid-column: 1;
+      &:last-child {
+        grid-column: 2;
+      }
+    }
+
+    @media (max-width: exclusive-breakpoint($large-phone)) {
+      grid-column: 1 / span 2;
+      &:last-child {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+      }
+    }
   }
 
-  .features-summary,
-  .feature-list {
+  .targets-summary {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    padding: 0 2rem;
+    max-width: 650px;
     flex: 1 1;
     gap: 1.5rem;
+    @media (max-width: exclusive-breakpoint($small-laptop)) {
+      grid-column: 1 / span 2;
+    }
     h5 {
       font-family: "Montserrat", sans-serif;
       font-weight: 800;
@@ -68,38 +83,11 @@ section.features {
     }
     @media (max-width: exclusive-breakpoint($small-laptop)) and (min-width: exclusive-breakpoint($large-tablet)) {
       h5 {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
 
       p {
-        font-size: 0.8rem;
-      }
-    }
-  }
-
-  .feature-list {
-    .feature {
-      display: flex;
-
-      .feature-icon {
-        width: 45px;
-        height: 45px;
-        &::after {
-          font-family: "Material Icons", sans-serif;
-          font-feature-settings: "liga";
-          content: "check";
-          font-size: 18px;
-          display: inline-block;
-
-          color: $cardinal-regular;
-          vertical-align: sub;
-        }
-      }
-
-      .feature-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
+        font-size: 0.9rem;
       }
     }
   }
@@ -114,7 +102,7 @@ section.features {
   .feature-panels {
     row-gap: 4rem !important;
   }
-  .features-summary {
+  .targets-summary {
     margin-top: 0;
     grid-row: 1;
     max-width: 100% !important;
@@ -125,28 +113,6 @@ section.features {
     p {
       padding-right: 0 !important;
     }
-  }
-
-  .feature-list {
-    grid-row: 2;
-    grid-column: 1;
-    @media (max-width: exclusive-breakpoint($large-phone)) {
-      grid-column: 1 / span 2;
-    }
-
-    &:last-of-type {
-      grid-column: 2;
-      @media (max-width: exclusive-breakpoint($large-phone)) {
-        grid-column: 1 / span 2;
-        grid-row: 3;
-      }
-    }
-  }
-  h5 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 1rem;
   }
 }
 

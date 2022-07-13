@@ -8,21 +8,21 @@ const HomeSummary: React.FC = () => {
     query {
       illustration: file(relativePath: { eq: "updated-home/summary/illustration.png" }) {
         childImageSharp {
-          fluid(maxHeight: 500, quality: 100) {
+          fluid(maxHeight: 1080, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       illustrationCrm: file(relativePath: { eq: "updated-home/summary/illustration-crm.png" }) {
         childImageSharp {
-          fluid(maxHeight: 500, quality: 100) {
+          fluid(maxHeight: 1080, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       illustrationClawbacks: file(relativePath: { eq: "updated-home/summary/illustration-clawbacks.png" }) {
         childImageSharp {
-          fluid(maxHeight: 500, quality: 100) {
+          fluid(maxHeight: 1080, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
