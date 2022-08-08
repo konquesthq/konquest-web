@@ -29,9 +29,10 @@ const HomeTargets: React.FC = () => {
         <div className="targets-summary">
           <h5>Put progress and incentivisation front and centre</h5>
           <p>
-            Cras leo turpis, convallis ac ligula sed, bibendum tempus mi. Aliquam diam sapien, suscipit eget bibendum
-            nec, sodales sit amet tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-            ridiculus mus. Nunc a magna quis ex porttitor consectetur. Donec non elementum diam.
+            Konquest brings your commission programme to life. Visual progress bars tell your consultants how close they
+            are to unlocking the next level of reward, and they can see the impact of their work in near real-time.
+            Gamify commission by tracking personal earning goals and provide commission rankings to drive healthy
+            competition.
           </p>
           <OpenContactButton>Request a Demo</OpenContactButton>
         </div>

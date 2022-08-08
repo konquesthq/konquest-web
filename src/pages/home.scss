@@ -20,7 +20,7 @@
   main {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 7rem;
     @media (max-width: exclusive-breakpoint($large-tablet)) {
       gap: 7rem;
     }
@@ -62,19 +62,19 @@
       top: 0;
     }
 
-    &::before {
-      background-color: $cardinal-regular;
-      left: 0;
-      z-index: 4;
-      animation: red-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0.7s 1 forwards;
-    }
+    // &::before {
+    //   background-color: $cardinal-regular;
+    //   left: 0;
+    //   z-index: 4;
+    //   animation: red-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0.7s 1 forwards;
+    // }
 
-    &::after {
-      background-color: white;
-      left: -1vw;
-      z-index: 3;
-      animation: white-wipe 1.5s cubic-bezier(0.499, 0, 0, 1) 1.5s 1 forwards;
-    }
+    // &::after {
+    //   background-color: white;
+    //   left: -1vw;
+    //   z-index: 3;
+    //   animation: white-wipe 1.5s cubic-bezier(0.499, 0, 0, 1) 1.5s 1 forwards;
+    // }
 
     @keyframes red-wipe {
       0% {

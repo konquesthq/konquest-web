@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { graphql, useStaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import React from "react";
@@ -19,22 +20,34 @@ const HomeAudit: React.FC = () => {
   return (
     <section className="audit">
       <div className="audit-content">
-        <div className="audit-image">
-          <GatsbyImage fluid={homeAuditImages.illustration.childImageSharp.fluid}  />
-        </div>
-        <div className="audit-summary">
+        <motion.div
+          className="audit-image"
+          transition={{ delay: 0.3, duration: 1.1 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0, scale: 1.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}>
+          <GatsbyImage fluid={homeAuditImages.illustration.childImageSharp.fluid} />
+        </motion.div>
+        <motion.div
+          className="audit-summary"
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.1 }}
+          viewport={{ once: true }}>
           <h5>Fully auditable</h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-            eget. Duis non massa iaculis, euismod nunc quis, egestas metus.
+            Konquest acts as a system of record, retaining the detail of every claim. Review your data on demand:
             <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>Lorem ipsum dolor sit amet</li>
+              <li>Digital audit trails built into every claim, or</li>
+              <li>Export a hard copy for your records offline</li>
+              <li>
+                Work with us to establish exactly what is stored and for how long to ensure full compliance with
+                national and international standards
+              </li>
             </ul>
           </p>
           <OpenContactButton>Request a Demo</OpenContactButton>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

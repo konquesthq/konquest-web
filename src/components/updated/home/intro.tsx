@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { graphql, useStaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import React from "react";
@@ -25,18 +26,26 @@ const HomeIntro: React.FC = () => {
   `);
   return (
     <section className="intro">
-
-        <div className="intro-contents">
-          <h2>The best way to manage, track and process commission for the recruitment industry</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus nulla. Morbi sed tincidunt eros.
-            Donec mi mi, tempus id quam nec, aliquet blandit magna. Proin id purus eget metus tempor fermentum ac at
-            justo.
-          </p>
-          <OpenContactButton>Request a Demo</OpenContactButton>
-        </div>
+      <motion.div
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -200, opacity: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="intro-contents">
+        <h2>The best way to manage, track and process commission for the recruitment industry</h2>
+        <p>
+          Konquest is the first and only automation platform built exclusively for recruiters. Say goodbye to
+          spreadsheets, and hello to automation and total visibility for consultants.
+        </p>
+        <OpenContactButton>Request a Demo</OpenContactButton>
+      </motion.div>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.1 }}
+        viewport={{ once: true }}
+        className="img">
         <GatsbyImage
-          className="img"
           fixed={[
             homeIntroSectionImage.heroImageDesktop.childImageSharp.fixed,
             {
@@ -46,7 +55,7 @@ const HomeIntro: React.FC = () => {
           ]}
           fadeIn={false}
         />
-   
+      </motion.div>
     </section>
   );
 };

@@ -27,6 +27,13 @@ const HomePartners: React.FC = () => {
           }
         }
       }
+      partnerTsp: file(relativePath: { eq: "updated-home/partners/partner-tsp.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       partnerMercury: file(relativePath: { eq: "updated-home/partners/partner-mercury.png" }) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 100) {
@@ -45,25 +52,26 @@ const HomePartners: React.FC = () => {
             <div className="partners-image">
               <GatsbyImage fluid={homePartnersImage.partnerVincere.childImageSharp.fluid} />
             </div>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
           </div>
           <div className="partners-card">
             <div className="partners-image">
               <GatsbyImage fluid={homePartnersImage.partnerBullhorn.childImageSharp.fluid} />
             </div>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
+          </div>
+          <div className="partners-card">
+            <div className="partners-image">
+              <GatsbyImage fluid={homePartnersImage.partnerTsp.childImageSharp.fluid} />
+            </div>
           </div>
           <div className="partners-card">
             <div className="partners-image">
               <GatsbyImage fluid={homePartnersImage.partnerInTime.childImageSharp.fluid} />
             </div>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
           </div>
           <div className="partners-card">
             <div className="partners-image">
               <GatsbyImage fluid={homePartnersImage.partnerMercury.childImageSharp.fluid} />
             </div>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit.</p>
           </div>
         </div>
       </div>
