@@ -28,7 +28,8 @@
     "react-helmet": "^5.2.0",
     "react-redux": "5.0.5",
     "redux": "3.6.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "swiper": "^8.3.2"
   },
   "keywords": [
     "gatsby"
