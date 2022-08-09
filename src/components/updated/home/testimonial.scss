@@ -1,7 +1,17 @@
+@import "../../../styles/palette";
+@import "../../../styles/palette";
+@import "../../../styles/grid";
+@import "../../../styles/forms";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
 section.testimonial {
   .swiper {
     grid-column: 1 / span 16;
     width: 100%;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $cardinal-regular !important;
   }
 
   .swiper-slide {
@@ -26,10 +36,7 @@ section.testimonial {
         font-size: 1rem;
         line-height: 2rem;
         padding-bottom: 1rem;
-
-
       }
-
       .testimonial-author {
         display: flex;
         align-items: center;

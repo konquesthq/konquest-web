@@ -12,11 +12,12 @@ const HomeTestimonial: React.FC = () => {
     <section className="testimonial">
       <Swiper
         modules={[Pagination, Autoplay, EffectFade]}
-        pagination={{ clickable: true }}
+        pagination={{ clickable: true, dynamicBullets: true }}
         effect="fade"
         fadeEffect={{
           crossFade: true,
         }}
+
         speed={1500}
         autoplay={{
           delay: 4500,
