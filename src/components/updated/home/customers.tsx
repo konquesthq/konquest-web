@@ -27,6 +27,13 @@ const HomeCustomers: React.FC = () => {
           }
         }
       }
+      customerAddition: file(relativePath: { eq: "updated-home/customers/customer-addition.jpeg" }) {
+        childImageSharp {
+          fixed(width: 120, height: 120) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `);
   return (
@@ -41,6 +48,9 @@ const HomeCustomers: React.FC = () => {
           </div>
           <div className="customers-image">
             <GatsbyImage alt="Tempting Ventures" fixed={homeCustomersImage.customerTempting.childImageSharp.fixed} />
+          </div>
+          <div className="customers-image">
+            <GatsbyImage alt="Addition Solutions" fixed={homeCustomersImage.customerAddition.childImageSharp.fixed} />
           </div>
         </div>
       </div>
