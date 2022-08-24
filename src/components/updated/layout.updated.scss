@@ -28,13 +28,17 @@ body {
   }
 }
 
-.site-container-updated {
+.site-container{
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 
   & > * {
     width: 100%;
+  }
+
+  & main > h1 {
+    padding-top: 3rem;
   }
 
   header {

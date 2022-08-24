@@ -1,11 +1,11 @@
-import React from "react";
-import {graphql} from "gatsby";
-import * as PropTypes from "prop-types";
+import { graphql } from "gatsby";
 import Img from 'gatsby-image';
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import ShortResourceItem from "../components/resourceItem";
+import * as PropTypes from "prop-types";
+import React from "react";
 import RequestDemo from "../components/requestDemo";
+import ShortResourceItem from "../components/resourceItem";
+import SEO from "../components/seo";
+import Layout from "../components/updated/layout.updated";
 
 import "./resource.scss";
 

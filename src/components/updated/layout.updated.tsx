@@ -60,7 +60,7 @@ const Layout: React.FC<Props> = ({ children, className }) => {
   return (
     <div
       className={clsx(
-        "site-container-updated",
+        "site-container",
         className,
         scrolled && "scrolled",
         pageDown && "page-down",

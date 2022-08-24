@@ -4,7 +4,7 @@
 @import "./sidePanel.updated.scss";
 
 @mixin fixed-header() {
-  header.site-header-updated {
+  header.site-header {
     position: fixed;
     background-color: $cardinal-regular;
     z-index: 3 !important;
@@ -22,24 +22,24 @@
   }
 }
 
-.site-container-updated.scrolled,
-.site-container-updated.info {
+.site-container.scrolled,
+.site-container.info {
   @include fixed-header();
 }
 
-.site-container-updated {
+.site-container {
 
 
   @media (max-width: exclusive-breakpoint($small-tablet)) {
     &.page-down {
-      header.site-header-updated {
+      header.site-header {
         display: grid !important;
       }
     }
   }
 }
 
-header.site-header-updated {
+header.site-header {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 32px;

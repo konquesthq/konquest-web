@@ -40,7 +40,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="site-header-updated">
+    <header className="site-header">
       <div className="logo">
         <Link to="/">
           <Logo />
