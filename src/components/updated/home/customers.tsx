@@ -20,16 +20,16 @@ const HomeCustomers: React.FC = () => {
           }
         }
       }
-      customerTempting: file(relativePath: { eq: "updated-home/customers/customer-tempting.jpeg" }) {
+      customerTempting: file(relativePath: { eq: "updated-home/customers/customer-tempting.png" }) {
         childImageSharp {
-          fixed(width: 120, height: 120) {
+          fixed(width: 120) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      customerAddition: file(relativePath: { eq: "updated-home/customers/customer-addition.jpeg" }) {
+      customerAddition: file(relativePath: { eq: "updated-home/customers/customer-addition.png" }) {
         childImageSharp {
-          fixed(width: 120, height: 120) {
+          fixed(width: 120) {
             ...GatsbyImageSharpFixed
           }
         }

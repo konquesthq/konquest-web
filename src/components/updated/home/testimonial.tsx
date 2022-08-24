@@ -1,3 +1,5 @@
+import { graphql, useStaticQuery } from "gatsby";
+import GatsbyImage from "gatsby-image";
 import React from "react";
 import { Autoplay, EffectFade, Pagination } from "swiper";
 
@@ -8,6 +10,31 @@ import "swiper/swiper.scss";
 import "./testimonial.scss";
 
 const HomeTestimonial: React.FC = () => {
+  const homeTestimonialImages = useStaticQuery(graphql`
+    query {
+      theoJamesPic: file(relativePath: { eq: "updated-home/testimonials/mark-bracknell.jpeg" }) {
+        childImageSharp {
+          fluid(maxHeight: 100, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      additionPic: file(relativePath: { eq: "updated-home/testimonials/simon-topps.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 100, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      placeholderPic: file(relativePath: { eq: "logo-inverse.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 100, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
   return (
     <section className="testimonial">
       <Swiper
@@ -17,7 +44,6 @@ const HomeTestimonial: React.FC = () => {
         fadeEffect={{
           crossFade: true,
         }}
-
         speed={1500}
         autoplay={{
           delay: 4500,
@@ -34,7 +60,7 @@ const HomeTestimonial: React.FC = () => {
             </p>
             <div className="testimonial-author">
               <div className="testimonial-author-image">
-                <img src="https://i.pravatar.cc/100?u=a042581f4e2902839" alt="Testimonial Author" />
+                <GatsbyImage fluid={homeTestimonialImages.placeholderPic.childImageSharp.fluid} alt="Testimonial Author" />
               </div>
               <div className="testimonial-author-info">
                 <div className="testimonial-author-name">
@@ -50,21 +76,19 @@ const HomeTestimonial: React.FC = () => {
         <SwiperSlide>
           <div className="testimonial-item">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-              eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
-              Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus. Nunc sit amet accumsan nulla. Quisque odio
-              mi, malesuada sed odio sit amet.
+              I used to dread calculating commissions at month end, Konquest solved this for us and now it just feels
+              like a no brainer.
             </p>
             <div className="testimonial-author">
               <div className="testimonial-author-image">
-                <img src="https://i.pravatar.cc/100?u=a042581f4e2902839" alt="Testimonial Author" />
+              <GatsbyImage fluid={homeTestimonialImages.additionPic.childImageSharp.fluid} alt="Testimonial Author" />
               </div>
               <div className="testimonial-author-info">
                 <div className="testimonial-author-name">
-                  <h5>Mark Bracknell</h5>&nbsp;-&nbsp;<span>Managing Director</span>
+                  <h5>Simon Topps</h5>&nbsp;-&nbsp;<span>Director</span>
                 </div>
                 <div className="testimonial-author-company">
-                  <span>Theo James Recruitment</span>
+                  <span>Addition Solutions</span>
                 </div>
               </div>
             </div>
@@ -73,14 +97,13 @@ const HomeTestimonial: React.FC = () => {
         <SwiperSlide>
           <div className="testimonial-item">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium orci magna, eu rutrum nulla volutpat
-              eget. Duis non massa iaculis, euismod nunc quis, egestas metus. Curabitur ac leo a dui vehicula blandit.
-              Donec a purus id ex tincidunt pulvinar. Proin a eleifend metus. Nunc sit amet accumsan nulla. Quisque odio
-              mi, malesuada sed odio sit amet.
+              Konquest is great! Spreadsheets are my nemesis, so I always hated the monthly commission calculations.
+              Getting that time back each month is ROI enough, but giving our consultants on demand info on their
+              earnings takes it to another level. I couldn’t recommend Konquest more.
             </p>
             <div className="testimonial-author">
               <div className="testimonial-author-image">
-                <img src="https://i.pravatar.cc/100?u=a042581f4e2902839" alt="Testimonial Author" />
+                <GatsbyImage fluid={homeTestimonialImages.theoJamesPic.childImageSharp.fluid} alt="Testimonial Author" />
               </div>
               <div className="testimonial-author-info">
                 <div className="testimonial-author-name">

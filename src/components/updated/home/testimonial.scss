@@ -42,7 +42,7 @@ section.testimonial {
         align-items: center;
         gap: 0.5rem;
         .testimonial-author-image {
-          > img {
+          > img, .gatsby-image-wrapper {
             width: 50px;
             border-radius: 50%;
           }
