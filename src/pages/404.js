@@ -1,8 +1,8 @@
-import {Link} from 'gatsby';
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Link } from 'gatsby';
+import React from "react";
 import OpenContactButton from "../components/openContactButton";
+import SEO from "../components/seo";
+import Layout from "../components/updated/layout.updated";
 
 import './404.scss';
 

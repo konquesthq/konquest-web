@@ -1,0 +1,67 @@
+@import "../../../styles/palette";
+@import "../../../styles/palette";
+@import "../../../styles/grid";
+@import "../../../styles/forms";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
+section.testimonial {
+  .swiper {
+    grid-column: 1 / span 16;
+    width: 100%;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $cardinal-regular !important;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+
+    .testimonial-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      background-image: url("../../../images/quotemark.png");
+      background-size: 170px;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width: 600px;
+
+      > p {
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 2rem;
+        padding-bottom: 1rem;
+      }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .testimonial-author-image {
+          > img, .gatsby-image-wrapper {
+            width: 50px;
+            border-radius: 50%;
+          }
+        }
+        .testimonial-author-info {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          font-size: 0.8rem;
+          .testimonial-author-name {
+            display: flex;
+
+            h5 {
+              font-family: "Open Sans", sans-serif;
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+  }
+}

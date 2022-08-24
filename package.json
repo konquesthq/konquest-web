@@ -6,7 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.0.1",
+    "clsx": "^1.2.1",
     "emailjs-com": "^2.3.2",
+    "framer-motion": "^6.5.0",
     "gatsby": "^2.0.115",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-google-tagmanager": "^2.0.11",
@@ -20,13 +22,14 @@
     "gatsby-source-contentful": "^2.0.29",
     "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-sharp": "^2.1.13",
-    "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.0",
     "react-redux": "5.0.5",
-    "redux": "3.6.0"
+    "redux": "3.6.0",
+    "sass": "^1.49.9",
+    "swiper": "^8.3.2"
   },
   "keywords": [
     "gatsby"
