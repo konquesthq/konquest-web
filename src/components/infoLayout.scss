@@ -12,13 +12,6 @@
   header.site-header {
     background: $firefly-dark;
 
-    .logo {
-      a {
-        color: white;
-        background-image: url(../images/wordmark-white.svg) !important;
-      }
-    }
-
     nav {
       a, button {
         color: white;

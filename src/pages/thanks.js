@@ -1,7 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
+import React from "react";
+import SEO from "../components/seo";
+import Layout from "../components/updated/layout.updated";
 
 const ThanksPage = ({data}) => (
   <Layout className="info">

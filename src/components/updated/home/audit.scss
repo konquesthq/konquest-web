@@ -1,0 +1,79 @@
+@import "../../../styles/palette";
+@import "../../../styles/grid";
+@import "../../../styles/forms";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
+section.audit {
+  grid-template-rows: 1fr auto !important;
+
+  h5 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: $firefly-dark;
+    font-size: 1rem;
+  }
+
+  .audit-content {
+    grid-column: 1 / span 11;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 60px 0;
+    max-width: 1200px;
+    background-color: $wireframe-bground;
+
+    @media (max-width: exclusive-breakpoint($small-tablet)) {
+      flex-wrap: wrap;
+    }
+
+    .audit-image {
+      width: 600px;
+      > div,
+      img {
+     
+        min-height: 475px;
+        object-position: right center !important;
+      }
+    }
+    .audit-summary {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      max-width: 525px;
+      min-width: 450px;
+      @media (max-width: exclusive-breakpoint($small-tablet)) {
+        max-width: 100%;
+        min-width: 100%;
+      }
+      padding: 0 2rem;
+      flex: 1 1;
+      gap: 1.5rem;
+
+      p {
+        text-align: start;
+
+        font-size: 1rem;
+        color: $firefly-x-light;
+        line-height: 1.5rem;
+      }
+
+      ul {
+        padding: 0.5em 1em;
+       
+        line-height: 2rem;
+        font-size: 0.9rem;
+        li::before {
+          content: "\2022";
+          color: $cardinal-regular;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+
+      
+    }
+  }
+}

@@ -1,6 +1,6 @@
-@import '../styles/reset';
-@import '../styles/palette';
-@import '../styles/breakpoints';
+@import '../../styles/reset';
+@import '../../styles/palette';
+@import '../../styles/breakpoints';
 
 * {
   box-sizing: border-box;
@@ -28,13 +28,17 @@ body {
   }
 }
 
-.site-container {
+.site-container{
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 
   & > * {
     width: 100%;
+  }
+
+  & main > h1 {
+    padding-top: 3rem;
   }
 
   header {

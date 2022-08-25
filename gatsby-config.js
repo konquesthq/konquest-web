@@ -1,15 +1,15 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
-const { BLOCKS } = require('@contentful/rich-text-types');
+const { BLOCKS } = require("@contentful/rich-text-types");
 
 module.exports = {
   siteMetadata: {
     title: `Konquest`,
     description: `Konquest automatically calculates your sales commissions, no matter how complex they are, allocating them to the right period and exposing earning pipelines to your team. No more spreadsheets. Just Konquest.`,
     author: `@KonquestHQ`,
-    siteUrl: `https://www.konquest.io`
+    siteUrl: `https://www.konquest.io`,
   },
   pathPrefix: "/konquest-web",
   plugins: [
@@ -35,10 +35,11 @@ module.exports = {
         icon: `src/images/favicon-96x96.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     {
       resolve: `gatsby-source-contentful`,
       options: {
+        downloadLocal: true,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
@@ -48,37 +49,35 @@ module.exports = {
       options: {
         renderOptions: {
           renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: node => {
-              return `<img src='${
-                node.data.target.fields.file['en-US'].url
-                }' />`
+            [BLOCKS.EMBEDDED_ASSET]: (node) => {
+              return `<img src='${node.data.target.fields.file["en-US"].url}' />`;
             },
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Open Sans:300,600,800', 'Material Icons', 'Montserrat:200,800']
+          families: ["Open Sans:300,600,800", "Material Icons", "Montserrat:100,200,800"],
         },
         custom: {
-          families: ['Bebas'],
-          urls: ['fonts.css']
-        }
-      }
+          families: ["Bebas"],
+          urls: ["fonts.css"],
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: 'GTM-P6QFBFG',
-        includeInDevelopment: false
-      }
+        id: "GTM-P6QFBFG",
+        includeInDevelopment: false,
+      },
     },
-    'gatsby-plugin-sitemap'
+    "gatsby-plugin-sitemap",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

@@ -1,7 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
-import Layout from './layout';
-import "./legals.scss"
+import React from "react";
+import "./legals.scss";
+import Layout from './updated/layout.updated';
 
 const Legals = ({children}) => (
   <Layout className="legals">

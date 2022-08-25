@@ -1,0 +1,39 @@
+@import "../../styles/palette";
+
+nav.site-nav-updated {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    li {
+      display: inline-block;
+
+      a,
+      button {
+        font-weight: 800;
+
+        padding: 0;
+        color: white;
+        border: none;
+        white-space: nowrap;
+        background-color: transparent;
+        outline: none;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        cursor: pointer;
+        display: inline;
+
+        &:hover,
+        &.selected {
+          margin-bottom: -3px;
+          border-bottom: 3px solid white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+@import "../../../styles/palette";
+@import "../../../styles/grid";
+@import "../../../styles/forms";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
+section.features {
+  padding-top: 50px;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 16;
+  grid-template-rows: 1fr auto !important;
+  margin-top: 3rem;
+
+  h5 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: $firefly-dark;
+    font-size: 1rem;
+  }
+
+  .feature-panels {
+    grid-row: 2;
+    width: 100%;
+    @media (min-width: exclusive-breakpoint($hd-display)) {
+      padding: 0 1rem;
+    }
+    grid-column: 1 / span 16;
+    display: grid;
+    @media (max-width: exclusive-breakpoint($large-tablet)) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 2rem;
+    }
+    grid-template-columns: repeat(3, minmax(300px, 550px));
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+  }
+  .features-summary {
+    margin-top: -3rem;
+  }
+
+  .features-summary,
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 0 2rem;
+    flex: 1 1;
+    gap: 1.5rem;
+    h5 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      color: $firefly-dark;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    p {
+      text-align: start;
+
+      font-size: 1rem;
+      color: $firefly-x-light;
+      padding-right: 50px;
+      line-height: 1.5rem;
+    }
+    @media (max-width: exclusive-breakpoint($small-laptop)) and (min-width: exclusive-breakpoint($large-tablet)) {
+      h5 {
+        font-size: 0.8rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .feature-list {
+    .feature {
+      display: flex;
+
+      .feature-icon {
+        width: 20px;
+        height: 20px;
+        padding-right: 10px;
+        &::after {
+          font-family: "Material Icons", sans-serif;
+          font-feature-settings: "liga";
+          content: "check";
+          font-size: 18px;
+          display: inline-block;
+
+          color: $cardinal-regular;
+          vertical-align: sub;
+        }
+      }
+
+      .feature-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  }
+
+  .open-contact-form {
+    border-radius: 5px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: exclusive-breakpoint($large-tablet)) {
+  .feature-panels {
+    row-gap: 4rem !important;
+  }
+  .features-summary {
+    margin-top: 0;
+    grid-row: 1;
+    max-width: 100% !important;
+    grid-column: 1 / span 2;
+    h5 {
+      white-space: normal !important;
+    }
+    p {
+      padding-right: 0 !important;
+    }
+  }
+
+  .feature-list {
+    grid-row: 2;
+    grid-column: 1;
+    @media (max-width: exclusive-breakpoint($large-phone)) {
+      grid-column: 1 / span 2;
+    }
+
+    &:last-child {
+      grid-column: 2;
+      @media (max-width: exclusive-breakpoint($large-phone)) {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+      }
+    }
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: exclusive-breakpoint($large-phone)) {
+  .open-contact-form {
+    width: 100% !important;
+  }
+}

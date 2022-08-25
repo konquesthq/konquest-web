@@ -1,10 +1,10 @@
+import { graphql } from "gatsby";
 import React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
 import Logos from "../components/logos";
-import RequestDemo from "../components/requestDemo";
 import OpenContactButton from '../components/openContactButton';
-import {graphql} from "gatsby";
+import RequestDemo from "../components/requestDemo";
+import SEO from "../components/seo";
+import Layout from "../components/updated/layout.updated";
 
 import './pricing.scss';
 

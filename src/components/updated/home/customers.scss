@@ -1,0 +1,56 @@
+@import "../../../styles/palette";
+@import "../../../styles/grid";
+@import "../../../styles/forms";
+@import "../../../styles/functions";
+@import "../../../styles/breakpoints";
+
+section.customers {
+  .customers-content {
+    grid-column: 1 / span 16;
+    padding: 3rem 0 3rem;
+    @media (max-width: exclusive-breakpoint($large-phone)) {
+      padding: 2rem 0 1rem;
+    }
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      color: $firefly-dark;
+      font-size: 1.1rem;
+    }
+
+    .customers-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 120px;
+      gap: 5vw;
+
+      @media (max-width: exclusive-breakpoint($large-phone)) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 5vh;
+      }
+
+      .customer-image {
+        display: grid;
+
+
+        & .gatsby-image-wrapper {
+
+          width: 120px;
+          height: 120px;
+        }
+
+        align-items: center;
+      }
+    }
+  }
+}

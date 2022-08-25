@@ -1,0 +1,123 @@
+@import "../styles/palette";
+@import "../styles/grid";
+@import "../styles/forms";
+@import "../styles/functions";
+@import "../styles/breakpoints";
+
+.site-container.home {
+  overflow: hidden;
+  position: relative;
+
+  &:not(.page-down) footer.site-footer {
+    display: none;
+  }
+
+  &,
+  & > * {
+    z-index: 2;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    @media (max-width: exclusive-breakpoint($large-tablet)) {
+      gap: 7rem;
+    }
+  }
+
+  main > section {
+    @extend %grid-no-padding;
+
+    button {
+      @extend %btn;
+      font-size: 16px;
+      line-height: 1.88;
+      padding: 12px 0;
+      text-align: center;
+      width: 214px;
+    }
+
+    .open-contact-form {
+      border-radius: 8px;
+    }
+
+    & > h2 {
+      text-align: center;
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 16;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+  }
+
+  @media (min-width: $small-tablet) {
+    &::before,
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+    }
+
+    // &::before {
+    //   background-color: $cardinal-regular;
+    //   left: 0;
+    //   z-index: 4;
+    //   animation: red-wipe 1.6s cubic-bezier(0.42, 0, 0.178, 0.918) 0.7s 1 forwards;
+    // }
+
+    // &::after {
+    //   background-color: white;
+    //   left: -1vw;
+    //   z-index: 3;
+    //   animation: white-wipe 1.5s cubic-bezier(0.499, 0, 0, 1) 1.5s 1 forwards;
+    // }
+
+    @keyframes red-wipe {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: 100vw;
+      }
+    }
+
+    @keyframes white-wipe {
+      0% {
+        left: -1vw;
+      }
+      100% {
+        left: 100vw;
+      }
+    }
+
+    @keyframes button-show {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes persona-wipe {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: 100vw;
+      }
+    }
+  }
+}
+
+@media (max-width: exclusive-breakpoint($large-tablet)) {
+  .site-container.home {
+    main > section {
+      column-gap: 0px;
+    }
+  }
+}
