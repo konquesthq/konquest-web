@@ -75,6 +75,16 @@ module.exports = {
         includeInDevelopment: false,
       },
     },
+    {
+      resolve: `@tmttn/gatsby-plugin-linkedin-insight`,
+      options: {
+        partnerId: `4463004`,
+  
+        // Include LinkedIn Insight in development.
+        // Defaults to false meaning LinkedIn Insight will only be loaded in production.
+        includeInDevelopment: true
+      }
+    },
     "gatsby-plugin-sitemap",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
