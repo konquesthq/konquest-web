@@ -102,6 +102,10 @@ class Footer extends React.Component {
                     href={`mailto:${data.contentfulFooter.contactEmail}`} className="email"
                     itemProp="email">{data.contentfulFooter.contactEmail}</a></p>
                 </address>
+                &nbsp;|&nbsp;
+                <p className="privacy">
+                  <a href="/privacy">Privacy Policy</a>
+                </p>
               </div>
               <div className="subscribe">
                 <MailchimpSubscribe content={data.contentfulFooter}/>
