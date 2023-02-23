@@ -6,6 +6,7 @@ import Header from "./header.updated";
 import "./layout.updated.scss";
 
 import clsx from "clsx";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const getScrollNode = (element) => {
   return element.ownerDocument.scrollingElement || element.ownerDocument.documentElement;
@@ -36,6 +37,7 @@ const Layout: React.FC<Props> = ({ children, className }) => {
   const [scrolled, setIsScrolled] = React.useState(false);
   const [pageDown, setIsPageDown] = React.useState(false);
   const [onBottom, setIsOnBottom] = React.useState(false);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -62,7 +64,7 @@ const Layout: React.FC<Props> = ({ children, className }) => {
       className={clsx(
         "site-container",
         className,
-        scrolled && "scrolled",
+        (scrolled || !isDesktop) && "scrolled",
         pageDown && "page-down",
         onBottom && "on-bottom"
       )}
