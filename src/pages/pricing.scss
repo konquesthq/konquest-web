@@ -60,6 +60,8 @@
     .features {
       padding: 44px 32px 32px;
       position: relative;
+      display: flex;
+      flex-direction: column;
       min-height: 295px;
       height: auto;
       font-size: 14px;
@@ -84,10 +86,6 @@
 
       button {
         @extend %btn;
-        position: absolute;
-        bottom: 35px;
-        left: 32px;
-        width: calc(100% - 64px);
         font-size: 16px;
         line-height: 1.9;
         font-weight: 600;
@@ -199,6 +197,10 @@
   .current-customers {
     padding: 48px 0 74px;
     @extend %grid;
+
+    @media (max-width: exclusive-breakpoint($large-tablet)) {
+      grid-template-rows: 200px 800px;
+    }
 
     h2 {
       display: none;
