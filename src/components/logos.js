@@ -23,7 +23,7 @@ const Logos = () => (
         {
           data.contentfulLogos.logos.map(node => (
             <li key={node.id}>
-              <Img className="img" fluid={node.fluid}/>
+              <Img className="img" fluid={node.fluid} imgStyle={{ objectFit: 'contain' }}/>
             </li>
           ))
         }
