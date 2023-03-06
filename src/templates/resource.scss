@@ -29,7 +29,7 @@
       right: -228px;
       transform: rotate(33deg);
       opacity: 0.88;
-      z-index: 1;
+      z-index: 0;
     }
 
     & > .contents {
@@ -46,6 +46,7 @@
       grid-column-gap: 0;
       padding-bottom: 76px;
       margin-bottom: 80px;
+      z-index: 1;
 
       & > * {
         grid-column: 3 / span 8;
